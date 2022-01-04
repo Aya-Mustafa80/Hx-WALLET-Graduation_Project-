@@ -3,8 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body></body>
 </html>
+
+    <meta name="viewport" content="width=device-width, initial-scale=9.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="img-background">
+      <img src="/assets/pics/Scrip1.png">
+    </div>
+    <div class="big-container">
+        <div class="imgcontainer">
+          <img src="/assets/pics/login (1).png" alt="Avatar" class="avatar">
+        </div>
+
+        <form  #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+        
+              <div class="container">
+                <label for="uname"><b><h3>UserID</h3></b></label>
+                <input type="text" placeholder="Enter UserID" [(ngModel)]="user.username" ngModel name="uname" required >
+                <br>
+                <label for="psw"><b><h3>Password</h3></b></label>
+                <input type="password" placeholder="Enter Password" [(ngModel)]="user.password" ngModel name="psw" required >
+            
+                <button type="submit" style="background-color: #168aad"><h3>Login</h3></button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> <h4>Remember me</h4>
+                </label>
+                 <br>
+                <span class="psw"> <a href="#" style="color: #168aad;" routerLink="/forget pass"
+                  routerLinkActive="active"><h3>Forgot password?</h3></a></span>
+              </div>
+        </form> 
+    </div>
+  </body>
+
