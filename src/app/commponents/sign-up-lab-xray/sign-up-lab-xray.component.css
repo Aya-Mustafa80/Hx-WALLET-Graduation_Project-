@@ -1,44 +1,69 @@
-body {
-  background-image: url("/assets/pics/x-rays.jpg");
-  background-size: cover;
-  height: 1200px;
+.SgnD {
+  /*  background-image: url("/assets/pics/ddoc.jpg");
+  background-size: cover; */
+  width: 100%;
+  height: 1100px;
 }
-
+.c1 {
+  padding-top: 70px;
+  float: left;
+}
+.c2 {
+  float: left;
+}
 input {
   border: none;
   background: none;
   outline: none;
-  border-bottom: 2px solid;
-  margin-top: 30px;
-  width: 300px;
-  margin-left: 10px;
+  border: 1px solid;
+  border-radius: 20px;
+  height: 60px;
+  width: 480px;
+  margin-left: 20px;
+  font-size: 15px;
 }
 
 label {
   font-size: 20px;
   font-weight: bold;
+  padding-left: 30px;
 }
 
 button {
-  height: 40px;
-  width: 70px;
-  font-size: 15px;
+  height: 50px;
+  width: 200px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 30px;
-  margin-left: 200px;
+  margin-left: 150px;
+  background-color: #069dbf;
+  border-radius: 20px;
+  color: white;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
 }
 
 fieldset {
-  height: 700px;
-  width: 500px;
-  border: 1.5px solid white;
-  margin-top: 30px;
+  height: 850px;
+  width: 540px;
+  border: solid 3px #069dbf;
+  border-radius: 20px;
+  margin-left: -70px;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
 }
 p {
   font-size: 30px;
   font-weight: bold;
   font-style: oblique;
-  margin-left: 1060px;
-  margin-top: -700px;
-  color: white;
+  margin-left: 1100px;
+  margin-top: -770px;
+}
+img {
+  margin-left: 100px;
+  margin-top: 150px;
+  width: 750px;
+  height: 700px;
 }
