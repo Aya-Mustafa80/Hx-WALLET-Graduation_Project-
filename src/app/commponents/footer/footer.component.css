@@ -1,51 +1,13 @@
 .f2 {
   width: 100%;
   height: 450px;
-  background-color: #445161;
 }
 .fter {
   width: 100%;
-  height: 400px;
-}
-.COL1 {
-  padding-left: 20px;
-}
-.COL2 {
-  width: 600px;
-  height: 500px;
-  background-color: white;
-}
-.contCOL1 {
-  width: 500px;
-  height: 400px;
-  border: 6px dotted #445161;
-}
-.contCOL2 {
+  height: 470px;
   background-color: #445161;
-  width: 600px;
-  height: 450px;
-  border-radius: 20px;
 }
-.RW {
-  padding-left: 200px;
-  padding-top: 20px;
-}
-h2 {
-  font-size: 75px;
-  font-weight: 800;
-  font-family: "Lobster", cursive;
-  font-family: "Shalimar", cursive;
-  color: #445161;
-  margin-top: 100px;
-  padding-left: 100px;
-}
-img {
-  width: 250px;
-  height: 250px;
-  margin: 0;
-  position: top right;
-  margin-left: 200px;
-}
+
 p {
   padding-left: 20px;
   font-size: 30px;
@@ -57,10 +19,8 @@ p {
 .rw2 {
   width: 100%;
   height: 350px;
-  background-color: #445161;
 }
 .rw3 {
-  background-color: #445161;
   width: 100%;
 }
 .CONrow2 {
