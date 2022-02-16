@@ -1,47 +1,183 @@
-.Sgn {
-  background-image: url("/assets/pics/PP.jpg");
-  background-size: cover;
+* {
+  box-sizing: border-box;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
   width: 100%;
-  height: 975px;
+}
+
+[class*="col-"] {
+  float: left;
+  border: 2px solid red;
+  height: 100%;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.Sgn {
+  background-color: #dae7e7;
+  width: 100%;
+  height: 900px;
   margin-top: 0;
+}
+.row {
+  height: 83%;
+  width: 80%;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+.C1 {
+  background-color: white;
 }
 
 h1 {
   text-align: center;
-  font-size: 100px;
-  padding-top: 2px;
-
-  font-family: "Lobster", cursive;
-  font-family: "Shalimar", cursive;
-  font-weight: 700;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.butts {
-  margin-top: 120px;
-  margin-left: 680px;
+  padding-top: 5%;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
 }
-
-button {
-  display: block;
-  margin-top: 50px;
-  height: 50px;
-  width: 240px;
-  transition: all 2.5s;
-  border-radius: 20px;
-  background-color: white;
+p {
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+  font-size: 15px;
+}
+img {
+  width: 100%;
+  height: 81%;
+  margin-bottom: 5%;
 }
 
+.C2 {
+  background-color: #445161;
+}
+.btns {
+  float: right;
+  margin-top: 3%;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 10px;
+}
+button {
+  background-color: #3b445b;
+  border: 2px solid #3b445b;
+  color: white;
+  height: 30px;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+}
+button:active {
+  background-color: #75d4d0;
+  border: 2px solid #75d4d0;
+  box-shadow: 0 2px #75d4d0;
+  transform: translateY(1px);
+}
 button:hover {
-  background-color: #069dbf;
-  border-radius: 50px;
+  background-color: #75d4d0;
+  border: 2px solid #75d4d0;
+}
+button:visited {
+  background-color: #75d4d0;
+  border: 2px solid #75d4d0;
+}
+button:focus {
+  background-color: #75d4d0;
+  border: 2px solid #75d4d0;
+}
+.selected {
+  background-color: #75d4d0;
+  border: 2px solid #75d4d0;
+}
+.frm {
+  width: 70%;
+  margin-top: 14%;
+  height: 650px;
+  margin-left: 15%;
+}
+.divform {
+  height: 90%;
+}
+input {
+  width: 100%;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #adb5bd;
+}
+::placeholder {
+  color: #adb5bd;
+  font-size: 13px;
+  opacity: 0.5;
+}
+fieldset {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+}
+label {
+  color: white;
+}
+
+#sin {
+  font-size: 12px;
+  color: white;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+}
+a {
+  color: #75d4d0;
+  font-size: 12px;
+}
+.divbut {
+  height: 100px;
+}
+#ButS {
+  width: 55%;
+  height: 45%;
+  border-radius: 20px;
+  background-color: #75d4d0;
+  font-size: 20px;
 }
