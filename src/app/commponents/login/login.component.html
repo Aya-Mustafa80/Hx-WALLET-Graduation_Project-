@@ -8,61 +8,66 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container-fluid"></div>
+    <div class="container-fluid Login">
+      <div class="row">
+        <div class="col-5">
+          <div class="divform">
+            <h2>
+              Hey, <br />
+              Login Now.
+            </h2>
+            <p>
+              If you are New
+              <a id="create" routerLink="/Signup" routerLinkActive="active"
+                >Create One</a
+              >
+            </p>
 
-    <div class="img-background">
-      <img src="/assets/pics/Scrip1.png" />
-    </div>
-    <div class="big-container">
-      <div class="imgcontainer">
-        <img src="/assets/pics/login (1).png" alt="Avatar" class="avatar" />
-      </div>
+            <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+              <label for="uname"
+                ><b><h3>UserID</h3></b></label
+              >
+              <input
+                class="inputt"
+                type="text"
+                placeholder="Enter UserID"
+                [(ngModel)]="user.username"
+                ngModel
+                name="uname"
+                required
+              />
+              <br />
+              <label for="psw"
+                ><b><h3>Password</h3></b></label
+              >
+              <input
+                class="inputt"
+                type="password"
+                placeholder="Enter Password"
+                [(ngModel)]="user.password"
+                ngModel
+                name="psw"
+                required
+              />
 
-      <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
-        <div class="container">
-          <label for="uname"
-            ><b><h3>UserID</h3></b></label
-          >
-          <input
-            type="text"
-            placeholder="Enter UserID"
-            [(ngModel)]="user.username"
-            ngModel
-            name="uname"
-            required
-          />
-          <br />
-          <label for="psw"
-            ><b><h3>Password</h3></b></label
-          >
-          <input
-            type="password"
-            placeholder="Enter Password"
-            [(ngModel)]="user.password"
-            ngModel
-            name="psw"
-            required
-          />
-
-          <button type="submit" style="background-color: #168aad">
-            <h3>Login</h3>
-          </button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" />
-            <h4>Remember me</h4>
-          </label>
-
-          <span class="psw">
-            <a
-              href="#"
-              style="color: #168aad"
-              routerLink="/forget pass"
-              routerLinkActive="active"
-              ><h3>Forgot password?</h3></a
-            ></span
-          >
+              <label id="labelremember" class="checkbox-inline">
+                <input type="checkbox" value="" checked /> Remember me
+              </label>
+              <span id="spanForgot"
+                ><a
+                  id="sign"
+                  routerLink="/forget pass"
+                  routerLinkActive="active"
+                  ><h3>Forgot password?</h3></a
+                ></span
+              >
+            </form>
+          </div>
+          <div class="divbut">
+            <button id="Logbut">Login</button>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>

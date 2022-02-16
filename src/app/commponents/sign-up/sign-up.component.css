@@ -40,7 +40,6 @@
 
 [class*="col-"] {
   float: left;
-  border: 2px solid red;
   height: 100%;
 }
 .row::after {
