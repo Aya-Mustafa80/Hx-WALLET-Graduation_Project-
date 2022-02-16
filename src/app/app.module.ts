@@ -12,7 +12,6 @@ import { MoreAboutComponent } from './commponents/more-about/more-about.componen
 import { LoginComponent } from './commponents/login/login.component';
 import { SignUpComponent } from './commponents/sign-up/sign-up.component';
 import { DocPageComponent } from './commponents/doc-page/doc-page.component';
-import { PharmacyPageComponent } from './commponents/pharmacy-page/pharmacy-page.component';
 import { LoginServiceService } from './services/login-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgetPasswordComponent } from './commponents/forget-password/forget-password.component';
@@ -30,7 +29,6 @@ import { PatientPageComponent } from './commponents/patient-page/patient-page.co
     LoginComponent,
     SignUpComponent,
     DocPageComponent,
-    PharmacyPageComponent,
     ForgetPasswordComponent,
     PatientPageComponent,
   ],

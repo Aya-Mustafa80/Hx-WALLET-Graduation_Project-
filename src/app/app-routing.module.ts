@@ -4,7 +4,6 @@ import { HomePageComponent } from './commponents/home-page/home-page.component';
 import { LoginComponent } from './commponents/login/login.component';
 import { SignUpComponent } from './commponents/sign-up/sign-up.component';
 import { DocPageComponent } from './commponents/doc-page/doc-page.component';
-import { PharmacyPageComponent } from './commponents/pharmacy-page/pharmacy-page.component';
 import { ForgetPasswordComponent } from './commponents/forget-password/forget-password.component';
 
 const routes: Routes = [
