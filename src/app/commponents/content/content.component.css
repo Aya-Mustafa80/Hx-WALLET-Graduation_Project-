@@ -1,49 +1,3 @@
-.about1 {
-  background-image: url("/assets/pics/Home.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 610px;
-}
-#img {
-  width: 449px;
-  height: 500px;
-}
-.imgdiv {
-  text-align: center;
-  padding-top: 40px;
-  padding-left: 20px;
-}
-.lft {
-  padding-top: 25px;
-  margin-left: 0;
-}
-p {
-  padding-top: 50px;
-  padding-left: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "Lobster", cursive;
-  font-family: "Shalimar", cursive;
-  font-family: "Titillium Web", sans-serif;
-}
-.rt {
-  height: 500px;
-  width: 250px;
-  margin-top: 40px;
-  background-color: white;
-  margin-left: 0;
-}
-h1 {
-  font-family: "Lobster", cursive;
-  font-family: "Shalimar", cursive;
-  font-family: "Titillium Web", sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  color: black;
-  position: absolute;
-  top: 400px;
-  margin-left: 0;
-}
 * {
   box-sizing: border-box;
 }
@@ -87,12 +41,12 @@ h1 {
 [class*="col-"] {
   float: left;
 }
-
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
+
 .about1 {
   background-image: url("/assets/pics/Home.png");
   background-size: cover;
@@ -106,7 +60,7 @@ h1 {
   margin-left: 12%;
 }
 .imgdiv {
-  background-image: url("/assets/pics/ppp.jpg");
+  background-image: url("/assets/pics/pppjpg.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -114,16 +68,15 @@ h1 {
   background-color: white;
 }
 p {
-  padding-left: 20px;
-  font-size: 20px;
+  padding-left: 5%;
+  padding-top: 15%;
+  font-size: 22px;
   font-weight: bold;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
 }
-.rt {
-  background-color: white;
-}
+
 h1 {
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
