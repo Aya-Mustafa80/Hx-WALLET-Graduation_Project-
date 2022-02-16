@@ -44,3 +44,94 @@ h1 {
   top: 400px;
   margin-left: 0;
 }
+* {
+  box-sizing: border-box;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.about1 {
+  background-image: url("/assets/pics/Home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 610px;
+}
+.row {
+  height: 80%;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 12%;
+}
+.imgdiv {
+  background-image: url("/assets/pics/ppp.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.word {
+  background-color: white;
+}
+p {
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+}
+.rt {
+  background-color: white;
+}
+h1 {
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  position: absolute;
+  top: 400px;
+  margin-left: 0;
+}

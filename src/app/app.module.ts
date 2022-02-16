@@ -17,6 +17,7 @@ import { LabsPageComponent } from './commponents/labs-page/labs-page.component';
 import { LoginServiceService } from './services/login-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgetPasswordComponent } from './commponents/forget-password/forget-password.component';
+import { PatientPageComponent } from './commponents/patient-page/patient-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ForgetPasswordComponent } from './commponents/forget-password/forget-pa
     PharmacyPageComponent,
     LabsPageComponent,
     ForgetPasswordComponent,
+    PatientPageComponent,
   ],
   imports: [
     BrowserModule,
