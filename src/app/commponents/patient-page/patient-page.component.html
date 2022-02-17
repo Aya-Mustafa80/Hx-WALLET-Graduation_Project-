@@ -15,7 +15,7 @@
           <!-- <div class="navbar1">
             <h4>Your Prescriptions</h4>
           </div> -->
-          <button id="tap-1" class="clicked">
+          <button id="tap-1" class="clicked" (click)="ChoosePrescription()">
             <img
               id="picprescription"
               class="icons"
@@ -26,12 +26,12 @@
             Prescriptions
           </button>
 
-          <button id="tap-2">
+          <button id="tap-2" (click)="ChooseTests()">
             <img class="icons" src="/assets/pics/microscope.png" alt="" />
             <br /><br />
             Medical tests
           </button>
-          <button id="tap-3">
+          <button id="tap-3" (click)="ChooseXRays()">
             <img class="icons" src="/assets/pics/x-ray.png" alt="" />
             <br /><br />
             Medical X-Rays
@@ -167,7 +167,42 @@
         </div>
         <!--------------------------------------- COL3------------------------------------------------>
 
-        <div class="col-8 COL3"></div>
+        <div class="col-7 COL3">
+          <div class="detail">
+            <div *ngIf="Detail_Prescription" class="DetailPrescription">
+              <h1 class="Headers">Prescription Details:</h1>
+            </div>
+            <div *ngIf="Detail_Tests" class="DetailTests"></div>
+            <div *ngIf="Detail_XRays" class="DetailXRays"></div>
+          </div>
+          <div class="result">
+            <!-- //////////////// -->
+            <div *ngIf="Result_Pescription" class="Prescrip">
+              <img id="giff" src="/assets/pics/medicine.gif" alt="" />
+              <h3 id="H3Result">
+                Take your medication regularly and stay healthy
+              </h3>
+              <img id="Doc1" src="/assets/pics/Doc2.jpg" alt="" />
+              <img id="Doc2" src="/assets/pics/Doc1.jpg" alt="" />
+            </div>
+            <!-- //////////////// -->
+            <div *ngIf="Result_Tests" class="Tests">
+              <h1 class="Headers">Your Test Result:</h1>
+            </div>
+            <!-- //////////////// -->
+            <div *ngIf="Result_XRay" class="Tests">
+              <h1 class="Headers">Your X-Ray Result:</h1>
+            </div>
+          </div>
+          <div class="info">
+            <img id="InfoImg" src="/assets/pics/solidarity.png" alt="" />
+            <h2 id="InfoH2">How is your health today?</h2>
+            <p id="InfoP">
+              Here you can track your Medical History <br />
+              We are happy to help you to do that <br />
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
