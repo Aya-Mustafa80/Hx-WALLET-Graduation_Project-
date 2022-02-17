@@ -46,14 +46,17 @@
   clear: both;
   display: table;
 }
-
+.continer {
+  height: 1500px;
+}
 .rowr {
-  margin-top: 50px;
+  margin-top: 5%;
   margin-left: 3%;
   margin-right: 3%;
   margin-bottom: 3%;
   border: dashed 2px #63dede;
   background-color: #dae7e7;
+  height: 15%;
 }
 
 p {
@@ -65,81 +68,92 @@ p {
 }
 
 .imgg {
-  width: 250px;
-  height: 250px;
+  width: 35%;
+  height: 70%;
   border-radius: 50%;
+  margin-top: 3%;
   float: left;
   border: 2px solid #63dede;
   position: relative;
   animation-name: example1;
-  animation-duration: 4s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
+  animation-delay: 1s;
 }
 @keyframes example1 {
   0% {
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
   }
   25% {
-    left: 200px;
-    top: 0px;
+    left: 50%;
+    top: 0;
   }
   50% {
     left: 0;
     top: 0;
   }
   75% {
-    left: 200 px;
-    top: 0px;
+    left: 50%;
+    top: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
   }
 }
 @keyframes example2 {
   0% {
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
   }
   25% {
-    left: -200px;
-    top: 0px;
+    left: -50%;
+    top: 0;
   }
   50% {
-    left: -200px;
-    top: 0px;
+    left: 0;
+    top: 0;
   }
   75% {
-    left: 0px;
-    top: 0px;
+    left: -50%;
+    top: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
   }
 }
 #Mid {
   float: right;
   animation-name: example2;
-  animation-duration: 4s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
 }
 
 .COL1 {
-  padding-left: 20px;
+  padding-left: 5%;
+  height: 100%;
 }
 .COL2 {
-  width: 600px;
-  height: 500px;
   background-color: white;
+  height: 100%;
 }
 .contCOL1 {
-  width: 500px;
-  height: 400px;
+  width: 80%;
+  height: 80%;
   border: 6px dotted #445161;
+  margin-left: 5%;
 }
 .contCOL2 {
   background-color: #445161;
-  width: 600px;
-  height: 400px;
+  width: 85%;
+  height: 80%;
   border-radius: 20px;
 }
 .RW {
-  padding-left: 200px;
-  padding-top: 20px;
+  margin-top: 5%;
+  height: 35%;
 }
 h2 {
   font-size: 75px;
