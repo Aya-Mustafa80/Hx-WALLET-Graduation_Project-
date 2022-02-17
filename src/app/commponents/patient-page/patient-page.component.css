@@ -48,13 +48,7 @@
 }
 
 .Patient_page {
-  background: rgb(218, 231, 231);
-  background: linear-gradient(
-    90deg,
-    rgba(218, 231, 231, 1) 0%,
-    rgba(116, 208, 205, 1) 40%,
-    rgba(61, 68, 90, 1) 100%
-  );
+  background-color: #dae7e7;
   height: 900px;
 }
 .heder {

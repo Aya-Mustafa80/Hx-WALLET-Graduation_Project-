@@ -13,12 +13,14 @@ export class SignUpComponent implements OnInit {
   F2 = false;
   F3 = false;
   F4 = false;
+  F5 = false;
 
   Patient() {
     this.F1 = true;
     this.F2 = false;
     this.F3 = false;
     this.F4 = false;
+    this.F5 = false;
   }
   Doc() {
     var but = document.getElementById('first');
@@ -27,6 +29,7 @@ export class SignUpComponent implements OnInit {
     this.F2 = true;
     this.F3 = false;
     this.F4 = false;
+    this.F5 = false;
   }
   Pharmacy() {
     var but = document.getElementById('first');
@@ -35,6 +38,7 @@ export class SignUpComponent implements OnInit {
     this.F2 = false;
     this.F3 = true;
     this.F4 = false;
+    this.F5 = false;
   }
   TestLab() {
     var but = document.getElementById('first');
@@ -43,6 +47,7 @@ export class SignUpComponent implements OnInit {
     this.F2 = false;
     this.F3 = false;
     this.F4 = true;
+    this.F5 = false;
   }
   XRays() {
     var but = document.getElementById('first');
@@ -50,6 +55,7 @@ export class SignUpComponent implements OnInit {
     this.F1 = false;
     this.F2 = false;
     this.F3 = false;
-    this.F4 = true;
+    this.F4 = false;
+    this.F5 = true;
   }
 }
