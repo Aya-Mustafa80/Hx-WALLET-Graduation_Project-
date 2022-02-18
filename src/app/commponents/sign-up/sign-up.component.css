@@ -104,26 +104,26 @@ button {
   font-family: "Titillium Web", sans-serif;
 }
 button:active {
-  background-color: #75d4d0;
-  border: 2px solid #75d4d0;
-  box-shadow: 0 2px #75d4d0;
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
+  box-shadow: 0 2px #5c959d;
   transform: translateY(1px);
 }
 button:hover {
-  background-color: #75d4d0;
-  border: 2px solid #75d4d0;
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
 }
 button:visited {
-  background-color: #75d4d0;
-  border: 2px solid #75d4d0;
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
 }
 button:focus {
-  background-color: #75d4d0;
-  border: 2px solid #75d4d0;
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
 }
 .selected {
-  background-color: #75d4d0;
-  border: 2px solid #75d4d0;
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
 }
 .frm {
   width: 70%;
@@ -167,7 +167,7 @@ label {
   font-family: "Titillium Web", sans-serif;
 }
 a {
-  color: #75d4d0;
+  color: #5c959d;
   font-size: 12px;
 }
 .divbut {
@@ -177,7 +177,7 @@ a {
   width: 55%;
   height: 48%;
   border-radius: 25px;
-  background-color: #75d4d0;
-  border: #75d4d0;
+  background-color: #5c959d;
+  border: #5c959d;
   font-size: 20px;
 }

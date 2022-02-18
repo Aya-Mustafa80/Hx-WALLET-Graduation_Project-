@@ -90,7 +90,7 @@ p {
 }
 #create {
   font-size: 16px;
-  color: #75d4d0;
+  color: #5c959d;
 }
 form {
   width: 95%;
@@ -121,7 +121,7 @@ form {
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
-  color: #75d4d0;
+  color: #5c959d;
 }
 .divbut {
   width: 95%;
@@ -135,13 +135,13 @@ form {
   height: 90%;
   margin-left: 20%;
   border-radius: 15px;
-  background-color: #75d4d0;
+  background-color: #5c959d;
   color: white;
   font-size: 25px;
 }
 button:active {
-  background-color: #75d4d0;
-  border: 2px solid #75d4d0;
-  box-shadow: 0 2px #75d4d0;
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
+  box-shadow: 0 2px #5c959d;
   transform: translateY(1px);
 }
