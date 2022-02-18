@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'Home', component: HomePageComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'Signup', component: SignUpComponent },
-  { path: 'forget pass', component: ForgetPasswordComponent },
+  { path: 'forget_pass', component: ForgetPasswordComponent },
   { path: 'Patient_page', component: PatientPageComponent },
   { path: 'Doc_Page', component: DocPageComponent },
 ];
