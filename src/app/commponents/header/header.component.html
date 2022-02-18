@@ -7,33 +7,36 @@
     <title>Document</title>
   </head>
   <body>
-    <nav class="Navbar1">
-      <div class="container-fluid">
-        <div class="img-cont tl">
+    <div class="container-fluid Nav">
+      <div class="row">
+        <div class="col1 img-cont tl">
           <img class="navbar" src="\assets\pics\logo22.jpeg" alt="" id="logo" />
         </div>
-
-        <div class="Hcont tl">
+        <div class="col2 Hcont tl">
           <h1 class="H">
             <a id="title" href="#">Your Electronic Prescription</a>
           </h1>
         </div>
-
-        <div class="tr">
-          <a class="icns navbar" routerLink="/Signup" routerLinkActive="active"
-            ><span class="glyphicon glyphicon-user"
-              ><span class="fn">&ensp;Sign Up</span></span
-            >
-          </a>
-        </div>
-        <div class="tr">
-          <a class="icns navbar" routerLink="/Login" routerLinkActive="active"
-            ><span class="glyphicon glyphicon-log-in"
-              ><span class="fn">&ensp;Login</span>
-            </span>
-          </a>
+        <div class="col3">
+          <div class="tr1">
+            <a
+              class="icns navbar"
+              routerLink="/Signup"
+              routerLinkActive="active"
+              ><span class="glyphicon glyphicon-user"
+                ><span class="fn">&ensp;Sign Up</span></span
+              >
+            </a>
+          </div>
+          <div class="tr2">
+            <a class="icns navbar" routerLink="/Login" routerLinkActive="active"
+              ><span class="glyphicon glyphicon-log-in"
+                ><span class="fn">&ensp;Login</span>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
   </body>
 </html>

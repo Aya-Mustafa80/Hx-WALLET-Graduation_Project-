@@ -1,25 +1,90 @@
-#logo {
-  border-radius: 50%;
-  width: 80px;
+* {
+  box-sizing: border-box;
 }
-.Navbar1 {
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+/* [class*="col-"] {
+  float: left; 
+} */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////// */
+.Nav {
   width: 100%;
   height: 70px;
   background-color: #445161;
 }
+.row {
+  height: 100%;
+  width: 100%;
+}
+.col1 {
+  width: 7%;
+  height: 100%;
+}
+.col2 {
+  width: 70%;
+  height: 100%;
+}
+.col3 {
+  width: 23%;
+  height: 100%;
+}
+
+#logo {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
 .tl {
   float: left;
 }
-.img-cont {
-  padding-right: 20px;
-  padding-top: 3px;
-}
+
 .H {
-  font-size: 45px;
+  font-size: 40px;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   margin: 0;
-  padding-top: 10px;
+  margin-top: 1%;
 }
 #title {
   color: white;
@@ -28,18 +93,236 @@
 #title:hover {
   text-shadow: white;
 }
-.tr {
+.tr1 {
+  float: left;
+  width: 40%;
+  height: 100%;
+
+  margin-left: 25%;
+}
+.tr2 {
   float: right;
-  padding-right: 30px;
-  padding-top: 0;
+  width: 35%;
+  height: 100%;
 }
 .icns {
   color: white;
   font-size: 20px;
-  padding-top: 15px;
+  margin-top: 3%;
 }
 .fn {
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-size: 30px;
+}
+@media only screen and (max-width: 1421px) {
+  /*  .Nav {
+    height: 150px;
+  } */
+  .col2 {
+    width: 48%;
+  }
+  .col3 {
+    width: 42%;
+  }
+  .col1 {
+    width: 10%;
+  }
+  .H {
+    margin-top: 1%;
+    font-size: 50px;
+  }
+  .tr1 {
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-left: 42%;
+  }
+  .tr2 {
+    float: right;
+    width: 28%;
+    height: 100%;
+  }
+  #logo {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+  .icns {
+    color: white;
+    font-size: 15px;
+    margin-top: 3%;
+  }
+  .fn {
+    font-family: "Lobster", cursive;
+    font-family: "Shalimar", cursive;
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .col1 {
+    width: 15%;
+    height: 100%;
+  }
+  .col2 {
+    width: 40%;
+    height: 100%;
+  }
+  .col3 {
+    width: 45%;
+    text-align: center;
+    height: 100%;
+  }
+  #logo {
+    width: 90%;
+  }
+
+  .tr1 {
+    float: left;
+    width: 35%;
+    height: 100%;
+
+    margin-left: 35%;
+  }
+  .tr2 {
+    float: right;
+    width: 30%;
+    height: 100%;
+  }
+  .icns {
+    font-size: 15px;
+  }
+  .fn {
+    font-family: "Lobster", cursive;
+    font-family: "Shalimar", cursive;
+    font-size: 25px;
+  }
+  .H {
+    font-size: 43px;
+    margin: 0;
+    margin-top: 4%;
+  }
+}
+@media only screen and (max-width: 783.99px) {
+  .col1 {
+    width: 20%;
+    height: 100%;
+  }
+  .col2 {
+    width: 50%;
+    height: 100%;
+  }
+  .col3 {
+    width: 30%;
+    text-align: center;
+    height: 100%;
+  }
+  #logo {
+    width: 90%;
+  }
+
+  .tr1 {
+    float: left;
+    width: 55%;
+    height: 100%;
+
+    margin-left: 0;
+  }
+  .tr2 {
+    float: right;
+    width: 45%;
+    height: 100%;
+  }
+  .icns {
+    font-size: 10px;
+  }
+  .fn {
+    font-family: "Lobster", cursive;
+    font-family: "Shalimar", cursive;
+    font-size: 20px;
+  }
+  .H {
+    font-size: 43px;
+    margin: 0;
+    margin-top: 4%;
+  }
+}
+@media only screen and (max-width: 783.99px) {
+  .col1 {
+    width: 15%;
+    height: 100%;
+  }
+  .col2 {
+    width: 60%;
+    height: 100%;
+  }
+  .col3 {
+    width: 25%;
+    text-align: center;
+    height: 100%;
+  }
+  #logo {
+    width: 110%;
+  }
+
+  .Nav {
+    height: 75px;
+  }
+  .tr1 {
+    width: 80%;
+    height: 50%;
+    margin-left: 25%;
+  }
+  .tr2 {
+    width: 80%;
+    height: 50%;
+  }
+  .H {
+    font-size: 43px;
+    margin: 0;
+    margin-top: 4%;
+  }
+  .icns {
+    font-size: 12px;
+    margin-top: 0;
+    padding-bottom: 22%;
+  }
+  .fn {
+    margin-bottom: 30%;
+    font-size: 22px;
+    padding-bottom: 2%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .col2 {
+    width: 50%;
+  }
+  .col1 {
+    width: 20%;
+  }
+  .col3 {
+    width: 30%;
+  }
+  .tr1 {
+    width: 90%;
+    height: 50%;
+    margin-left: 12%;
+  }
+  .tr2 {
+    width: 100%;
+    height: 50%;
+  }
+  .icns {
+    font-size: 15px;
+  }
+  .fn {
+    font-family: "Lobster", cursive;
+    font-family: "Shalimar", cursive;
+    font-size: 20px;
+  }
+  .H {
+    font-size: 30px;
+    margin: 0;
+    margin-top: 9%;
+  }
 }
