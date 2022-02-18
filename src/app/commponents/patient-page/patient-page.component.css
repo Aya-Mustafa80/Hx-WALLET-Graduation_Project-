@@ -256,7 +256,15 @@ button:focus {
   height: 50%;
   float: right;
 }
-.Headers {
+.HeadersDetail {
+  margin-left: 5%;
+  font-weight: 300;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+  color: #445161;
+}
+.HeadersResult {
   font-weight: 300;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;

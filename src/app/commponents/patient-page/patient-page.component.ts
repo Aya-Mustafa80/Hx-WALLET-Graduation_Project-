@@ -28,6 +28,12 @@ export class PatientPageComponent implements OnInit {
   Detail_XRays = false;
   /* // */
   ChoosePrescription() {
+    var Prescrip = document.getElementById('tap-1');
+    Prescrip?.setAttribute('class', 'clicked');
+    var test = document.getElementById('tap-2');
+    test?.setAttribute('class', '');
+    var XRay = document.getElementById('tap-3');
+    XRay?.setAttribute('class', '');
     this.Prescription_page = true;
     this.Result_Pescription = true;
     this.Detail_Prescription = true;
@@ -41,6 +47,10 @@ export class PatientPageComponent implements OnInit {
   ChooseTests() {
     var Prescrip = document.getElementById('tap-1');
     Prescrip?.setAttribute('class', '');
+    var test = document.getElementById('tap-2');
+    test?.setAttribute('class', 'clicked');
+    var XRay = document.getElementById('tap-3');
+    XRay?.setAttribute('class', '');
     this.Prescription_page = false;
     this.Result_Pescription = false;
     this.Detail_Prescription = false;
@@ -54,6 +64,10 @@ export class PatientPageComponent implements OnInit {
   ChooseXRays() {
     var Prescrip = document.getElementById('ap-1');
     Prescrip?.setAttribute('class', '');
+    var test = document.getElementById('tap-2');
+    test?.setAttribute('class', '');
+    var XRay = document.getElementById('tap-3');
+    XRay?.setAttribute('class', 'clicked');
     this.Prescription_page = false;
     this.Result_Pescription = false;
     this.Detail_Prescription = false;

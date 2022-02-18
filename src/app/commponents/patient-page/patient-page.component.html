@@ -170,7 +170,8 @@
         <div class="col-7 COL3">
           <div class="detail">
             <div *ngIf="Detail_Prescription" class="DetailPrescription">
-              <h1 class="Headers">Prescription Details:</h1>
+              <h1 class="HeadersDetail">Prescription Details:</h1>
+              <div class="PrescriptionForm"></div>
             </div>
             <div *ngIf="Detail_Tests" class="DetailTests"></div>
             <div *ngIf="Detail_XRays" class="DetailXRays"></div>
@@ -187,7 +188,7 @@
             </div>
             <!-- //////////////// -->
             <div *ngIf="Result_Tests" class="Tests">
-              <h1 class="Headers">Your Test Result:</h1>
+              <h1 class="HeadersResult">Your Test Result:</h1>
             </div>
             <!-- //////////////// -->
             <div *ngIf="Result_XRay" class="Tests">
