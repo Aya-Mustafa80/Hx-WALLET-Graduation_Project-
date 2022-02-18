@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  float: left;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.continer {
+  height: 1500px;
+}
+.rowr {
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  border: dashed 2px #63dede;
+  background-color: #dae7e7;
+  height: 15%;
+}
+
+p {
+  margin-top: 50px;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 30px;
+}
+
+.imgg {
+  width: 35%;
+  height: 70%;
+  border-radius: 50%;
+  margin-top: 3%;
+  float: left;
+  border: 2px solid #63dede;
+  position: relative;
+  animation-name: example1;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+@keyframes example1 {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: 50%;
+    top: 0;
+  }
+  50% {
+    left: 0;
+    top: 0;
+  }
+  75% {
+    left: 50%;
+    top: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+@keyframes example2 {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    left: -50%;
+    top: 0;
+  }
+  50% {
+    left: 0;
+    top: 0;
+  }
+  75% {
+    left: -50%;
+    top: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+#Mid {
+  float: right;
+  animation-name: example2;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.COL1 {
+  padding-left: 5%;
+  height: 100%;
+}
+.COL2 {
+  background-color: white;
+  height: 100%;
+}
+.contCOL1 {
+  width: 80%;
+  height: 80%;
+  border: 6px dotted #445161;
+  margin-left: 5%;
+}
+.contCOL2 {
+  background-color: #445161;
+  width: 85%;
+  height: 80%;
+  border-radius: 20px;
+}
+.RW {
+  margin-top: 5%;
+  height: 35%;
+}
+h2 {
+  font-size: 75px;
+  font-weight: 800;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  color: #445161;
+  margin-top: 100px;
+  padding-left: 100px;
+}
+
+#wy {
+  padding-left: 20px;
+  font-size: 25px;
+  color: white;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+}
+#logo {
+  width: 40%;
+  height: 50%;
+  margin-left: 25%;
+}
