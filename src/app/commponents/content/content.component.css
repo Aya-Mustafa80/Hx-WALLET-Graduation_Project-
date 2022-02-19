@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.col-1 {
+/* .col-1 {
   width: 8.33%;
 }
 .col-2 {
@@ -36,46 +36,62 @@
 }
 .col-12 {
   width: 100%;
+} */
+.A {
+  border: 2px solid red;
 }
-
-[class*="col-"] {
+/* [class*="col-"] {
   float: left;
-}
-.row::after {
+  border: 2px solid red;
+} */
+/* .row::after {
   content: "";
   clear: both;
   display: table;
-}
+} */
 
 .about1 {
   background-image: url("/assets/pics/Home.png");
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  height: 610px;
+  /*   height: 610px; */
+  height: 90vh;
 }
 .row {
-  height: 80%;
-  width: 80%;
+  /*  height: 80%;
+  width: 80%; */
   margin-top: 5%;
-  margin-left: 12%;
+  margin-left: 10%;
+  border: 2px solid red;
+  height: 65vh;
 }
+
 .HeadDiv {
   /* border: 2px solid red; */
+  border: 2px solid green;
 }
 .imgdiv {
   background-image: url("/assets/pics/pppjpg.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  /*   border: 2px solid red; */
+  border: 2px solid blueviolet;
+  text-align: center;
+  padding-top: 20%;
+}
+img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid blue;
 }
 .wordDiv {
   background-color: white;
-  /*  border: 2px solid red; */
+  border: 2px solid red;
 }
 p {
   padding-left: 5%;
   padding-top: 15%;
-  font-size: 22px;
+  font-size: 1vw;
+  font-size: 2.5vh;
   font-weight: bold;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
@@ -87,15 +103,27 @@ h1 {
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 2vw;
+  font-size: 4vh;
   color: black;
+  /*  top: 400px;
+  margin-left: 0; */
+  border: 2px solid blue;
   position: absolute;
-  top: 400px;
-  margin-left: 0;
+  bottom: 0px;
+  /*  margin-top: 100%; */
 }
-@media only screen and (max-width: 600px) {
-  col-4 {
-    width: 33.33%;
-    border: 2px solid blue;
+/* @media only screen and (max-width: 3754px) {
+  .HeadDiv {
+    height: 20%;
   }
+  h1 {
+    font-size: 20px;
+  }
+  .imgdiv,
+  .wordDiv {
+    height: 80%;
+  }
+
 }
+ */
