@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid Patient_page">
+      <div class="row r1">
+        <!--------------------------------------- COL1------------------------------------------------>
+
+        <div class="col-1 COL1">
+          <!-- <div class="navbar1">
+            <h4>Your Prescriptions</h4>
+          </div> -->
+          <button id="tap-1" class="clicked" (click)="ChoosePrescription()">
+            <img
+              id="picprescription"
+              class="icons"
+              src="/assets/pics/medical-history.png"
+              alt=""
+            />
+            <br /><br />
+            Prescriptions
+          </button>
+
+          <button id="tap-2" (click)="ChooseTests()">
+            <img class="icons" src="/assets/pics/microscope.png" alt="" />
+            <br /><br />
+            Medical tests
+          </button>
+          <button id="tap-3" (click)="ChooseXRays()">
+            <img class="icons" src="/assets/pics/x-ray.png" alt="" />
+            <br /><br />
+            Medical X-Rays
+          </button>
+        </div>
+        <!--------------------------------------- COL2------------------------------------------------>
+        <div class="col-3 COL2">
+          <div class="card1">
+            <img id="personIcon" src="/assets/pics/profile.png" alt="" />
+            <h3 id="Name">Patient Name{{ Name }}</h3>
+            <h5 id="Age">Age {{ Age }}</h5>
+          </div>
+          <p class="P1">{{ Contient }} Content :</p>
+
+          <div class="card2">
+            <!-- /////////// -->
+            <div class="search p1">
+              <input type="search" class="search-box" />
+              <span (click)="SearchClick1()" class="search-button">
+                <span class="search-icon"></span>
+              </span>
+            </div>
+            <!-- /////////// -->
+            <div class="content">
+              <div>
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf dfjhsfjfhsdf fhsfshfns
+                fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns
+              </div>
+            </div>
+          </div>
+          <p class="P1">Notification :</p>
+
+          <div class="card3">
+            <!-- /////////// -->
+            <div class="search p2">
+              <input type="search" class="search-box" />
+              <span (click)="SearchClick2()" class="search-button">
+                <span class="search-icon"></span>
+              </span>
+            </div>
+            <!-- /////////// -->
+            <div class="notification">
+              <div>
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf dfjhsfjfhsdf fhsfshfns
+                fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjsfhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj
+                fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf
+                fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdjfhsfjs fhsdfjhsfjfhsdf
+                fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs fhsdjfhsfjs
+                fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns fhsdfjhsfj fhsdjfhsfjs
+                fhsdjfhsfjs fhsdfjhsfjfhsdf fhsdfjhsfjfhsdf fhsfshfns
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--------------------------------------- COL3------------------------------------------------>
+
+        <div class="col-7 COL3">
+          <div class="detail">
+            <div *ngIf="Detail_Prescription" class="DetailPrescription">
+              <h1 class="HeadersDetail">Prescription Details:</h1>
+              <div class="PrescriptionForm"></div>
+            </div>
+            <div *ngIf="Detail_Tests" class="DetailTests"></div>
+            <div *ngIf="Detail_XRays" class="DetailXRays"></div>
+          </div>
+          <div class="result">
+            <!-- //////////////// -->
+            <div *ngIf="Result_Pescription" class="Prescrip">
+              <img id="giff" src="/assets/pics/medicine.gif" alt="" />
+              <h3 id="H3Result">
+                Take your medication regularly and stay healthy
+              </h3>
+              <img id="Doc1" src="/assets/pics/Doc2.jpg" alt="" />
+              <img id="Doc2" src="/assets/pics/Doc1.jpg" alt="" />
+            </div>
+            <!-- //////////////// -->
+            <div *ngIf="Result_Tests" class="Tests">
+              <h1 class="HeadersResult">Your Test Result:</h1>
+            </div>
+            <!-- //////////////// -->
+            <div *ngIf="Result_XRay" class="Tests">
+              <h1 class="Headers">Your X-Ray Result:</h1>
+            </div>
+          </div>
+          <div class="info">
+            <img id="InfoImg" src="/assets/pics/solidarity.png" alt="" />
+            <h2 id="InfoH2">How is your health today?</h2>
+            <p id="InfoP">
+              Here you can track your Medical History <br />
+              We are happy to help you to do that <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

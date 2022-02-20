@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=9.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid Login">
+      <div class="row">
+        <div class="col-5">
+          <div class="divform">
+            <h2>
+              Hey, <br />
+              Login Now.
+            </h2>
+            <p>
+              If you are New
+              <a id="create" routerLink="/Signup" routerLinkActive="active"
+                >Create One</a
+              >
+            </p>
+
+            <form #userForm="ngForm" novalidate >
+              <label for="uname"
+                ><b><h3>UserID</h3></b></label
+              >
+              <input
+                class="inputt"
+                type="text"
+                placeholder="Enter UserID" 
+                [(ngModel)]="loginUSerData.userName"
+                ngModel
+                name="uname"
+                required
+              />
+              <br />
+              <label for="psw"
+                ><b><h3>Password</h3></b></label
+              >
+              <input
+                class="inputt"
+                type="password"
+                placeholder="Enter Password"
+                [(ngModel)]="loginUSerData.password"
+                ngModel
+                name="psw"
+                required
+              />
+
+              <label id="labelremember" class="checkbox-inline">
+                <input type="checkbox" value="" checked /> Remember me
+              </label>
+              <span id="spanForgot"
+                ><a
+                  id="sign"
+                  routerLink="/forget pass"
+                  routerLinkActive="active"
+                  ><h3>Forgot password?</h3></a
+                ></span
+              >
+            </form>
+          </div>
+          <div class="divbut">
+            <button id="Logbut" type="submit" (click)="loginuser()" [disabled]="userForm.form.invalid">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
