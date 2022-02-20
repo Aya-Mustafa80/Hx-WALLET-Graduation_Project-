@@ -16,18 +16,17 @@ export class LoginComponent implements OnInit {
     password: undefined,
     grant_type: "password"
   };
-  loginData = new FormData();
   frmRegister: FormGroup | undefined;
   constructor(private _fb: FormBuilder, private info: AuthService, private _router: Router) { }
-
+  body = new URLSearchParams();
   ngOnInit(): void { }
-
   onSubmit() { }
   loginuser() {
-    this.loginData.append('userName', this.loginUSerData.userName)
-    this.loginData.append('password', this.loginUSerData.password)
-    this.loginData.append('grant_type', this.loginUSerData.grant_type)
-    this.info.loginuser(this.loginData).subscribe(res => {
+    this.body.set('userName', this.loginUSerData.userName)
+    this.body.set('password', this.loginUSerData.password)
+    this.body.set('grant_type', 'password')
+
+    this.info.loginuser(this.body).subscribe(res => {
       console.log(res);
       localStorage.setItem('token', res.token);
       this._router.navigate(['/Patient_page'])
