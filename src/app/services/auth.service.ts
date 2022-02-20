@@ -72,7 +72,7 @@ JSON_to_URLEncoded(element:any,key:any,list:any){
       'Content-Type',
       'application/x-www-form-urlencoded'
     );
-  loginuser(user: User) {
+  loginuser(user) {
     return this.http.post<any>(this._loginURL, user)
   }
 }
