@@ -183,7 +183,6 @@ button:focus {
   border-bottom-left-radius: 20px;
   margin-left: 4%;
 }
-
 .Presc {
   height: 9%;
   width: 100%;
@@ -200,7 +199,6 @@ button:focus {
 #date {
   float: right;
 }
-
 .card3 {
   height: 20%;
   background-color: white;
@@ -234,7 +232,6 @@ button:focus {
   margin-left: 5%;
   border-radius: 70px;
 }
-
 .DetailPrescription {
   height: 75%;
   width: 100%;
@@ -264,7 +261,6 @@ button:focus {
   margin-left: 6%;
   color: #445161;
 }
-
 .result {
   width: 50%;
   height: 50%;
