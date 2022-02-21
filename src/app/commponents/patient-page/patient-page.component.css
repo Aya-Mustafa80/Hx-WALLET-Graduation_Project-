@@ -183,7 +183,22 @@ button:focus {
   border-bottom-left-radius: 20px;
   margin-left: 4%;
 }
-
+.Presc {
+  height: 9%;
+  width: 100%;
+  background-color: #ced4da;
+  border: 2px solid #5c959d;
+  border-radius: 20px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+#SpanPres {
+  margin-left: 2%;
+  margin-top: 6%;
+}
+#date {
+  float: right;
+}
 .card3 {
   height: 20%;
   background-color: white;
@@ -216,6 +231,35 @@ button:focus {
   margin-top: 5%;
   margin-left: 5%;
   border-radius: 70px;
+}
+.DetailPrescription {
+  height: 75%;
+  width: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.PrescriptionForm {
+  height: 90%;
+  width: 90%;
+  background-color: #ced4da;
+  border: 2px solid #5c959d;
+  border-radius: 20px;
+  margin-top: 2%;
+  margin-left: 5%;
+  /*   margin-bottom: 2%; */
+  /*  border: 2px solid red; */
+}
+.D {
+  font-size: large;
+  margin-left: 2%;
+  margin-top: 2%;
+  font-weight: bold;
+  color: #445161;
+}
+.DSpan {
+  font-size: medium;
+  margin-left: 6%;
+  color: #445161;
 }
 .result {
   width: 50%;
