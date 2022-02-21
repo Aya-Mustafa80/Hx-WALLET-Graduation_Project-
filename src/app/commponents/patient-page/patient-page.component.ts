@@ -274,6 +274,7 @@ export class PatientPageComponent implements OnInit {
     this.objXR = ele;
   }
   /*//////////////////////////////////////////////////////// */
+
   ngOnInit(): void {}
   Name = '';
   Age = '';
@@ -287,18 +288,23 @@ export class PatientPageComponent implements OnInit {
   Detail_Prescription = true;
   Content_Prescription = true;
   Notification_Prescription = true;
+
   /* // */
   MedicalTest_page = false;
   Result_Tests = false;
   Detail_Tests = false;
+
   Content_Tests = false;
   Notification_Tests = false;
+
   /* // */
   MedicalXRay_page = false;
   Result_XRay = false;
   Detail_XRays = false;
+
   Content_XRays = false;
   Notification_XRays = false;
+
   /* // */
   ChoosePrescription() {
     var Prescrip = document.getElementById('tap-1');
@@ -310,6 +316,7 @@ export class PatientPageComponent implements OnInit {
     this.Prescription_page = true;
     this.Result_Pescription = true;
     this.Detail_Prescription = true;
+
     this.Content_Prescription = true;
     this.Notification_Prescription = true;
     /*  */
@@ -327,6 +334,13 @@ export class PatientPageComponent implements OnInit {
     /*  */
     this.Contient = 'Prescriptions';
     this.Detail = 'Prescription';
+
+    this.MedicalTest_page = false;
+    this.Result_Tests = false;
+    this.Detail_Tests = false;
+    this.MedicalXRay_page = false;
+    this.Result_XRay = false;
+    this.Detail_XRays = false;
   }
   ChooseTests() {
     var Prescrip = document.getElementById('tap-1');
@@ -338,6 +352,7 @@ export class PatientPageComponent implements OnInit {
     this.Prescription_page = false;
     this.Result_Pescription = false;
     this.Detail_Prescription = false;
+
     this.Content_Prescription = false;
     this.Notification_Prescription = false;
     /*  */
@@ -355,6 +370,13 @@ export class PatientPageComponent implements OnInit {
     /*  */
     this.Contient = 'Medical Tests';
     this.Detail = 'Test';
+
+    this.MedicalTest_page = true;
+    this.Result_Tests = true;
+    this.Detail_Tests = true;
+    this.MedicalXRay_page = false;
+    this.Result_XRay = false;
+    this.Detail_XRays = false;
   }
   ChooseXRays() {
     var Prescrip = document.getElementById('ap-1');
@@ -383,6 +405,12 @@ export class PatientPageComponent implements OnInit {
     /*  */
     this.Contient = 'Medical X-Rays ';
     this.Detail = 'X-Ray';
+    this.MedicalTest_page = false;
+    this.Result_Tests = false;
+    this.Detail_Tests = false;
+    this.MedicalXRay_page = true;
+    this.Result_XRay = true;
+    this.Detail_XRays = true;
   }
 
   /* SEARCH */

@@ -12,10 +12,12 @@ import { MoreAboutComponent } from './commponents/more-about/more-about.componen
 import { LoginComponent } from './commponents/login/login.component';
 import { SignUpComponent } from './commponents/sign-up/sign-up.component';
 import { DocPageComponent } from './commponents/doc-page/doc-page.component';
-import { LoginServiceService } from './services/login-service.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ForgetPasswordComponent } from './commponents/forget-password/forget-password.component';
 import { PatientPageComponent } from './commponents/patient-page/patient-page.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { AuthGuard } from './auth.guard';
+import {TokenInterceptorService} from 'src/app/services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,11 @@ import { PatientPageComponent } from './commponents/patient-page/patient-page.co
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [LoginServiceService],
+  providers: [AuthService,AuthGuard,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
