@@ -23,7 +23,7 @@
               >
             </p>
 
-            <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <form #userForm="ngForm" novalidate>
               <label for="uname"
                 ><b><h3>UserID</h3></b></label
               >
@@ -31,7 +31,7 @@
                 class="inputt"
                 type="text"
                 placeholder="Enter UserID"
-                [(ngModel)]="user.username"
+                [(ngModel)]="loginUSerData.userName"
                 ngModel
                 name="uname"
                 required
@@ -44,7 +44,7 @@
                 class="inputt"
                 type="password"
                 placeholder="Enter Password"
-                [(ngModel)]="user.password"
+                [(ngModel)]="loginUSerData.password"
                 ngModel
                 name="psw"
                 required
@@ -56,7 +56,7 @@
               <span id="spanForgot"
                 ><a
                   id="sign"
-                  routerLink="/forget_pass"
+                  routerLink="/forget pass"
                   routerLinkActive="active"
                   ><h3>Forgot password?</h3></a
                 ></span
@@ -64,7 +64,14 @@
             </form>
           </div>
           <div class="divbut">
-            <button id="Logbut">Login</button>
+            <button
+              id="Logbut"
+              type="submit"
+              (click)="loginuser()"
+              [disabled]="userForm.form.invalid"
+            >
+              Login
+            </button>
           </div>
         </div>
       </div>
