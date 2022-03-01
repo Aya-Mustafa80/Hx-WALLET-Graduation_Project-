@@ -1,1 +1,40 @@
-<p>doc-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid Doc_page">
+      <div class="row r1">
+        <div class="col-7">
+          <div id="Qutes">
+            <h1>
+              "medicine cure diseases but only doctors can care patients",
+              <span id="SpanQu">Carl Jung</span>
+            </h1>
+          </div>
+          <div id="Check" *ngIf="search">
+            <h2>Patient SSN:</h2>
+            <input type="text" class="form-control" id="SSN" />
+            <button id="srch" (click)="Start()">Search</button>
+          </div>
+          <div id="select" *ngIf="select">
+            <button class="addshow">
+              <img class="ASImg" src="/assets/pics/add.png" alt="" />
+            </button>
+            <button class="addshow">
+              <img class="ASImg" src="/assets/pics/eye.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="col-5 ImgCol">
+          <img id="DocImg" src="/assets/pics/Doc.jpg" alt="" />
+        </div>
+      </div>
+      <div class="row r2" *ngIf="Show"></div>
+    </div>
+  </body>
+</html>
