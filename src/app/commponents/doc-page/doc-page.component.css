@@ -83,12 +83,11 @@ h2 {
 }
 #select {
   width: 95%;
-  height: 30%;
+  height: 25%;
   margin-top: 28%;
   margin-left: 7.3%;
   border-top: 4px solid #5c959d;
   border-left: 4px solid #5c959d;
-
   border-bottom: 4px solid #97d1d8;
   border-top-right-radius: 70px;
   border-top-left-radius: 70px;
@@ -96,13 +95,16 @@ h2 {
   background-color: #e3f8f9;
 }
 .addshow {
-  width: 30%;
+  width: 20%;
   height: 70%;
-  margin-left: 10%;
+  margin-left: 20%;
   margin-top: 2.5%;
   border: 2px solid #e3f8f9;
   background-color: #e3f8f9;
   border-radius: 20px;
+}
+.showone {
+  background-color: white;
 }
 .addshow:active {
   background-color: white;
@@ -131,4 +133,84 @@ h2 {
   border-bottom: 4px solid #5c959d;
   margin-left: 10%;
   background-color: white;
+}
+.ShowHistory {
+  height: 95%;
+  width: 95%;
+  overflow: auto;
+  overflow-x: hidden;
+  margin-left: 2.5%;
+  margin-top: 1%;
+  background-color: white;
+  border: 2px solid #5c959d;
+}
+.AddHistory {
+  height: 95%;
+  width: 95%;
+  overflow: auto;
+  overflow-x: hidden;
+  margin-left: 2.5%;
+  margin-top: 1%;
+  background-color: white;
+  border: 2px solid #5c959d;
+}
+.btns {
+  float: right;
+  margin-top: 1%;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 10px;
+  height: 10%;
+  background-color: #5c959d;
+  width: 20%;
+}
+.btt {
+  height: 95%;
+  width: 33%;
+  background-color: #97d1d8;
+  border: #97d1d8;
+  color: white;
+  font-size: 15px;
+}
+.btt:active {
+  background-color: #445161;
+}
+.btt:focus {
+  background-color: #445161;
+}
+
+#first {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-right: 1px solid #445161;
+}
+#last {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-left: 1px solid #445161;
+}
+/* /////////////////////////////////////////////////SCROLL DESIGN ///////////////////////////////////////////////*/
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px #dae7e7;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5c959d;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #445161;
+}
+::-webkit-scrollbar-button {
+  height: 5px;
 }

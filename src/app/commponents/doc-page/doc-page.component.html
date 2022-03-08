@@ -22,11 +22,11 @@
             <button id="srch" (click)="Start()">Search</button>
           </div>
           <div id="select" *ngIf="select">
-            <button class="addshow">
-              <img class="ASImg" src="/assets/pics/add.png" alt="" />
-            </button>
-            <button class="addshow">
+            <button id="showone" class="addshow showone" (click)="FuncShow()">
               <img class="ASImg" src="/assets/pics/eye.png" alt="" />
+            </button>
+            <button class="addshow" (click)="FuncAdd()">
+              <img class="ASImg" src="/assets/pics/add.png" alt="" />
             </button>
           </div>
         </div>
@@ -34,7 +34,16 @@
           <img id="DocImg" src="/assets/pics/Doc.jpg" alt="" />
         </div>
       </div>
-      <div class="row r2" *ngIf="Show"></div>
+      <div class="row r2" *ngIf="DO">
+        <div class="ShowHistory" *ngIf="show"></div>
+        <div class="AddHistory" *ngIf="add">
+          <div class="btns">
+            <button id="first" type="button" class="selected btt">Drugs</button>
+            <button type="button" class="btt">Tests</button>
+            <button id="last" type="button" class="btt">X-Rays</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

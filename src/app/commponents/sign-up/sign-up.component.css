@@ -103,6 +103,16 @@ button {
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
 }
+#first {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-right: 1px solid #3b445b;
+}
+#last {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-left: 1px solid #3b445b;
+}
 button:active {
   background-color: #5c959d;
   border: 2px solid #5c959d;
