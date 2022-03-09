@@ -38,9 +38,26 @@
         <div class="ShowHistory" *ngIf="show"></div>
         <div class="AddHistory" *ngIf="add">
           <div class="btns">
-            <button id="first" type="button" class="selected btt">Drugs</button>
-            <button type="button" class="btt">Tests</button>
-            <button id="last" type="button" class="btt">X-Rays</button>
+            <button
+              id="first"
+              type="button"
+              class="selected btt"
+              (click)="Drug()"
+            >
+              Drugs
+            </button>
+            <button type="button" class="btt" (click)="Tests()">Tests</button>
+            <button id="last" type="button" class="btt" (click)="XRays()">
+              X-Rays
+            </button>
+          </div>
+          <!-- /////////// -->
+          <div class="forms">
+            <div class="drgfrm" *ngIf="drug">
+              <app-med-form></app-med-form>
+            </div>
+            <div class="testfrm" *ngIf="tests">test</div>
+            <div class="Xraysfrm" *ngIf="xrays">xrays</div>
           </div>
         </div>
       </div>

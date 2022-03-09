@@ -88,7 +88,7 @@ h2 {
   margin-left: 7.3%;
   border-top: 4px solid #5c959d;
   border-left: 4px solid #5c959d;
-  border-bottom: 4px solid #97d1d8;
+  border-bottom: 4px solid #5c959d;
   border-top-right-radius: 70px;
   border-top-left-radius: 70px;
   border-bottom-right-radius: 70px;
@@ -96,12 +96,13 @@ h2 {
 }
 .addshow {
   width: 20%;
-  height: 70%;
+  height: 80%;
   margin-left: 20%;
-  margin-top: 2.5%;
-  border: 2px solid #e3f8f9;
+  margin-top: 1%;
+  border: 3px solid white;
   background-color: #e3f8f9;
-  border-radius: 20px;
+  border-radius: 100px;
+  box-shadow: 5px 5px #97d1d8;
 }
 .showone {
   background-color: white;
@@ -120,10 +121,11 @@ h2 {
 }
 .addshow:focus {
   background-color: white;
+  border: white;
 }
 .ASImg {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 .r2 {
   width: 80%;
@@ -142,17 +144,13 @@ h2 {
   margin-left: 2.5%;
   margin-top: 1%;
   background-color: white;
-  border: 2px solid #5c959d;
 }
 .AddHistory {
   height: 95%;
   width: 95%;
-  overflow: auto;
-  overflow-x: hidden;
   margin-left: 2.5%;
   margin-top: 1%;
   background-color: white;
-  border: 2px solid #5c959d;
 }
 .btns {
   float: right;
@@ -162,7 +160,7 @@ h2 {
   font-size: 10px;
   height: 10%;
   background-color: #5c959d;
-  width: 20%;
+  width: 23%;
 }
 .btt {
   height: 95%;
@@ -178,7 +176,9 @@ h2 {
 .btt:focus {
   background-color: #445161;
 }
-
+.selected {
+  background-color: #445161;
+}
 #first {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
@@ -188,6 +188,24 @@ h2 {
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
   border-left: 1px solid #445161;
+}
+.forms {
+  border: 5px solid #97d1d8;
+  width: 100%;
+  height: 95%;
+  margin-top: 3.5%;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+}
+.drgfrm {
+  width: 95%;
+  height: 93%;
+  border: 2px solid red;
+  margin-top: 3%;
+  margin-left: 3%;
+  overflow: auto;
+  overflow-x: hidden;
 }
 /* /////////////////////////////////////////////////SCROLL DESIGN ///////////////////////////////////////////////*/
 /* width */

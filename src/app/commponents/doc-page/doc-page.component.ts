@@ -12,8 +12,11 @@ export class DocPageComponent implements OnInit {
   search = false; //true
   DO = true; //false
   select = true; //false
-  show = true; //true;
-  add = false; //false;
+  show = true; //true
+  add = false; //false
+  drug = true; //true
+  tests = false; //false
+  xrays = false; //false
   Start() {
     this.search = false;
     this.DO = true;
@@ -28,5 +31,24 @@ export class DocPageComponent implements OnInit {
     v?.setAttribute('class', 'addshow');
     this.show = false;
     this.add = true;
+  }
+  Drug() {
+    this.drug = true;
+    this.tests = false;
+    this.xrays = false;
+  }
+  Tests() {
+    var f = document.getElementById('first');
+    f?.setAttribute('class', 'btt');
+    this.drug = false;
+    this.tests = true;
+    this.xrays = false;
+  }
+  XRays() {
+    var f = document.getElementById('first');
+    f?.setAttribute('class', 'btt');
+    this.drug = false;
+    this.tests = false;
+    this.xrays = true;
   }
 }

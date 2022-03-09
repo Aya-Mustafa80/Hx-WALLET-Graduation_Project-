@@ -18,6 +18,9 @@ import { PatientPageComponent } from './commponents/patient-page/patient-page.co
 import { AuthService } from 'src/app/services/auth.service';
 import { AuthGuard } from './auth.guard';
 import {TokenInterceptorService} from 'src/app/services/token-interceptor.service';
+import { MedFormComponent } from './commponents/doc-page/med-form/med-form.component';
+import { TestFormComponent } from './commponents/doc-page/test-form/test-form.component';
+import { XrayFormComponent } from './commponents/doc-page/xray-form/xray-form.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import {TokenInterceptorService} from 'src/app/services/token-interceptor.servic
     DocPageComponent,
     ForgetPasswordComponent,
     PatientPageComponent,
+    MedFormComponent,
+    TestFormComponent,
+    XrayFormComponent,
   ],
   imports: [
     BrowserModule,
