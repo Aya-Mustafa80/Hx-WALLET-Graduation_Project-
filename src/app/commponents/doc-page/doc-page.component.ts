@@ -25,10 +25,18 @@ export class DocPageComponent implements OnInit {
   FuncShow() {
     this.show = true;
     this.add = false;
+    var p1 = document.getElementById('p1');
+    p1?.setAttribute('class', 'P_PIc Pselect');
+    var p2 = document.getElementById('p2');
+    p2?.setAttribute('class', 'P_PIc');
   }
   FuncAdd() {
     var v = document.getElementById('showone');
     v?.setAttribute('class', 'addshow');
+    var p1 = document.getElementById('p1');
+    p1?.setAttribute('class', 'P_PIc ');
+    var p2 = document.getElementById('p2');
+    p2?.setAttribute('class', 'P_PIc Pselect');
     this.show = false;
     this.add = true;
   }
