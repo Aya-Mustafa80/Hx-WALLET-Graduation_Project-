@@ -57,13 +57,36 @@
               X-Rays
             </button>
           </div>
-          <!-- /////////// -->
+          <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
           <div class="forms">
             <div class="drgfrm" *ngIf="drug">
-              <app-med-form></app-med-form>
+              <app-med-form *ngFor="let m of meds"></app-med-form>
+              <!-- med itration -->
+              <br />
+              <br />
+              <button type="button" (click)="AddMed()" class="medbt">
+                Add Medicine
+              </button>
+              <button type="button" class="medbt">submit</button>
+              <br />
+              <br />
             </div>
-            <div class="testfrm" *ngIf="tests">test</div>
-            <div class="Xraysfrm" *ngIf="xrays">xrays</div>
+            <div class="testfrm" *ngIf="tests">
+              <app-test-form></app-test-form>
+              <br />
+              <br />
+              <button type="button" class="medbt">submit</button>
+              <br />
+              <br />
+            </div>
+            <div class="Xraysfrm" *ngIf="xrays">
+              <app-xray-form></app-xray-form>
+              <br /><br />
+              <button type="button" class="medbt">submit</button>
+              <br /><br />
+            </div>
           </div>
         </div>
       </div>

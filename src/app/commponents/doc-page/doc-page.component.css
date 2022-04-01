@@ -1,6 +1,6 @@
 .Doc_page {
   background-color: #dae7e7;
-  height: 150vh;
+  height: 175vh;
   width: 100vw;
 }
 .r1 {
@@ -84,8 +84,8 @@ h2 {
 #select {
   width: 95%;
   height: 25%;
-  margin-top: 28%;
-  margin-left: 7.3%;
+  margin-top: 34%;
+  margin-left: 7.1%;
   border-top: 4px solid #5c959d;
   border-left: 4px solid #5c959d;
   border-bottom: 4px solid #5c959d;
@@ -212,12 +212,26 @@ h2 {
 .drgfrm {
   width: 95%;
   height: 93%;
-  border: 2px solid red;
+  /*  border: 2px solid red; */
   margin-top: 3%;
   margin-left: 3%;
   overflow: auto;
   overflow-x: hidden;
 }
+.medbt {
+  width: 25%;
+  height: 50px;
+  background-color: #97d1d8;
+  border: #97d1d8;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5%;
+  border-radius: 20px;
+  border-left: 4px solid #5c959d;
+  border-right: 4px solid #5c959d;
+}
+
 /* /////////////////////////////////////////////////SCROLL DESIGN ///////////////////////////////////////////////*/
 /* width */
 ::-webkit-scrollbar {

@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocPageComponent implements OnInit {
   constructor() {}
-
+  meds: number[] = [1];
   ngOnInit(): void {}
   search = false; //true
   DO = true; //false
   select = true; //false
-  show = true; //true
-  add = false; //false
+  show = false; //true
+  add = true; //false
   drug = true; //true
   tests = false; //false
   xrays = false; //false
@@ -58,5 +58,8 @@ export class DocPageComponent implements OnInit {
     this.drug = false;
     this.tests = false;
     this.xrays = true;
+  }
+  AddMed() {
+    this.meds.push(1);
   }
 }

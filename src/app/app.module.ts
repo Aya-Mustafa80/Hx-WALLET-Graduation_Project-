@@ -21,6 +21,7 @@ import {TokenInterceptorService} from 'src/app/services/token-interceptor.servic
 import { MedFormComponent } from './commponents/doc-page/med-form/med-form.component';
 import { TestFormComponent } from './commponents/doc-page/test-form/test-form.component';
 import { XrayFormComponent } from './commponents/doc-page/xray-form/xray-form.component';
+import { DosageComponent } from './commponents/doc-page/med-form/dosage/dosage.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { XrayFormComponent } from './commponents/doc-page/xray-form/xray-form.co
     MedFormComponent,
     TestFormComponent,
     XrayFormComponent,
+    DosageComponent,
   ],
   imports: [
     BrowserModule,
