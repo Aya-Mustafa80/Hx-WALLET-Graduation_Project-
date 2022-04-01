@@ -147,13 +147,13 @@ button:focus {
 }
 
 #personIcon {
-  width: 22%;
+  width: 25%;
   height: 13%;
   border-radius: 50%;
   position: absolute;
   top: 2%;
   background-color: white;
-  right: 38%;
+  right: 33%;
 }
 #Name {
   margin-top: 25%;

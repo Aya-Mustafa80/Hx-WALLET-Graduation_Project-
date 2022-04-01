@@ -1,0 +1,9 @@
+form {
+  width: 90%;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+#name-select {
+  height: 100px;
+}
