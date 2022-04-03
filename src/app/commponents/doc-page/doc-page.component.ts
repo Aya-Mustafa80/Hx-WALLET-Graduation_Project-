@@ -9,11 +9,11 @@ export class DocPageComponent implements OnInit {
   constructor() {}
   meds: number[] = [1];
   ngOnInit(): void {}
-  search = false; //true
-  DO = true; //false
-  select = true; //false
-  show = false; //true
-  add = true; //false
+  search = true; //true
+  DO = false; //false
+  select = false; //false
+  show = true; //true
+  add = false; //false
   drug = true; //true
   tests = false; //false
   xrays = false; //false

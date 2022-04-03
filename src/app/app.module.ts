@@ -22,6 +22,9 @@ import { MedFormComponent } from './commponents/doc-page/med-form/med-form.compo
 import { TestFormComponent } from './commponents/doc-page/test-form/test-form.component';
 import { XrayFormComponent } from './commponents/doc-page/xray-form/xray-form.component';
 import { DosageComponent } from './commponents/doc-page/med-form/dosage/dosage.component';
+import { PharmacyPageComponent } from './commponents/pharmacy-page/pharmacy-page.component';
+import { TestsPageComponent } from './commponents/tests-page/tests-page.component';
+import { XRaysPageComponent } from './commponents/x-rays-page/x-rays-page.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { DosageComponent } from './commponents/doc-page/med-form/dosage/dosage.c
     TestFormComponent,
     XrayFormComponent,
     DosageComponent,
+    PharmacyPageComponent,
+    TestsPageComponent,
+    XRaysPageComponent,
   ],
   imports: [
     BrowserModule,
