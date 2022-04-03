@@ -6,6 +6,9 @@ import { SignUpComponent } from './commponents/sign-up/sign-up.component';
 import { DocPageComponent } from './commponents/doc-page/doc-page.component';
 import { ForgetPasswordComponent } from './commponents/forget-password/forget-password.component';
 import { PatientPageComponent } from './commponents/patient-page/patient-page.component';
+import { PharmacyPageComponent } from './commponents/pharmacy-page/pharmacy-page.component';
+import { TestsPageComponent } from './commponents/tests-page/tests-page.component';
+import { XRaysPageComponent } from './commponents/x-rays-page/x-rays-page.component';
 import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'forget_pass', component: ForgetPasswordComponent },
   { path: 'Patient_page', component: PatientPageComponent },
   { path: 'Doc_page', component: DocPageComponent },
+  { path: 'Pharmacy_page', component: PharmacyPageComponent },
+  { path: 'Tests_page', component: TestsPageComponent },
+  { path: 'XRays_page', component: XRaysPageComponent },
 ];
 
 @NgModule({
