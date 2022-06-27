@@ -7,8 +7,8 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container-fluid Pharmacy_page">
-      <div class="srch" *ngIf="search">
+    <div class="container-fluid Pharmacy_page row">
+      <div class="srch col-3" *ngIf="search">
         <form id="frmsrch">
           <label id="labssn">&nbsp; Enter Patient SSN:</label>
           <br />
@@ -17,9 +17,34 @@
           <button id="bt" (click)="Search()">Search</button>
         </form>
       </div>
-      <div class="page zoom-in-zoom-out" *ngIf="page">
-        <div class="nav"></div>
-        <div class="pageCon row">
+      <div class="log col-3" *ngIf="log">
+        <div class="waviy">
+          <span style="--i: 1">W</span>
+          <span style="--i: 2">e</span>
+          &nbsp;&nbsp;
+          <span style="--i: 4">A</span>
+          <span style="--i: 5">r</span>
+          <span style="--i: 6">e</span>
+          &nbsp;&nbsp;
+          <span style="--i: 8">H</span>
+          <span style="--i: 9">e</span>
+          <span style="--i: 10">r</span>
+          <span style="--i: 11">e</span>
+          &nbsp;&nbsp;
+          <span style="--i: 13">T</span>
+          <span style="--i: 14">o</span>
+          &nbsp;&nbsp;
+          <span style="--i: 16">H</span>
+          <span style="--i: 17">e</span>
+          <span style="--i: 18">l</span>
+          <span style="--i: 19">p</span>
+        </div>
+      </div>
+      <div class="page zoom-in-zoom-out col-8">
+        <div class="nav">
+          <!--  nav_in_top -->
+        </div>
+        <div class="pageCon">
           <div class="col-6 lft">
             <label id="labelPharm"
               ><img id="phrtmIMG" src="/assets/pics/m.png" alt="" /> &nbsp;
@@ -40,7 +65,9 @@
                   </div>
                 </div>
               </div>
-              <div class="row list"></div>
+              <div class="row list">
+                <!-- For_prescription_list -->
+              </div>
             </div>
           </div>
           <div class="col-6 rigt">
