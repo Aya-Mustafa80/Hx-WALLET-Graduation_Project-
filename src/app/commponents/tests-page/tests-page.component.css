@@ -1,0 +1,153 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #dae7e7;
+}
+.row {
+  height: 100%;
+  width: 100%;
+}
+.Test_page {
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/pics/labbbb.webp");
+  background-repeat: no-repeat;
+  background-size: 95% 95%;
+  margin-top: 2%;
+  margin-left: 7%;
+}
+.login {
+  width: 100%;
+  height: 100%;
+  margin-left: 24%;
+  margin-top: 14%;
+}
+#frmsrch {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  width: 83%;
+  height: 35%;
+  margin-left: 5%;
+  margin-top: 9%;
+  border: 2px solid #5a8c93;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#labssn {
+  margin-top: 2%;
+  color: #5a8c93;
+  font-size: 25px;
+  text-shadow: 2px 2px 8px #97d1d8;
+}
+#inputsrch {
+  height: 45px;
+  width: 90%;
+  margin-left: 5%;
+}
+#sub,
+#bt {
+  width: 40%;
+  height: 50px;
+  background-color: #97d1d8;
+  border: #97d1d8;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 30%;
+  margin-top: 5%;
+  border-radius: 20px;
+  border-left: 4px solid #5c959d;
+  border-right: 4px solid #5c959d;
+}
+button:active {
+  background-color: #5c959d;
+  border: 2px solid #5c959d;
+  box-shadow: 0 2px #5c959d;
+  transform: translateY(1px);
+}
+#sub:active,
+#bt:active {
+  background-color: #445161;
+}
+.testP {
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 95%;
+  margin-left: 5%;
+  border-radius: 70px;
+}
+.showTest {
+  overflow: auto;
+  overflow-x: hidden;
+  border-right: 2px solid #97d1d8;
+  width: 100%;
+  height: 100%;
+}
+label {
+  font-size: 20px;
+}
+.result {
+  width: 90%;
+  height: 100%;
+  border-radius: 70px;
+  float: left;
+  font-family: "Inter", sans-serif;
+  font-family: "Lobster", cursive;
+  font-family: "Luckiest Guy", cursive;
+  font-family: "Patrick Hand", cursive;
+  font-family: "Quintessential", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Shizuru", cursive;
+  font-family: "Titillium Web", sans-serif;
+  color: #445161;
+}
+#picl {
+  width: 90%;
+  height: 35%;
+  border-radius: 90px;
+  margin-left: 7%;
+}
+form {
+  width: 90%;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+#name-select {
+  height: 40px;
+}
+
+/* /////////////////////////////////////////////////SCROLL DESIGN ///////////////////////////////////////////////*/
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px #dae7e7;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5c959d;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #445161;
+}
+::-webkit-scrollbar-button {
+  height: 5px;
+}

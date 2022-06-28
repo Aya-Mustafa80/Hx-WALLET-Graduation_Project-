@@ -1,33 +1,51 @@
 .Pharmacy_page {
   /* background-image: url("/assets/pics/pharn.png"); */
-  height: 120vh;
+  height: 100vh;
   width: 100vw;
   background-color: #dae7e7;
   /*   background-repeat: no-repeat;
   background-size: cover; */
 }
+/* [class*="col-"] {
+  border: 2px solid red;
+} */
 .srch {
-  width: 60%;
+  width: 45%;
   height: 50%;
-  background-color: #5a8c93;
-  margin-left: 20%;
-  margin-top: 7%;
+  /* background-color: #5a8c93; */
+  margin-left: 30%;
+  margin-top: 4%;
   border-radius: 20px;
-  border: 2px solid #97d1d8;
+  /* border: 7px solid #445161; */
+  position: relative;
+}
+.log {
+  height: 90%;
+  /*  border-radius: 70px; */
+  background-image: url("/assets/pics/FPic.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-left: 4%;
+  margin-top: 2%;
 }
 #frmsrch {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
   width: 90%;
-  height: 100%;
+  height: 80%;
   margin-left: 5%;
+  margin-top: 5%;
 }
 #labssn {
   margin-top: 10%;
   color: #5a8c93;
   font-size: 25px;
+  text-shadow: 2px 2px 8px #97d1d8;
 }
 #inputsrch {
   height: 45px;
+  width: 90%;
+  margin-left: 5%;
 }
 #bt {
   width: 40%;
@@ -53,9 +71,9 @@ button:active {
   background-color: #445161;
 }
 .page {
-  width: 90%;
-  height: 80%;
-  margin-top: 5%;
+  width: 100%;
+  height: 90%;
+  /* margin-top: 5%; */
   margin-left: 5%;
   /*  animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
@@ -68,15 +86,16 @@ button:active {
 }
 .pageCon {
   width: 100%;
-  height: 90%;
+  height: 98%;
   background-color: white;
   margin-left: 0.05%;
 }
-/* [class*="col-"] */
+
 .lft,
 .rigt {
   border: 1px solid #97d1d8;
   height: 100%;
+  float: left;
 }
 #labelPharm {
   margin-top: 3%;
@@ -111,7 +130,7 @@ button:active {
   background-color: #dddddd;
   margin-top: 2%;
   width: 100%;
-  height: 85%;
+  height: 89.5%;
 }
 #userPrsclabel {
   font-size: 15px;
@@ -172,6 +191,7 @@ button:active {
 .zoom-in-zoom-out {
   animation: zoom-in-zoom-out 1s ease-out;
   animation-duration: 1;
+  margin-top: 0.5%;
 }
 
 @keyframes zoom-in-zoom-out {
@@ -183,5 +203,39 @@ button:active {
   } */
   100% {
     transform: scale(1, 1);
+  }
+}
+/* ///////////////////////////TEXT ANIMATION ///////////////////////*/
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.waviy {
+  /*  position: relative; */
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  margin-top: 6%;
+  margin-left: 5%;
+  font-size: 30px;
+}
+.waviy span {
+  font-family: "Alfa Slab One", cursive;
+  position: relative;
+  display: inline-block;
+  color: #5a8c93;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
   }
 }

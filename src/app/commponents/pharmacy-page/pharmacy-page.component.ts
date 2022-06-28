@@ -10,9 +10,9 @@ export class PharmacyPageComponent implements OnInit {
 
   ngOnInit(): void {}
   search = true; //true
-  page = false; //false
+  log = false; //false
   Search() {
     this.search = false;
-    this.page = true;
+    this.log = true;
   }
 }
