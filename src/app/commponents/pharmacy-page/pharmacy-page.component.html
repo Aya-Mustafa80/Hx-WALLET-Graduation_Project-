@@ -8,16 +8,7 @@
   </head>
   <body>
     <div class="container-fluid Pharmacy_page row">
-      <div class="srch col-3" *ngIf="search">
-        <form id="frmsrch">
-          <label id="labssn">&nbsp; Enter Patient SSN:</label>
-          <br />
-          <br />
-          <input id="inputsrch" type="text" class="form-control" />
-          <button id="bt" (click)="Search()">Search</button>
-        </form>
-      </div>
-      <div class="log col-3" *ngIf="log">
+      <div class="log col-11" *ngIf="search">
         <div class="waviy">
           <span style="--i: 1">W</span>
           <span style="--i: 2">e</span>
@@ -39,8 +30,17 @@
           <span style="--i: 18">l</span>
           <span style="--i: 19">p</span>
         </div>
+        <div class="srch col-10" *ngIf="search">
+          <form id="frmsrch">
+            <label id="labssn">&nbsp; Enter Patient SSN:</label>
+            <br />
+            <br />
+            <input id="inputsrch" type="text" class="form-control" />
+            <button id="bt" (click)="Search()">Search</button>
+          </form>
+        </div>
       </div>
-      <div class="page zoom-in-zoom-out col-8">
+      <div class="page zoom-in-zoom-out col-11" *ngIf="log">
         <div class="nav">
           <!--  nav_in_top -->
         </div>

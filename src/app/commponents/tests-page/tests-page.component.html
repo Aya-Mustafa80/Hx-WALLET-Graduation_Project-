@@ -1,1 +1,57 @@
-<p>tests-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Lobster&family=Luckiest+Guy&family=Patrick+Hand&family=Quintessential&family=Shalimar&family=Shizuru&family=Titillium+Web:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid row">
+      <div class="Test_page col-11">
+        <div class="login col-6" *ngIf="!show">
+          <form id="frmsrch">
+            <label id="labssn">&nbsp; Enter Patient SSN:</label>
+            <br />
+            <br />
+            <input id="inputsrch" type="text" class="form-control" />
+            <button id="bt" (click)="logBody()">Search</button>
+          </form>
+        </div>
+        <div class="testP col-10 row" *ngIf="show">
+          <div class="showTest col-8"></div>
+          <div class="result col-4">
+            <img id="picl" src="/assets/pics/la1b.jpg" alt="" />
+            <label for="test">Select test:</label>
+            <select name="" id="name-select" class="form-control">
+              <option value="">Please choose a Test</option>
+              <option value="1">option</option>
+              <option value="2">option</option>
+              <option value="3">option</option>
+              <option value="4">option</option>
+              <option value="5">option</option>
+              <option value="6">option</option>
+            </select>
+            <br />
+            <label for="img">Select result:</label>
+            <input
+              class="form-control"
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+            />
+            <br /><br />
+            <input id="sub" type="submit" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
