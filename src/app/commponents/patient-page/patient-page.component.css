@@ -191,6 +191,8 @@ button:focus {
   border-radius: 20px;
   margin-top: 2%;
   margin-bottom: 2%;
+  height: auto;
+  padding: 6px 16px;
 }
 #SpanPres {
   margin-left: 2%;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-patient-page',
@@ -6,227 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient-page.component.css'],
 })
 export class PatientPageComponent implements OnInit {
-  constructor() {}
+  constructor(private auth: AuthService) {
+    this.getAllPres();
+  }
 
-  Prescription = [
-    {
-      ID: '025',
-      Date: '5/6/2019',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D3',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '857',
-      Date: '10/9/2019',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '951',
-      Date: '22/1/2020',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D3',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '542',
-      Date: '8/9/2020',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '961',
-      Date: '2/12/2020',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '079',
-      Date: '4/4/2021',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '135',
-      Date: '15/6/2021',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D3',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '102',
-      Date: '20/8/2021',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '987',
-      Date: '20/2/2022',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D3',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '192',
-      Date: '20/8/2021',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '101',
-      Date: '20/2/2022',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D3',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-    {
-      ID: '333',
-      Date: '20/2/2022',
-      Drugs: [
-        {
-          DrugName: 'D1',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D2',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-        {
-          DrugName: 'D3',
-          DrugDose: '15ml',
-          DrugDates: 'Morning before eating',
-        },
-      ],
-    },
-  ];
+  Prescription: any[] = [];
   MTeats = [
     { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
     { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
@@ -261,9 +46,13 @@ export class PatientPageComponent implements OnInit {
   ];
   public objP: any = {};
   public Drugss: any = {};
-  ShowPresc(el: object) {
-    this.objP = el;
-    this.Drugss = this.objP.Drugs;
+  ShowPresc(item: any) {
+    console.log(item);
+    this.auth.getPrescriptionByID(item.ID).subscribe(res => {
+      console.log(res);
+      this.Drugss = res;
+    }, err => {
+    })
   }
   public objT: any = {};
   ShowTest(ell: object) {
@@ -274,7 +63,7 @@ export class PatientPageComponent implements OnInit {
     this.objXR = ele;
   }
   /*//////////////////////////////////////////////////////// */
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   Name = '';
   Age = '';
   Contient = 'Prescriptions';
@@ -407,5 +196,13 @@ export class PatientPageComponent implements OnInit {
       search2?.setAttribute('class', 'search p2');
       this.flag2 = false;
     }
+  }
+  getAllPres() {
+    this.auth.getAllPrescription().subscribe((res: any) => {
+      this.Prescription = res;
+      console.log(res);
+    }, err => {
+      console.log(err);
+    })
   }
 }

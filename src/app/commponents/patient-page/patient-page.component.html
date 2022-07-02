@@ -1,154 +1,142 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container-fluid Patient_page">
-      <div class="row r1">
-        <!--------------------------------------- COL1------------------------------------------------>
 
-        <div class="col-1 COL1">
-          <!-- <div class="navbar1">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-fluid Patient_page">
+    <div class="row r1">
+      <!--------------------------------------- COL1------------------------------------------------>
+
+      <div class="col-1 COL1">
+        <!-- <div class="navbar1">
             <h4>Your Prescriptions</h4>
           </div> -->
-          <button id="tap-1" class="clicked" (click)="ChoosePrescription()">
-            <img
-              id="picprescription"
-              class="icons"
-              src="/assets/pics/medical-history.png"
-              alt=""
-            />
-            <br /><br />
-            Prescriptions
-          </button>
+        <button id="tap-1" class="clicked" (click)="ChoosePrescription()">
+          <img id="picprescription" class="icons" src="/assets/pics/medical-history.png" alt="" />
+          <br /><br />
+          Prescriptions
+        </button>
 
-          <button id="tap-2" (click)="ChooseTests()">
-            <img class="icons" src="/assets/pics/microscope.png" alt="" />
-            <br /><br />
-            Medical tests
-          </button>
-          <button id="tap-3" (click)="ChooseXRays()">
-            <img class="icons" src="/assets/pics/x-ray.png" alt="" />
-            <br /><br />
-            Medical X-Rays
-          </button>
+        <button id="tap-2" (click)="ChooseTests()">
+          <img class="icons" src="/assets/pics/microscope.png" alt="" />
+          <br /><br />
+          Medical tests
+        </button>
+        <button id="tap-3" (click)="ChooseXRays()">
+          <img class="icons" src="/assets/pics/x-ray.png" alt="" />
+          <br /><br />
+          Medical X-Rays
+        </button>
+      </div>
+      <!--------------------------------------- COL2------------------------------------------------>
+      <div class="col-3 COL2">
+        <div class="card1">
+          <img id="personIcon" src="/assets/pics/profile.png" alt="" />
+          <h3 id="Name">Patient Name{{ Name }}</h3>
+          <h5 id="Age">Age {{ Age }}</h5>
         </div>
-        <!--------------------------------------- COL2------------------------------------------------>
-        <div class="col-3 COL2">
-          <div class="card1">
-            <img id="personIcon" src="/assets/pics/profile.png" alt="" />
-            <h3 id="Name">Patient Name{{ Name }}</h3>
-            <h5 id="Age">Age {{ Age }}</h5>
-          </div>
-          <p class="P1">{{ Contient }} Content :</p>
+        <p class="P1">{{ Contient }} Content :</p>
 
-          <div class="card2">
-            <!-- /////////// -->
-            <div class="search p1">
-              <input type="search" class="search-box" />
-              <span (click)="SearchClick1()" class="search-button">
-                <span class="search-icon"></span>
-              </span>
-            </div>
-            <!-- /////////// -->
-            <div class="content" *ngIf="Content_Prescription">
-              <div
-                class="Presc"
-                (click)="ShowPresc(item)"
-                *ngFor="let item of Prescription"
-              >
-                <span id="SpanPres">Prescription </span>
-                <span id="date"> {{ item.Date }}</span>
-              </div>
-            </div>
-            <div class="content" *ngIf="Content_Tests">
-              <div
-                class="Presc"
-                (click)="ShowTest(item)"
-                *ngFor="let item of MTeats"
-              >
-                <span id="SpanPres">Medical Test </span>
-                <span id="date"> {{ item.Date }}</span>
-              </div>
-            </div>
-            <div class="content" *ngIf="Content_XRays">
-              <div
-                class="Presc"
-                (click)="ShowXRay(item)"
-                *ngFor="let item of MXRays"
-              >
-                <span id="SpanPres">Medicals X-Ray </span>
-                <span id="date"> {{ item.Date }}</span>
-              </div>
+        <div class="card2">
+          <!-- /////////// -->
+          <div class="search p1">
+            <input type="search" class="search-box" />
+            <span (click)="SearchClick1()" class="search-button">
+              <span class="search-icon"></span>
+            </span>
+          </div>
+          <!-- /////////// -->
+          <div class="content" *ngIf="Content_Prescription">
+            <div class="Presc" (click)="ShowPresc(item)" *ngFor="let item of Prescription">
+              <span id="SpanPres">Prescription </span>
+              <span id="date"> {{ item?.Date | date:'longDate' }}</span>
             </div>
           </div>
-          <p class="P1">Notification :</p>
-
-          <div class="card3">
-            <!-- /////////// -->
-            <div class="search p2">
-              <input type="search" class="search-box" />
-              <span (click)="SearchClick2()" class="search-button">
-                <span class="search-icon"></span>
-              </span>
+          <div class="content" *ngIf="Content_Tests">
+            <div class="Presc" (click)="ShowTest(item)" *ngFor="let item of MTeats">
+              <span id="SpanPres">Medical Test </span>
+              <span id="date"> {{ item.Date }}</span>
             </div>
-            <!-- /////////// -->
-            <div class="notification">
-              <div></div>
+          </div>
+          <div class="content" *ngIf="Content_XRays">
+            <div class="Presc" (click)="ShowXRay(item)" *ngFor="let item of MXRays">
+              <span id="SpanPres">Medicals X-Ray </span>
+              <span id="date"> {{ item.Date }}</span>
             </div>
           </div>
         </div>
-        <!--------------------------------------- COL3------------------------------------------------>
+        <p class="P1">Notification :</p>
 
-        <div class="col-7 COL3">
-          <div class="detail">
-            <h1 class="HeadersDetail">{{ Detail }} Details:</h1>
-            <div *ngIf="Detail_Prescription" class="DetailPrescription">
-              <div class="PrescriptionForm" *ngFor="let t of Drugss">
-                <p class="D">Drug Name:</p>
-                <span class="DSpan">{{ t.DrugName }}</span>
-                <p class="D">Drug Dose:</p>
-                <span class="DSpan">{{ t.DrugDose }}</span>
-                <p class="D">Drug Dates:</p>
-                <span class="DSpan"> {{ t.DrugDates }}</span>
-              </div>
-            </div>
-            <div *ngIf="Detail_Tests" class="DetailTests"></div>
-            <div *ngIf="Detail_XRays" class="DetailXRays"></div>
+        <div class="card3">
+          <!-- /////////// -->
+          <div class="search p2">
+            <input type="search" class="search-box" />
+            <span (click)="SearchClick2()" class="search-button">
+              <span class="search-icon"></span>
+            </span>
           </div>
-          <div class="result">
-            <!-- //////////////// -->
-            <div *ngIf="Result_Pescription" class="Prescrip">
-              <img id="giff" src="/assets/pics/medicine.gif" alt="" />
-              <h3 id="H3Result">
-                Take your medication regularly and stay healthy
-              </h3>
-              <img id="Doc1" src="/assets/pics/Doc2.jpg" alt="" />
-              <img id="Doc2" src="/assets/pics/Doc1.jpg" alt="" />
-            </div>
-            <!-- //////////////// -->
-            <div *ngIf="Result_Tests" class="Tests">
-              <h1 class="HeadersResult">Your Test Result:</h1>
-            </div>
-            <!-- //////////////// -->
-            <div *ngIf="Result_XRay" class="Tests">
-              <h1 class="Headers">Your X-Ray Result:</h1>
-            </div>
-          </div>
-          <div class="info">
-            <img id="InfoImg" src="/assets/pics/solidarity.png" alt="" />
-            <h2 id="InfoH2">How is your health today?</h2>
-            <p id="InfoP">
-              Here you can track your Medical History <br />
-              We are happy to help you to do that <br />
-            </p>
+          <!-- /////////// -->
+          <div class="notification">
+            <div></div>
           </div>
         </div>
       </div>
+      <!--------------------------------------- COL3------------------------------------------------>
+
+      <div class="col-7 COL3">
+        <div class="detail">
+          <h1 class="HeadersDetail">{{ Detail }} Details:</h1>
+          <div *ngIf="Detail_Prescription" class="DetailPrescription">
+            <div class="PrescriptionForm" *ngFor="let t of Drugss">
+              <p class="D">Drug Name:</p>
+              <span class="DSpan">{{ t.Drug.Name }}</span>
+              <p class="D">Drug Dose:</p>
+              <span class="DSpan">{{ t.Dose }}</span>
+              <p class="D">Drug Dates:</p>
+              <span class="DSpan"> {{ t.DrugTime }}</span>
+            </div>
+          </div>
+          <div *ngIf="Detail_Tests" class="DetailTests"></div>
+          <div *ngIf="Detail_XRays" class="DetailXRays"></div>
+        </div>
+        <div class="result">
+          <!-- //////////////// -->
+          <div *ngIf="Result_Pescription" class="Prescrip">
+            <img id="giff" src="/assets/pics/medicine.gif" alt="" />
+            <h3 id="H3Result">
+              Take your medication regularly and stay healthy
+            </h3>
+            <img id="Doc1" src="/assets/pics/Doc2.jpg" alt="" />
+            <img id="Doc2" src="/assets/pics/Doc1.jpg" alt="" />
+          </div>
+          <!-- //////////////// -->
+          <div *ngIf="Result_Tests" class="Tests">
+            <h1 class="HeadersResult">Your Test Result:</h1>
+          </div>
+          <!-- //////////////// -->
+          <div *ngIf="Result_XRay" class="Tests">
+            <h1 class="Headers">Your X-Ray Result:</h1>
+          </div>
+        </div>
+        <div class="info">
+          <img id="InfoImg" src="/assets/pics/solidarity.png" alt="" />
+          <h2 id="InfoH2">How is your health today?</h2>
+          <p id="InfoP">
+            Here you can track your Medical History <br />
+            We are happy to help you to do that <br />
+          </p>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

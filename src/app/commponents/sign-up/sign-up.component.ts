@@ -94,6 +94,8 @@ export class SignUpComponent implements OnInit {
     this.F5 = true;
   }
   signup(){
+    console.log(this.doctoruser);
+
     if(this.F1==true){
       this.signuppatient();
     }

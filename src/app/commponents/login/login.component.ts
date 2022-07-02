@@ -32,8 +32,12 @@ export class LoginComponent implements OnInit {
     this.info.loginuser(this.body).subscribe(
       (res) => {
         console.log(res);
-        localStorage.setItem('token', res.token);
-        this._router.navigate(['/Patient_page']);
+        localStorage.setItem('token', res.access_token);
+        // if(res.userType == 'patient'){
+        //   this._router.navigate(['/Patient_page']);
+        // }
+          this._router.navigate(['/Patient_page']);
+
       },
       (err) => console.log(err)
     );

@@ -1,53 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container-fluid Nav">
-      <div class="row">
-        <div class="col-lg-1 col-md-3 col-sm-1 DivLogo">
-          <!-- //// -->
-          <img class="navbar" src="\assets\pics\logoo1.jpg" alt="" id="logo" />
+<div class="container-fluid Nav">
+  <div class="row">
+    <div class="col-md-1 DivLogo">
+      <img class="navbar" src="\assets\pics\logoo1.jpg" alt="" id="logo" />
+    </div>
+    <div class="col-md-8 DivHeader">
+      <h1>
+        <a id="title">Hx Wallet</a>
+      </h1>
+    </div>
+    <div class="col-md-3">
+      <div class="row buttonssing">
+        <div class="col-md-6 ">
+            <a  routerLink="/Signup" routerLinkActive="active">
+              <span class="glyphicon glyphicon-user">
+                <span class="fn">&ensp;Sign Up</span>
+              </span>
+            </a>
         </div>
-        <div class="col-lg-7 col-md-3 col-sm-6 DivHeader">
-          <!-- //// -->
-          <h1 id="H">
-            <a id="title" href="#">Hx Wallet</a>
-          </h1>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-5 ContienerSL">
-          <!-- //// -->
-          <div class="col-lg-5 col-md-1 col-sm-1"></div>
-          <div class="col-lg-4 col-md-6 col-sm-6 SIGNN">
-            <div class="tr1">
-              <a
-                class="icns navbar"
-                routerLink="/Signup"
-                routerLinkActive="active"
-                ><span class="glyphicon glyphicon-user"
-                  ><span class="fn">&ensp;Sign Up</span></span
-                >
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5 LOGIN">
-            <div class="tr2">
-              <a
-                class="icns navbar"
-                routerLink="/Login"
-                routerLinkActive="active"
-                ><span class="glyphicon glyphicon-log-in"
-                  ><span class="fn">&ensp;Login</span>
-                </span>
-              </a>
-            </div>
-          </div>
+        <div class="col-md-6 ">
+            <a  routerLink="/Login" routerLinkActive="active"><span
+                class="glyphicon glyphicon-log-in"><span class="fn">&ensp;Login</span>
+              </span>
+            </a>
         </div>
       </div>
+
     </div>
-  </body>
-</html>
+  </div>
+</div>

@@ -15,17 +15,17 @@ export class AuthService {
   // here we put API link
   // public url: string = '/assets/data.json';
   // url of login
-  private _loginURL = "http://youssefelsayed-001-site1.itempurl.com/login";
+  private _loginURL = "http://hostserver-001-site1.ctempurl.com/login";
   // url of patient
-  private _signuppURL = "http://youssefelsayed-001-site1.itempurl.com/reg/pat";
+  private _signuppURL = "http://hostserver-001-site1.ctempurl.com/reg/pat";
   // url of doctor
-  private _signupdURL = "http://youssefelsayed-001-site1.itempurl.com/reg/doc";
+  private _signupdURL = "http://hostserver-001-site1.ctempurl.com/reg/doc";
   // url of pharmacy
-  private _signupphURL = "http://youssefelsayed-001-site1.itempurl.com/reg/phar";
+  private _signupphURL = "http://hostserver-001-site1.ctempurl.com/reg/phar";
   // url of test lab
-  private _signuptURL = "http://youssefelsayed-001-site1.itempurl.com/reg/tlab";
+  private _signuptURL = "http://hostserver-001-site1.ctempurl.com/reg/tlab";
   // url of x-ray lab
-  private _signupxURL = "http://youssefelsayed-001-site1.itempurl.com/reg/xlab";
+  private _signupxURL = "http://hostserver-001-site1.ctempurl.com/reg/xlab";
 
   constructor(private http: HttpClient) { }
   // function for get all patient tests
@@ -74,5 +74,11 @@ export class AuthService {
     );
   loginuser(user: any) {
     return this.http.post<any>(this._loginURL, user)
+  }
+  getAllPrescription() {
+    return this.http.get(`http://hostserver-001-site1.ctempurl.com/get/pres`)
+  }
+  getPrescriptionByID(id: any) {
+    return this.http.get(`http://hostserver-001-site1.ctempurl.com/api/Prescriptions/${id}`)
   }
 }
