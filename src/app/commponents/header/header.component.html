@@ -16,18 +16,37 @@
             <a id="title" href="#">Hx Wallet</a>
           </h1>
         </div>
-        <div id="S" class="SIGNN">
+        <div id="About" class="about">
           <a
-            id="fn"
+            class="fn"
+            [routerLink]="['about']"
+            [fragment]="'ABOUT'"
+            routerLinkActive="active"
+            (click)="A_Check()"
+            >About</a
+          >
+        </div>
+        <div id="Content" class="content">
+          <a
+            class="fn"
+            [routerLink]="['content']"
+            [fragment]="'CONTENT'"
+            (click)="C_Check()"
+            >Overview</a
+          >
+        </div>
+        <div id="Sighin" class="SIGNN">
+          <a
+            class="fn"
             routerLink="/Signup"
             routerLinkActive="active"
             (click)="S_Check()"
             >Sign Up
           </a>
         </div>
-        <div id="L" class="LOGIN">
+        <div id="Login" class="LOGIN">
           <a
-            id="fn"
+            class="fn"
             routerLink="/Login"
             routerLinkActive="active"
             (click)="L_Check()"

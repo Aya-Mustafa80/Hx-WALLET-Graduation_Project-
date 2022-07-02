@@ -1,13 +1,12 @@
 * {
   box-sizing: border-box;
 }
-
-/* //////////////////////////////////////////////////////////////////////////////////////// */
 .Nav {
   width: 100%;
   height: 10vh;
   background-color: white;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  position: fixed;
 }
 .row {
   height: 100%;
@@ -30,13 +29,12 @@
 #H {
   height: 100%;
   width: 15%;
-  margin-top: 0.5%;
+  margin-top: 0.7%;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
-
   position: absolute;
-  margin-left: 4.8%;
+  margin-left: 5%;
 }
 
 #title {
@@ -47,20 +45,22 @@
   text-shadow: #5c959d;
 }
 .SIGNN,
-.LOGIN {
+.LOGIN,
+.about,
+.content {
   width: 10%;
   height: 100%;
   text-align: center;
   padding-top: 1%;
+  margin-left: 4%;
+}
+.about {
   margin-left: 5%;
 }
-.SIGNN {
-  margin-left: 45%;
+.tabActive {
+  border-bottom: 4px solid #5c959d;
 }
-.EditLS {
-  border-bottom: 2px solid #5c959d;
-}
-#fn {
+.fn {
   font-family: "Barlow", sans-serif;
   font-family: "Inter", sans-serif;
   font-family: "Lobster", cursive;
@@ -74,17 +74,17 @@
   font-size: 22px;
   color: #ced4da;
 }
-#fn:hover {
+.fn:hover {
   color: #5c959d;
   text-decoration: none;
 }
-#fn:active {
+.fn:active {
   text-decoration: none;
 }
-#fn:visited {
+.fn:visited {
   text-decoration: none;
 }
-#fn:focus {
+.fn:focus {
   text-decoration: none;
 }
 /* @media only screen and (max-width: 1421px) {

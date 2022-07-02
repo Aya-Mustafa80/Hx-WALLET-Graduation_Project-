@@ -10,6 +10,7 @@ import { PharmacyPageComponent } from './commponents/pharmacy-page/pharmacy-page
 import { TestsPageComponent } from './commponents/tests-page/tests-page.component';
 import { XRaysPageComponent } from './commponents/x-rays-page/x-rays-page.component';
 import { AuthGuard } from './auth.guard';
+import { AboutComponent } from './commponents/about/about.component';
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: 'Home', component: HomePageComponent },

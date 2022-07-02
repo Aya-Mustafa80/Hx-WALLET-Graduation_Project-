@@ -1,72 +1,24 @@
-* {
-  box-sizing: border-box;
-}
-.col-1 {
-  width: 8.33%;
-}
-.col-2 {
-  width: 16.66%;
-}
-.col-3 {
-  width: 25%;
-}
-.col-4 {
-  width: 33.33%;
-}
-.col-5 {
-  width: 41.66%;
-}
-.col-6 {
-  width: 50%;
-}
-.col-7 {
-  width: 58.33%;
-}
-.col-8 {
-  width: 66.66%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.33%;
-}
-.col-11 {
-  width: 91.66%;
-}
-.col-12 {
-  width: 100%;
-}
-
-[class*="col-"] {
-  float: left;
-  height: 100%;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .Sgn {
   background-color: #dae7e7;
   width: 100%;
   height: 900px;
-  margin-top: 0;
+  margin-top: 3%;
+  filter: drop-shadow(0 4px 4px rgba(0.25, 0.25, 0.25, 0.25));
 }
 .row {
-  height: 83%;
-  width: 80%;
-  margin-left: 15%;
+  height: 100%;
+  width: 90%;
+  margin-left: 12%;
   margin-top: 5%;
 }
 .C1 {
   background-color: white;
+  height: 77%;
 }
 
 h1 {
   text-align: center;
-  padding-top: 5%;
+
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
@@ -80,12 +32,13 @@ p {
 }
 img {
   width: 100%;
-  height: 81%;
+  height: 78%;
   margin-bottom: 5%;
 }
 
 .C2 {
   background-color: #445161;
+  height: 77%;
 }
 .btns {
   float: right;
@@ -136,25 +89,25 @@ button:focus {
   border: 2px solid #5c959d;
 }
 .frm {
-  width: 70%;
+  width: 100%;
   margin-top: 14%;
-  height: 650px;
-  margin-left: 15%;
+  height: 500px;
 }
 .divform {
-  height: 90%;
+  height: 80%;
 }
 input {
-  width: 100%;
+  width: 60%;
   font-family: "Lobster", cursive;
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
   border: none;
-  background: none;
+  background-color: white;
   border-bottom: 1px solid #adb5bd;
 }
+
 ::placeholder {
-  color: #adb5bd;
+  color: #445161;
   font-size: 13px;
   opacity: 0.5;
 }
@@ -165,8 +118,16 @@ fieldset {
   font-family: "Shalimar", cursive;
   font-family: "Titillium Web", sans-serif;
 }
-label {
+#IDSpan {
+  font-size: 10px;
   color: white;
+}
+label {
+  width: 25%;
+  color: white;
+  clear: both;
+  float: left;
+  margin-left: 5%;
 }
 
 #sin {
@@ -184,10 +145,11 @@ a {
   height: 100px;
 }
 #ButS {
-  width: 55%;
+  width: 30%;
   height: 48%;
   border-radius: 25px;
   background-color: #5c959d;
   border: #5c959d;
   font-size: 20px;
+  margin-left: 25%;
 }

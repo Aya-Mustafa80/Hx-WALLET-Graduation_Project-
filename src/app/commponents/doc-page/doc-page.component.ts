@@ -9,14 +9,15 @@ export class DocPageComponent implements OnInit {
   constructor() {}
   meds: number[] = [1];
   ngOnInit(): void {}
+  popup = false; //false
   search = true; //true
   DO = false; //false
   select = false; //false
+  /* /////// */
   show = true; //true
-  add = false; //false
-  drug = true; //true
-  tests = false; //false
-  xrays = false; //false
+  adddrug = false; //true
+  addtests = false; //false
+  addxrays = false; //false
   Start() {
     this.search = false;
     this.DO = true;
@@ -24,42 +25,52 @@ export class DocPageComponent implements OnInit {
   }
   FuncShow() {
     this.show = true;
-    this.add = false;
+    this.adddrug = false;
+    this.addtests = false;
+    this.addxrays = false;
     var p1 = document.getElementById('p1');
     p1?.setAttribute('class', 'P_PIc Pselect');
     var p2 = document.getElementById('p2');
     p2?.setAttribute('class', 'P_PIc');
   }
-  FuncAdd() {
-    var v = document.getElementById('showone');
-    v?.setAttribute('class', 'addshow');
-    var p1 = document.getElementById('p1');
-    p1?.setAttribute('class', 'P_PIc ');
-    var p2 = document.getElementById('p2');
-    p2?.setAttribute('class', 'P_PIc Pselect');
-    this.show = false;
-    this.add = true;
-  }
   Drug() {
-    this.drug = true;
-    this.tests = false;
-    this.xrays = false;
+    this.show = false;
+    this.adddrug = true;
+    this.addtests = false;
+    this.addxrays = false;
   }
   Tests() {
     var f = document.getElementById('first');
     f?.setAttribute('class', 'btt');
-    this.drug = false;
-    this.tests = true;
-    this.xrays = false;
+    this.show = false;
+    this.adddrug = false;
+    this.addtests = true;
+    this.addxrays = false;
   }
   XRays() {
     var f = document.getElementById('first');
     f?.setAttribute('class', 'btt');
-    this.drug = false;
-    this.tests = false;
-    this.xrays = true;
+    this.show = false;
+    this.adddrug = false;
+    this.addtests = false;
+    this.addxrays = true;
   }
   AddMed() {
     this.meds.push(1);
+  }
+  openForm() {
+    this.popup = true;
+    /*  var p = document.getElementById('displayPage');
+    p?.setAttribute('class', 'form-popupedit');
+    var p1 = document.getElementById('bod');
+    p1?.setAttribute('class', 'bodBac '); */
+  }
+
+  closeForm() {
+    this.popup = false;
+    var p = document.getElementById('displayPage');
+    p?.setAttribute('class', 'form-popup');
+    var p1 = document.getElementById('bod');
+    p1?.setAttribute('class', '');
   }
 }

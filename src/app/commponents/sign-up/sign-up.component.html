@@ -9,7 +9,7 @@
   <body>
     <div class="container-fluid Sgn">
       <div class="row">
-        <div class="col-4 C1">
+        <div class="col-3 C1">
           <h1>Sign up</h1>
           <p>
             to use all features <br />
@@ -17,7 +17,7 @@
           </p>
           <img src="/assets/pics/Sign.jpg" alt="" />
         </div>
-        <div class="col-6 C2">
+        <div class="col-7 C2">
           <div class="btns">
             <button
               id="first"
@@ -49,12 +49,11 @@
                     [(ngModel)]="patientuser.name"
                     name="pname"
                     required
-                  /><br /><br />
+                  />
 
-                  <label>ID:</label
-                  ><span style="font-size: small; color: white"
-                    >(National Id)</span
-                  >
+                  <br /><br />
+
+                  <label>ID: <span id="IDSpan">(National Id)</span></label>
                   <input
                     type="text"
                     placeholder="Type Your ID"
@@ -128,9 +127,8 @@
                     required
                   /><br /><br />
 
-                  <label>ID: </label
-                  ><span style="font-size: small; color: white"
-                    >(Registration Number)</span
+                  <label
+                    >ID: <span id="IDSpan">(Registration Number)</span></label
                   >
 
                   <input
@@ -211,11 +209,10 @@
                     required
                   /><br /><br />
 
-                  <label>Pharmacy ID: </label
-                  ><span style="font-size: small; color: white"
-                    >(Registration Number)</span
+                  <label
+                    >Pharmacy ID:
+                    <span id="IDSpan">(Registration Number)</span></label
                   >
-
                   <input
                     type="text"
                     placeholder="Type Pharmacy ID"
@@ -286,11 +283,10 @@
                     required
                   /><br /><br />
 
-                  <label>Lab ID: </label
-                  ><span style="font-size: small; color: white"
-                    >(Registration Number)</span
+                  <label
+                    >Lab ID:
+                    <span id="IDSpan">(Registration Number)</span></label
                   >
-
                   <input
                     type="text"
                     placeholder="Type Lab ID"
@@ -361,9 +357,9 @@
                     required
                   /><br /><br />
 
-                  <label>Lab ID: </label
-                  ><span style="font-size: small; color: white"
-                    >(Registration Number)</span
+                  <label
+                    >Lab ID:
+                    <span id="IDSpan">(Registration Number)</span></label
                   >
 
                   <input
