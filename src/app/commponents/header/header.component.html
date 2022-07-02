@@ -7,45 +7,51 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container-fluid Nav">
+    <div class="container-fluid Nav sticky-top">
       <div class="row">
-        <div class="col-lg-1 col-md-3 col-sm-1 DivLogo">
+        <div class="DivLogo">
           <!-- //// -->
-          <img class="navbar" src="\assets\pics\logoo1.jpg" alt="" id="logo" />
-        </div>
-        <div class="col-lg-7 col-md-3 col-sm-6 DivHeader">
-          <!-- //// -->
+          <img class="navbar" src="\assets\pics\logoo1.jpeg" alt="" id="logo" />
           <h1 id="H">
             <a id="title" href="#">Hx Wallet</a>
           </h1>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-5 ContienerSL">
-          <!-- //// -->
-          <div class="col-lg-5 col-md-1 col-sm-1"></div>
-          <div class="col-lg-4 col-md-6 col-sm-6 SIGNN">
-            <div class="tr1">
-              <a
-                class="icns navbar"
-                routerLink="/Signup"
-                routerLinkActive="active"
-                ><span class="glyphicon glyphicon-user"
-                  ><span class="fn">&ensp;Sign Up</span></span
-                >
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-5 col-sm-5 LOGIN">
-            <div class="tr2">
-              <a
-                class="icns navbar"
-                routerLink="/Login"
-                routerLinkActive="active"
-                ><span class="glyphicon glyphicon-log-in"
-                  ><span class="fn">&ensp;Login</span>
-                </span>
-              </a>
-            </div>
-          </div>
+        <div id="About" class="about">
+          <a
+            class="fn"
+            [routerLink]="['about']"
+            [fragment]="'ABOUT'"
+            routerLinkActive="active"
+            (click)="A_Check()"
+            >About</a
+          >
+        </div>
+        <div id="Content" class="content">
+          <a
+            class="fn"
+            [routerLink]="['content']"
+            [fragment]="'CONTENT'"
+            (click)="C_Check()"
+            >Overview</a
+          >
+        </div>
+        <div id="Sighin" class="SIGNN">
+          <a
+            class="fn"
+            routerLink="/Signup"
+            routerLinkActive="active"
+            (click)="S_Check()"
+            >Sign Up
+          </a>
+        </div>
+        <div id="Login" class="LOGIN">
+          <a
+            class="fn"
+            routerLink="/Login"
+            routerLinkActive="active"
+            (click)="L_Check()"
+            >Login
+          </a>
         </div>
       </div>
     </div>

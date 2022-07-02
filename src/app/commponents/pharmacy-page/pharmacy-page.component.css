@@ -1,8 +1,11 @@
 .Pharmacy_page {
   /* background-image: url("/assets/pics/pharn.png"); */
-  height: 100vh;
-  width: 100vw;
-  background-color: #dae7e7;
+  height: 800px;
+  width: 80%;
+  background-image: url("/assets/pics/FPic.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-left: 10%;
   /*   background-repeat: no-repeat;
   background-size: cover; */
 }
@@ -22,11 +25,11 @@
 .log {
   height: 90%;
   /*  border-radius: 70px; */
-  background-image: url("/assets/pics/FPic.jpg");
+  /*   background-image: url("/assets/pics/FPic.jpg");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 100%; */
   margin-left: 4%;
-  margin-top: 2%;
+  margin-top: 5%;
 }
 #frmsrch {
   background: rgba(255, 255, 255, 0.7);
@@ -70,30 +73,24 @@ button:active {
 #bt:active {
   background-color: #445161;
 }
-.page {
+.testP {
+  background-color: white;
   width: 100%;
-  height: 90%;
-  /* margin-top: 5%; */
+  height: 80%;
   margin-left: 5%;
-  /*  animation: fadeInAnimation ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; */
+  border-radius: 70px;
+  margin-top: 10%;
+  border: 1px solid #97d1d8;
 }
-.nav {
-  width: 100%;
-  height: 10%;
-  background-color: #5a8c93;
-}
+
 .pageCon {
   width: 100%;
   height: 98%;
-  background-color: white;
   margin-left: 0.05%;
 }
 
 .lft,
 .rigt {
-  border: 1px solid #97d1d8;
   height: 100%;
   float: left;
 }
@@ -114,7 +111,7 @@ button:active {
 #phrtmIMG {
   width: 40px;
   height: 40px;
-  background-color: #dae7e7;
+
   border-radius: 5px;
 }
 @keyframes fadeInAnimation {
@@ -127,10 +124,11 @@ button:active {
 }
 
 .userpress {
-  background-color: #dddddd;
+  background-color: #d8e2dc;
   margin-top: 2%;
   width: 100%;
   height: 89.5%;
+  border-bottom-left-radius: 70px;
 }
 #userPrsclabel {
   font-size: 15px;
@@ -164,7 +162,7 @@ button:active {
   width: 100%;
   padding: 2px 23px 2px 30px;
   outline: 0;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .search-icon {
@@ -180,7 +178,7 @@ button:active {
 }
 .list {
   /* edit */
-  background-color: white;
+  background: rgba(255, 255, 255, 0.9);
   width: 95%;
   height: 80%;
   margin-top: 5%;
@@ -191,7 +189,7 @@ button:active {
 .zoom-in-zoom-out {
   animation: zoom-in-zoom-out 1s ease-out;
   animation-duration: 1;
-  margin-top: 0.5%;
+  margin-top: 5%;
 }
 
 @keyframes zoom-in-zoom-out {

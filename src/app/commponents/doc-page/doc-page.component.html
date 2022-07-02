@@ -1,95 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container-fluid Doc_page">
-      <div class="row r1">
-        <div class="col-7">
-          <div id="Qutes">
-            <h1>
-              "medicine cure diseases but only doctors can care patients",
-              <span id="SpanQu">Carl Jung</span>
-            </h1>
-          </div>
-          <div id="Check" *ngIf="search">
-            <h2>Patient SSN:</h2>
-            <input type="text" class="form-control" id="SSN" />
-            <button id="srch" (click)="Start()">Search</button>
-          </div>
-          <div id="select" *ngIf="select">
-            <div class="continerbtn col-lg-6">
-              <button id="showone" class="addshow showone" (click)="FuncShow()">
-                <img class="ASImg" src="/assets/pics/eye.png" alt="" />
-              </button>
-              <p id="p1" class="P_PIc Pselect">Show Medical History</p>
-            </div>
-            <div class="continerbtn col-lg-6">
-              <button class="addshow" (click)="FuncAdd()">
-                <img class="ASImg" src="/assets/pics/add.png" alt="" />
-              </button>
-              <p id="p2" class="P_PIc">Add Medical History</p>
-            </div>
-          </div>
+<div class="container Doc_page">
+  <div class="col-8" id="Check" *ngIf="search">
+    <h2>Patient SSN:</h2>
+    <input type="text" class="form-control" id="SSN" />
+    <button id="srch" (click)="Start()">Search</button>
+  </div>
+
+  <div class="row" id="select" *ngIf="select">
+    <div class="col-3 list">
+      <h2>Actions</h2>
+      <button id="button1" (click)="FuncShow()">Show Hx</button>
+      <button (click)="Drug()">Add Prescription</button>
+      <button (click)="Tests()">Add Medical Test</button>
+      <button (click)="XRays()">Add X-Ray Teat</button>
+    </div>
+
+    <div class="col-9 forms">
+      <div class="divshow" *ngIf="show">
+        <h2 id="viewHx">View Medical History</h2>
+
+        <div class="card">
+          <h4>Prescriptions</h4>
+          <button class="cardBUT" (click)="openForm()">View</button>
         </div>
-        <div class="col-5 ImgCol">
-          <img id="DocImg" src="/assets/pics/Doc.jpg" alt="" />
+        <div class="card">
+          <h4>Medical Tests</h4>
+          <button class="cardBUT" (click)="openForm()">View</button>
+        </div>
+        <div class="card">
+          <h4>X-Ray Tests</h4>
+          <button class="cardBUT" (click)="openForm()">View</button>
         </div>
       </div>
-      <div class="row r2" *ngIf="DO">
-        <div class="ShowHistory" *ngIf="show"></div>
-        <div class="AddHistory" *ngIf="add">
-          <div class="btns">
-            <button
-              id="first"
-              type="button"
-              class="selected btt"
-              (click)="Drug()"
-            >
-              Drugs
-            </button>
-            <button type="button" class="btt" (click)="Tests()">Tests</button>
-            <button id="last" type="button" class="btt" (click)="XRays()">
-              X-Rays
-            </button>
-          </div>
-          <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-          <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-          <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-          <div class="forms">
-            <div class="drgfrm" *ngIf="drug">
-              <app-med-form *ngFor="let m of meds"></app-med-form>
-              <!-- med itration -->
-              <br />
-              <br />
-              <button type="button" (click)="AddMed()" class="medbt">
-                Add Medicine
-              </button>
-              <button type="button" class="medbt">submit</button>
-              <br />
-              <br />
-            </div>
-            <div class="testfrm" *ngIf="tests">
-              <app-test-form></app-test-form>
-              <br />
-              <br />
-              <button type="button" class="medbt">submit</button>
-              <br />
-              <br />
-            </div>
-            <div class="Xraysfrm" *ngIf="xrays">
-              <app-xray-form></app-xray-form>
-              <br /><br />
-              <button type="button" class="medbt">submit</button>
-              <br /><br />
-            </div>
-          </div>
-        </div>
+      <div class="drgfrm" *ngIf="adddrug">
+        <app-med-form *ngFor="let m of meds"></app-med-form>
+        <button type="button" (click)="AddMed()" class="medbt">
+          Add Medicine
+        </button>
+        <button type="button" class="medbt">submit</button>
+        <br />
+        <br />
+      </div>
+      <div class="testfrm" *ngIf="addtests">
+        <app-test-form></app-test-form>
+        <br />
+        <br />
+        <button type="button" class="medbt">submit</button>
+        <br />
+        <br />
+      </div>
+      <div class="Xraysfrm" *ngIf="addxrays">
+        <app-xray-form></app-xray-form>
+        <br /><br />
+        <button type="button" class="medbt">submit</button>
+        <br /><br />
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+<div *ngIf="popup">
+  <div class="popupModal-backdrop"></div>
+
+  <div class="popupModal-dialog">
+    <div class="popupModal-content">
+      <div class="popupModal-body">
+        <p style="margin-left: 20px">showModal</p>
+
+        <button (click)="closeForm()">Hide modal</button>
+      </div>
+    </div>
+  </div>
+</div>
