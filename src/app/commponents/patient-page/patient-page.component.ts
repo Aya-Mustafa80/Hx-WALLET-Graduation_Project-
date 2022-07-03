@@ -28,9 +28,9 @@ export class PatientPageComponent implements OnInit {
   Detail = 'Prescription';
   flag1 = false;
   flag2 = false;
+  TestXRaysOnly = false;
   /* // */
   Prescription_page = true;
-  Result_Pescription = true;
   Detail_Prescription = true;
   Content_Prescription = true;
   Notification_Prescription = true;
@@ -54,8 +54,10 @@ export class PatientPageComponent implements OnInit {
     test?.setAttribute('class', '');
     var XRay = document.getElementById('tap-3');
     XRay?.setAttribute('class', '');
+    var detailcon = document.getElementById('detailCon');
+    detailcon?.setAttribute('class', 'detail');
+    this.TestXRaysOnly = false;
     this.Prescription_page = true;
-    this.Result_Pescription = true;
     this.Detail_Prescription = true;
     this.Content_Prescription = true;
     this.Notification_Prescription = true;
@@ -82,8 +84,10 @@ export class PatientPageComponent implements OnInit {
     test?.setAttribute('class', 'clicked');
     var XRay = document.getElementById('tap-3');
     XRay?.setAttribute('class', '');
+    var detailcon = document.getElementById('detailCon');
+    detailcon?.setAttribute('class', 'detailTR');
+    this.TestXRaysOnly = true;
     this.Prescription_page = false;
-    this.Result_Pescription = false;
     this.Detail_Prescription = false;
     this.Content_Prescription = false;
     this.Notification_Prescription = false;
@@ -110,8 +114,10 @@ export class PatientPageComponent implements OnInit {
     test?.setAttribute('class', '');
     var XRay = document.getElementById('tap-3');
     XRay?.setAttribute('class', 'clicked');
+    var detailcon = document.getElementById('detailCon');
+    detailcon?.setAttribute('class', 'detailTR');
+    this.TestXRaysOnly = true;
     this.Prescription_page = false;
-    this.Result_Pescription = false;
     this.Detail_Prescription = false;
     this.Content_Prescription = false;
     this.Notification_Prescription = false;

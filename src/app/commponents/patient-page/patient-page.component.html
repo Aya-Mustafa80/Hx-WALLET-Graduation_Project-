@@ -105,48 +105,78 @@
         <!--------------------------------------- COL3------------------------------------------------>
 
         <div class="col-7 COL3">
-          <div class="detail">
+          <div class="detail" id="detailCon">
             <h1 class="HeadersDetail">{{ Detail }} Details:</h1>
             <div *ngIf="Detail_Prescription" class="DetailPrescription">
-              <div class="PrescriptionForm" *ngFor="let t of Drugss">
-                <p class="D">Drug Name:</p>
-                <span class="DSpan">{{ t.Drug.Name }}</span>
-                <p class="D">Drug Dose:</p>
-                <span class="DSpan">{{ t.Dose }}</span>
-                <p class="D">Drug Dates:</p>
-                <span class="DSpan"> {{ t.DrugTime }}</span>
+              <h4>Doc name:</h4>
+              <h5>Prescription Date:</h5>
+              <div class="med">
+                <!-- *ngFor="let med of meds" -->
+                <label class="userdatalabel">Medicine name:</label>
+                <label class="userdataP">Name</label>
+                <label class="userdatalabel">Form of Medicine</label>
+                <label class="userdataP">Name</label>
+                <label class="userdatalabel">Strength:</label>
+                <label class="userdataP">Name</label>
+                <label class="userdatalabel">Method of Intake:</label>
+                <label class="userdataP">Name</label>
+                <label class="userdatalabel">Dosage:</label>
+                <label class="userdataP" id="datap">
+                  <!-- ngfor -->
+                  <p>dose1</p>
+                  <p>dose1</p>
+                  <p>dose1</p>
+                </label>
+                <label class="userdatalabel">Other instractions:</label>
+                <label class="userdataP" id="datap">Name</label>
+              </div>
+              <br />
+              <br />
+            </div>
+            <div *ngIf="Detail_Tests" class="DetailTests">
+              <div class="listd">
+                <h5 id="H5TR" class="h5h6TR">Doc name:</h5>
+                <h6 class="h5h6TR">Test Date:</h6>
+                <label class="userdatalabelTR">Test name:</label>
+                <label class="userdataPTR">Name</label>
               </div>
             </div>
-            <div *ngIf="Detail_Tests" class="DetailTests"></div>
-            <div *ngIf="Detail_XRays" class="DetailXRays"></div>
+            <div *ngIf="Detail_XRays" class="DetailXRays">
+              <div class="listd">
+                <h5 h5 id="H5TR" class="h5h6TR">Doc name:</h5>
+                <h6 class="h5h6TR">X-Ray Date:</h6>
+                <label class="userdatalabelTR">X-Ray name:</label>
+                <label class="userdataPTR">Name</label>
+              </div>
+            </div>
           </div>
-          <div class="result">
+          <div class="result" *ngIf="TestXRaysOnly">
             <!-- //////////////// -->
-            <div *ngIf="Result_Pescription" class="Prescrip">
+            <!--   <div *ngIf="Result_Pescription" class="Prescrip">
               <img id="giff" src="/assets/pics/medicine.gif" alt="" />
               <h3 id="H3Result">
                 Take your medication regularly and stay healthy
               </h3>
               <img id="Doc1" src="/assets/pics/Doc2.jpg" alt="" />
               <img id="Doc2" src="/assets/pics/Doc1.jpg" alt="" />
-            </div>
+            </div> -->
             <!-- //////////////// -->
             <div *ngIf="Result_Tests" class="Tests">
               <h1 class="HeadersResult">Your Test Result:</h1>
             </div>
             <!-- //////////////// -->
             <div *ngIf="Result_XRay" class="Tests">
-              <h1 class="Headers">Your X-Ray Result:</h1>
+              <h1 class="HeadersResult">Your X-Ray Result:</h1>
             </div>
           </div>
-          <div class="info">
+          <!--   <div class="info">
             <img id="InfoImg" src="/assets/pics/solidarity.png" alt="" />
             <h2 id="InfoH2">How is your health today?</h2>
             <p id="InfoP">
               Here you can track your Medical History <br />
               We are happy to help you to do that <br />
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

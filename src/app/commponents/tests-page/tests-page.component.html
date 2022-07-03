@@ -20,23 +20,36 @@
             <label id="labssn">&nbsp; Enter Patient SSN:</label>
             <br />
             <br />
-            <input id="inputsrch" type="text" class="form-control" />
+            <input
+              id="inputsrch"
+              type="text"
+              class="form-control"
+              [(ngModel)]="PatientSSn"
+              required
+              name="PSSN"
+            />
+            <span *ngIf="spanRequired" id="required">requird!</span>
             <button id="bt" (click)="logBody()">Search</button>
           </form>
         </div>
         <div class="testP col-10 row" *ngIf="show">
-          <div class="showTest col-8"></div>
+          <div class="showTest col-8">
+            <!--  -->
+            <div class="list">
+              <h5>Doc name:</h5>
+              <h6>Test Date:</h6>
+              <label class="userdatalabel">Test name:</label>
+              <label class="userdataP">Name</label>
+              <label class="userdatalabel">Result</label>
+              <label class="userdataP" id="datap">Name</label>
+            </div>
+          </div>
           <div class="result col-4">
             <img id="picl" src="/assets/pics/la1b.jpg" alt="" />
             <label for="test">Select test:</label>
             <select name="" id="name-select" class="form-control">
               <option value="">Please choose a Test</option>
-              <option value="1">option</option>
-              <option value="2">option</option>
-              <option value="3">option</option>
-              <option value="4">option</option>
-              <option value="5">option</option>
-              <option value="6">option</option>
+              <option value="" *ngFor="let item of Tests">{{ item }}</option>
             </select>
             <br />
             <label for="img">Select result:</label>
