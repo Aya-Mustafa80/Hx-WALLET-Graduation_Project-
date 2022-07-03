@@ -62,7 +62,7 @@
                 *ngFor="let item of Prescription"
               >
                 <span id="SpanPres">Prescription </span>
-                <span id="date"> {{ item.Date }}</span>
+                <span id="date"> {{ item?.Date | date: "longDate" }}</span>
               </div>
             </div>
             <div class="content" *ngIf="Content_Tests">
@@ -110,11 +110,11 @@
             <div *ngIf="Detail_Prescription" class="DetailPrescription">
               <div class="PrescriptionForm" *ngFor="let t of Drugss">
                 <p class="D">Drug Name:</p>
-                <span class="DSpan">{{ t.DrugName }}</span>
+                <span class="DSpan">{{ t.Drug.Name }}</span>
                 <p class="D">Drug Dose:</p>
-                <span class="DSpan">{{ t.DrugDose }}</span>
+                <span class="DSpan">{{ t.Dose }}</span>
                 <p class="D">Drug Dates:</p>
-                <span class="DSpan"> {{ t.DrugDates }}</span>
+                <span class="DSpan"> {{ t.DrugTime }}</span>
               </div>
             </div>
             <div *ngIf="Detail_Tests" class="DetailTests"></div>

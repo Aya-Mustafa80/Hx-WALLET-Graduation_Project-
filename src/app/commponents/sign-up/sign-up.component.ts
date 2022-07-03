@@ -11,37 +11,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  patientuser:RegisterPatient={
+  patientuser: RegisterPatient = {
     name: '',
-    id: '',
+    ssn: '',
     phone: '',
     address: '',
     email: '',
     age: undefined,
     password: '',
-    confirmpassword: ''
+    confirmpassword: '',
   };
-  doctoruser:RegisterDoctor={
+  doctoruser: RegisterDoctor = {
     name: '',
-    id: undefined,
+    ssn: '',
     phone: '',
-    specialty: undefined,
+    specialization: '',
     email: '',
-    address: undefined,
     password: '',
-    confirmpassword: undefined
+    confirmpassword: '',
   };
-  otheruser:OtherUsers={
+  otheruser: OtherUsers = {
     name: '',
-    id: undefined,
+    ssn: '',
     phone: '',
     email: undefined,
     address: '',
-    password: undefined,
-    confirmpassword: ''
+    password: '',
+    confirmpassword: '',
   };
+  http: any;
 
-  constructor(private info:AuthService ,private _router:Router) {}
+  constructor(private info: AuthService, private _router: Router) {}
 
   ngOnInit(): void {}
   F1 = true;
@@ -49,7 +49,7 @@ export class SignUpComponent implements OnInit {
   F3 = false;
   F4 = false;
   F5 = false;
-
+  successpopUP = false;
   Patient() {
     this.F1 = true;
     this.F2 = false;
@@ -93,73 +93,90 @@ export class SignUpComponent implements OnInit {
     this.F4 = false;
     this.F5 = true;
   }
-  signup(){
-    if(this.F1==true){
+
+  signup() {
+    if (this.F1 == true) {
       this.signuppatient();
-    }
-    else if(this.F2==true){
+      this.successpopUP = true;
+      var myTimeOut = setTimeout(() => {
+        this.successpopUP = false;
+      }, 1500);
+    } else if (this.F2 == true) {
       this.signupdoctor();
-    }
-    else if(this.F3==true){
+      this.successpopUP = true;
+      var myTimeOut = setTimeout(() => {
+        this.successpopUP = false;
+      }, 1500);
+    } else if (this.F3 == true) {
       this.signupphar();
-    }
-    else if(this.F4==true){
+      this.successpopUP = true;
+      var myTimeOut = setTimeout(() => {
+        this.successpopUP = false;
+      }, 1500);
+    } else if (this.F4 == true) {
       this.signuptlab();
-    }
-    else{
+      this.successpopUP = true;
+      var myTimeOut = setTimeout(() => {
+        this.successpopUP = false;
+      }, 1500);
+    } else {
       this.signupxlab();
+      this.successpopUP = true;
+      var myTimeOut = setTimeout(() => {
+        this.successpopUP = false;
+      }, 1500);
     }
   }
-  signuppatient(){
+
+  signuppatient() {
     //console.log(this.patientuser);
-    this.info.signuppatient(this.patientuser)
-      .subscribe(
-        res=>{
-          console.log(res);
-          localStorage.setItem('token',res.token);
-          this._router.navigate(['/Patient_page'])
-        },
-        err=>console.log(err)
-      )
-   }
-   signupdoctor(){
-    this.info.signupdoctor(this.doctoruser)
-      .subscribe(
-        res=>{
-          console.log(res);
-          localStorage.setItem('token',res.token);
-        },
-        err=>console.log(err)
-      )
-   }
-   signupphar(){
-    this.info.signupphar(this.otheruser)
-      .subscribe(
-        res=>{
-          console.log(res);
-          localStorage.setItem('token',res.token);
-        },
-        err=>console.log(err)
-      )
-   }
-   signuptlab(){
-    this.info.signuptlab(this.otheruser)
-      .subscribe(
-        res=>{
-          console.log(res);
-          localStorage.setItem('token',res.token);
-        },
-        err=>console.log(err)
-      )
-   }
-   signupxlab(){
-    this.info.signupxlab(this.otheruser)
-      .subscribe(
-        res=>{
-          console.log(res);
-          localStorage.setItem('token',res.token);
-        },
-        err=>console.log(err)
-      )
-   }
+    this.info.signuppatient(this.patientuser).subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['/Patient_page']);
+      },
+      (err) => console.log(err)
+    );
+  }
+  signupdoctor() {
+    this.info.signupdoctor(this.doctoruser).subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['/Doc_page']);
+      },
+      (err) => console.log(err)
+    );
+  }
+  signupphar() {
+    this.info.signupphar(this.otheruser).subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['/Pharmacy_page']);
+      },
+      (err) => console.log(err)
+    );
+  }
+  signuptlab() {
+    this.info.signuptlab(this.otheruser).subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['/Tests_page']);
+      },
+      (err) => console.log(err)
+    );
+  }
+  signupxlab() {
+    this.info.signupxlab(this.otheruser).subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['/XRays_page']);
+      },
+      (err) => console.log(err)
+    );
+  }
 }

@@ -1,437 +1,416 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container-fluid Sgn">
-      <div class="row">
-        <div class="col-3 C1">
-          <h1>Sign up</h1>
-          <p>
-            to use all features <br />
-            of the application
-          </p>
-          <img src="/assets/pics/Sign.jpg" alt="" />
+<div class="container-fluid Sgn">
+  <div class="row">
+    <div class="col-3 C1">
+      <h1>Sign up</h1>
+      <p>
+        to use all features <br />
+        of the application
+      </p>
+      <img src="/assets/pics/Sign.jpg" alt="" />
+    </div>
+    <div class="col-7 C2">
+      <div class="btns">
+        <button id="first" (click)="Patient()" type="button" class="selected">
+          Patient
+        </button>
+        <button (click)="Doc()" type="button" class="">Doctor</button>
+        <button (click)="Pharmacy()" type="button" class="">Pharmacy</button>
+        <button (click)="TestLab()" type="button" class="">Tests Lab</button>
+        <button id="last" (click)="XRays()" type="button" class="">
+          X-Rays Lab
+        </button>
+      </div>
+      <div class="frm">
+        <div class="divform">
+          <form *ngIf="F1">
+            <fieldset>
+              <label>Name:</label>
+              <input
+                type="text"
+                placeholder="Type Your Name"
+                [(ngModel)]="patientuser.name"
+                name="pname"
+                required
+              />
+
+              <br /><br />
+
+              <label>ID: <span id="IDSpan">(National Id)</span></label>
+              <input
+                type="text"
+                placeholder="Type Your ID"
+                [(ngModel)]="patientuser.ssn"
+                name="pid"
+                required
+              /><br /><br />
+
+              <label>Phone Number:</label>
+              <input
+                type="text"
+                placeholder="Type Your Phone Number"
+                [(ngModel)]="patientuser.phone"
+                name="p-phone"
+                required
+              /><br /><br />
+
+              <label>Adress:</label>
+              <input
+                type="text"
+                placeholder="Type Your adress"
+                [(ngModel)]="patientuser.address"
+                name="paddress"
+                required
+              /><br /><br />
+              <label>Email:</label>
+              <input
+                type="email"
+                placeholder="Type Your email"
+                [(ngModel)]="patientuser.email"
+                name="pemail"
+                required
+              /><br /><br />
+              <label>Age:</label>
+              <input
+                type="number"
+                placeholder="Type Your age"
+                [(ngModel)]="patientuser.age"
+                name="p-age"
+                required
+              /><br /><br />
+
+              <label> Create Password:</label>
+              <input
+                type="password"
+                placeholder="Create A Password"
+                [(ngModel)]="patientuser.password"
+                name="p-pass"
+                required
+              /><br /><br />
+
+              <label>Confirm Passowrd:</label>
+              <input
+                type="password"
+                placeholder="Confirm Your Password"
+                [(ngModel)]="patientuser.confirmpassword"
+                name="p-confirm"
+                required
+                min="8"
+              /><br /><br />
+            </fieldset>
+          </form>
+          <form *ngIf="F2">
+            <fieldset>
+              <label>Name:</label>
+              <input
+                type="text"
+                placeholder="Type Your Name"
+                [(ngModel)]="doctoruser.name"
+                name="dname"
+                required
+              /><br /><br />
+
+              <label>ID: <span id="IDSpan">(Registration Number)</span></label>
+
+              <input
+                type="text"
+                placeholder="Type Your ID"
+                [(ngModel)]="doctoruser.ssn"
+                name="d-id"
+                required
+              /><br /><br />
+
+              <label>Phone Number:</label>
+
+              <input
+                type="text"
+                placeholder="Type Your Phone Number"
+                [(ngModel)]="doctoruser.phone"
+                name="d-phone"
+                required
+              /><br /><br />
+
+              <label>Specialty:</label>
+
+              <input
+                type="text"
+                placeholder="Type Your Specialty"
+                [(ngModel)]="doctoruser.specialization"
+                name="d-speciality"
+                required
+              /><br /><br />
+              <label>Email:</label>
+
+              <input
+                type="email"
+                placeholder="Type Your email"
+                [(ngModel)]="doctoruser.email"
+                name="d-email"
+                required
+              /><br /><br />
+
+              <label> Create Password:</label>
+
+              <input
+                type="password"
+                placeholder="Create A Password"
+                [(ngModel)]="doctoruser.password"
+                name="d-pass"
+                required
+              /><br /><br />
+
+              <label>Confirm Passowrd:</label>
+
+              <input
+                type="password"
+                placeholder="Confirm Your Password"
+                [(ngModel)]="doctoruser.confirmpassword"
+                name="d-confirm"
+                required
+              /><br /><br />
+            </fieldset>
+          </form>
+          <form *ngIf="F3">
+            <fieldset>
+              <label>Pharmacy Name:</label>
+
+              <input
+                type="text"
+                placeholder="Type Pharmacy Name"
+                [(ngModel)]="otheruser.name"
+                name="ph-name"
+                required
+              /><br /><br />
+
+              <label
+                >Pharmacy ID:
+                <span id="IDSpan">(Registration Number)</span></label
+              >
+              <input
+                type="text"
+                placeholder="Type Pharmacy ID"
+                [(ngModel)]="otheruser.ssn"
+                name="ph-id"
+                required
+              /><br /><br />
+
+              <label>Phone Number:</label>
+
+              <input
+                type="text"
+                placeholder="Type Pharmacy Phone Number"
+                [(ngModel)]="otheruser.phone"
+                name="ph-phone"
+                required
+              />
+              <br /><br />
+              <label>Email:</label>
+
+              <input
+                type="email"
+                placeholder="Type Your email"
+                [(ngModel)]="otheruser.email"
+                name="ph-email"
+                required
+              /><br /><br />
+              <label>Pharmacy Address:</label>
+
+              <input
+                type="text"
+                placeholder="Type Pharmacy adress"
+                [(ngModel)]="otheruser.address"
+                name="ph-address"
+                required
+              /><br /><br />
+
+              <label> Create Password:</label>
+
+              <input
+                type="password"
+                placeholder="Create A Password"
+                [(ngModel)]="otheruser.password"
+                name="ph-pass"
+                required
+              /><br /><br />
+
+              <label>Confirm Passowrd:</label>
+
+              <input
+                type="password"
+                placeholder="Confirm Your Password"
+                [(ngModel)]="otheruser.confirmpassword"
+                name="ph-confirm"
+                required
+              /><br /><br />
+            </fieldset>
+          </form>
+          <form *ngIf="F4">
+            <fieldset>
+              <label>Lab Name:</label>
+
+              <input
+                type="text"
+                placeholder="Type Lab Name"
+                [(ngModel)]="otheruser.name"
+                name="t-name"
+                required
+              /><br /><br />
+
+              <label
+                >Lab ID: <span id="IDSpan">(Registration Number)</span></label
+              >
+              <input
+                type="text"
+                placeholder="Type Lab ID"
+                [(ngModel)]="otheruser.ssn"
+                name="t-id"
+                required
+              /><br /><br />
+
+              <label>Phone Number:</label>
+
+              <input
+                type="text"
+                placeholder="Type Lab Phone Number"
+                [(ngModel)]="otheruser.phone"
+                name="t-phone"
+                required
+              /><br /><br />
+
+              <label>Lab Adress:</label>
+
+              <input
+                type="text"
+                placeholder="Type Lab adress"
+                [(ngModel)]="otheruser.address"
+                name="t-address"
+                required
+              /><br /><br />
+              <label>Lab Email:</label>
+
+              <input
+                type="email"
+                placeholder="Type Lab E-mail"
+                [(ngModel)]="otheruser.email"
+                name="t-email"
+                required
+              /><br /><br />
+
+              <label> Create Password:</label>
+
+              <input
+                type="password"
+                placeholder="Create A Password"
+                [(ngModel)]="otheruser.password"
+                name="t-pass"
+                required
+              /><br /><br />
+
+              <label>Confirm Passowrd:</label>
+
+              <input
+                type="password"
+                placeholder="Confirm Your Password"
+                [(ngModel)]="otheruser.confirmpassword"
+                name="t-confirm"
+                required
+              /><br /><br />
+            </fieldset>
+          </form>
+          <form *ngIf="F5">
+            <fieldset>
+              <label>Lab Name:</label>
+
+              <input
+                type="text"
+                placeholder="Type Lab Name"
+                [(ngModel)]="otheruser.name"
+                name="x-name"
+                required
+              /><br /><br />
+
+              <label
+                >Lab ID: <span id="IDSpan">(Registration Number)</span></label
+              >
+
+              <input
+                type="text"
+                placeholder="Type Lab ID"
+                [(ngModel)]="otheruser.ssn"
+                name="x-id"
+                required
+              /><br /><br />
+
+              <label>Phone Number:</label>
+
+              <input
+                type="text"
+                placeholder="Type Lab Phone Number"
+                [(ngModel)]="otheruser.phone"
+                name="x-phone"
+                required
+              /><br /><br />
+
+              <label>Lab Adress:</label>
+
+              <input
+                type="text"
+                placeholder="Type Lab adress"
+                [(ngModel)]="otheruser.address"
+                name="x-address"
+                required
+              /><br /><br />
+              <label>Lab Email:</label>
+
+              <input
+                type="email"
+                placeholder="Type Lab E-mail"
+                [(ngModel)]="otheruser.email"
+                name="x-email"
+                required
+              /><br /><br />
+
+              <label> Create Password:</label>
+
+              <input
+                type="password"
+                placeholder="Create A Password"
+                [(ngModel)]="otheruser.password"
+                name="x-pass"
+                required
+              /><br /><br />
+
+              <label>Confirm Passowrd:</label>
+
+              <input
+                type="password"
+                placeholder="Confirm Your Password"
+                [(ngModel)]="otheruser.confirmpassword"
+                name="x-confirm"
+                required
+              /><br /><br />
+            </fieldset>
+          </form>
         </div>
-        <div class="col-7 C2">
-          <div class="btns">
-            <button
-              id="first"
-              (click)="Patient()"
-              type="button"
-              class="selected"
-            >
-              Patient
-            </button>
-            <button (click)="Doc()" type="button" class="">Doctor</button>
-            <button (click)="Pharmacy()" type="button" class="">
-              Pharmacy
-            </button>
-            <button (click)="TestLab()" type="button" class="">
-              Tests Lab
-            </button>
-            <button id="last" (click)="XRays()" type="button" class="">
-              X-Rays Lab
-            </button>
-          </div>
-          <div class="frm">
-            <div class="divform">
-              <form *ngIf="F1">
-                <fieldset>
-                  <label>Name:</label>
-                  <input
-                    type="text"
-                    placeholder="Type Your Name"
-                    [(ngModel)]="patientuser.name"
-                    name="pname"
-                    required
-                  />
 
-                  <br /><br />
-
-                  <label>ID: <span id="IDSpan">(National Id)</span></label>
-                  <input
-                    type="text"
-                    placeholder="Type Your ID"
-                    [(ngModel)]="patientuser.id"
-                    name="pid"
-                    required
-                  /><br /><br />
-
-                  <label>Phone Number:</label>
-                  <input
-                    type="text"
-                    placeholder="Type Your Phone Number"
-                    [(ngModel)]="patientuser.phone"
-                    name="p-phone"
-                    required
-                  /><br /><br />
-
-                  <label>Adress:</label>
-                  <input
-                    type="text"
-                    placeholder="Type Your adress"
-                    [(ngModel)]="patientuser.address"
-                    name="paddress"
-                    required
-                  /><br /><br />
-                  <label>Email:</label>
-                  <input
-                    type="email"
-                    placeholder="Type Your email"
-                    [(ngModel)]="patientuser.email"
-                    name="pemail"
-                    required
-                  /><br /><br />
-                  <label>Age:</label>
-                  <input
-                    type="number"
-                    placeholder="Type Your age"
-                    [(ngModel)]="patientuser.age"
-                    name="p-age"
-                    required
-                  /><br /><br />
-
-                  <label> Create Password:</label>
-                  <input
-                    type="password"
-                    placeholder="Create A Password"
-                    [(ngModel)]="patientuser.password"
-                    name="p-pass"
-                    required
-                  /><br /><br />
-
-                  <label>Confirm Passowrd:</label>
-                  <input
-                    type="password"
-                    placeholder="Confirm Your Password"
-                    [(ngModel)]="patientuser.confirmpassword"
-                    name="p-confirm"
-                    required
-                    min="8"
-                  /><br /><br />
-                </fieldset>
-              </form>
-              <form *ngIf="F2">
-                <fieldset>
-                  <label>Name:</label>
-                  <input
-                    type="text"
-                    placeholder="Type Your Name"
-                    [(ngModel)]="doctoruser.name"
-                    name="dname"
-                    required
-                  /><br /><br />
-
-                  <label
-                    >ID: <span id="IDSpan">(Registration Number)</span></label
-                  >
-
-                  <input
-                    type="text"
-                    placeholder="Type Your ID"
-                    [(ngModel)]="doctoruser.id"
-                    name="d-id"
-                    required
-                  /><br /><br />
-
-                  <label>Phone Number:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Your Phone Number"
-                    [(ngModel)]="doctoruser.phone"
-                    name="d-phone"
-                    required
-                  /><br /><br />
-
-                  <label>Specialty:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Your Specialty"
-                    [(ngModel)]="doctoruser.specialty"
-                    name="d-speciality"
-                    required
-                  /><br /><br />
-                  <label>Email:</label>
-
-                  <input
-                    type="email"
-                    placeholder="Type Your email"
-                    [(ngModel)]="doctoruser.email"
-                    name="d-email"
-                    required
-                  /><br /><br />
-                  <label>Adress:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Your Adress"
-                    [(ngModel)]="doctoruser.address"
-                    name="d-address"
-                    required
-                  /><br /><br />
-                  <label> Create Password:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Create A Password"
-                    [(ngModel)]="doctoruser.password"
-                    name="d-pass"
-                    required
-                  /><br /><br />
-
-                  <label>Confirm Passowrd:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Confirm Your Password"
-                    [(ngModel)]="doctoruser.confirmpassword"
-                    name="d-confirm"
-                    required
-                  /><br /><br />
-                </fieldset>
-              </form>
-              <form *ngIf="F3">
-                <fieldset>
-                  <label>Pharmacy Name:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Pharmacy Name"
-                    [(ngModel)]="otheruser.name"
-                    name="ph-name"
-                    required
-                  /><br /><br />
-
-                  <label
-                    >Pharmacy ID:
-                    <span id="IDSpan">(Registration Number)</span></label
-                  >
-                  <input
-                    type="text"
-                    placeholder="Type Pharmacy ID"
-                    [(ngModel)]="otheruser.id"
-                    name="ph-id"
-                    required
-                  /><br /><br />
-
-                  <label>Phone Number:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Pharmacy Phone Number"
-                    [(ngModel)]="otheruser.phone"
-                    name="ph-phone"
-                    required
-                  />
-                  <br /><br />
-                  <label>Email:</label>
-
-                  <input
-                    type="email"
-                    placeholder="Type Your email"
-                    [(ngModel)]="otheruser.email"
-                    name="ph-email"
-                    required
-                  /><br /><br />
-                  <label>Pharmacy Address:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Pharmacy adress"
-                    [(ngModel)]="otheruser.address"
-                    name="ph-address"
-                    required
-                  /><br /><br />
-
-                  <label> Create Password:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Create A Password"
-                    [(ngModel)]="otheruser.password"
-                    name="ph-pass"
-                    required
-                  /><br /><br />
-
-                  <label>Confirm Passowrd:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Confirm Your Password"
-                    [(ngModel)]="otheruser.confirmpassword"
-                    name="ph-confirm"
-                    required
-                  /><br /><br />
-                </fieldset>
-              </form>
-              <form *ngIf="F4">
-                <fieldset>
-                  <label>Lab Name:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab Name"
-                    [(ngModel)]="otheruser.name"
-                    name="t-name"
-                    required
-                  /><br /><br />
-
-                  <label
-                    >Lab ID:
-                    <span id="IDSpan">(Registration Number)</span></label
-                  >
-                  <input
-                    type="text"
-                    placeholder="Type Lab ID"
-                    [(ngModel)]="otheruser.id"
-                    name="t-id"
-                    required
-                  /><br /><br />
-
-                  <label>Phone Number:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab Phone Number"
-                    [(ngModel)]="otheruser.phone"
-                    name="t-phone"
-                    required
-                  /><br /><br />
-
-                  <label>Lab Adress:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab adress"
-                    [(ngModel)]="otheruser.address"
-                    name="t-address"
-                    required
-                  /><br /><br />
-                  <label>Lab Email:</label>
-
-                  <input
-                    type="email"
-                    placeholder="Type Lab E-mail"
-                    [(ngModel)]="otheruser.email"
-                    name="t-email"
-                    required
-                  /><br /><br />
-
-                  <label> Create Password:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Create A Password"
-                    [(ngModel)]="otheruser.password"
-                    name="t-pass"
-                    required
-                  /><br /><br />
-
-                  <label>Confirm Passowrd:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Confirm Your Password"
-                    [(ngModel)]="otheruser.confirmpassword"
-                    name="t-confirm"
-                    required
-                  /><br /><br />
-                </fieldset>
-              </form>
-              <form *ngIf="F5">
-                <fieldset>
-                  <label>Lab Name:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab Name"
-                    [(ngModel)]="otheruser.name"
-                    name="x-name"
-                    required
-                  /><br /><br />
-
-                  <label
-                    >Lab ID:
-                    <span id="IDSpan">(Registration Number)</span></label
-                  >
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab ID"
-                    [(ngModel)]="otheruser.id"
-                    name="x-id"
-                    required
-                  /><br /><br />
-
-                  <label>Phone Number:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab Phone Number"
-                    [(ngModel)]="otheruser.phone"
-                    name="x-phone"
-                    required
-                  /><br /><br />
-
-                  <label>Lab Adress:</label>
-
-                  <input
-                    type="text"
-                    placeholder="Type Lab adress"
-                    [(ngModel)]="otheruser.address"
-                    name="x-address"
-                    required
-                  /><br /><br />
-                  <label>Lab Email:</label>
-
-                  <input
-                    type="email"
-                    placeholder="Type Lab E-mail"
-                    [(ngModel)]="otheruser.email"
-                    name="x-email"
-                    required
-                  /><br /><br />
-
-                  <label> Create Password:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Create A Password"
-                    [(ngModel)]="otheruser.password"
-                    name="x-pass"
-                    required
-                  /><br /><br />
-
-                  <label>Confirm Passowrd:</label>
-
-                  <input
-                    type="password"
-                    placeholder="Confirm Your Password"
-                    [(ngModel)]="otheruser.confirmpassword"
-                    name="x-confirm"
-                    required
-                  /><br /><br />
-                </fieldset>
-              </form>
-            </div>
-
-            <div class="divbut">
-              <button id="ButS" (click)="signup()">Sign up</button>
-              <span id="sin"
-                >&nbsp;&nbsp;Already have an account?
-                <a routerLink="/Login" routerLinkActive="active">&nbsp;Login</a>
-              </span>
-            </div>
-          </div>
+        <div class="divbut">
+          <button id="ButS" (click)="signup()">Sign up</button>
+          <span id="sin"
+            >&nbsp;&nbsp;Already have an account?
+            <a routerLink="/Login" routerLinkActive="active">&nbsp;Login</a>
+          </span>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+<div class="popup" *ngIf="successpopUP">
+  <div class="popupModal-dialog">
+    <div class="popupModal-content">
+      <div class="popupModal-body">
+        <h3 id="Hsuccess">Success!</h3>
+      </div>
+      <!-- <button id="closeBUt" (click)="closePopUP()"></button> -->
+    </div>
+  </div>
+</div>
