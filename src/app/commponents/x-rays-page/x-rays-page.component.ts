@@ -9,17 +9,23 @@ import { LoadXray } from 'src/app/classes/load-xray';
 export class XRaysPageComponent implements OnInit {
   show = false;
   constructor(private auth: AuthService) {}
-  PatientSSn='';
-  PHX: any ={};
-
-    xray: LoadXray = {
+  PatientSSn = '';
+  PHX: any = {};
+  spanRequired = false;
+  Tests = [1, 2, 3, 4];
+  xray: LoadXray = {
     XrayName: '',
-    XrayImage: ''
-    };
+    XrayImage: '',
+  };
 
   ngOnInit(): void {}
   logBody() {
-    this.show = true;
+    if (this.PatientSSn != '') {
+      this.getPatientHX();
+      this.show = true;
+    } else {
+      this.spanRequired = true;
+    }
   }
 
   getPatientHX() {
@@ -43,5 +49,4 @@ export class XRaysPageComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-
 }

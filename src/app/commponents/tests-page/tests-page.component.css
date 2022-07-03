@@ -7,12 +7,12 @@ body {
   width: 100%;
 }
 .Test_page {
-  height: 100%;
+  height: 90%;
   width: 100%;
   background-image: url("/assets/pics/labbbb.webp");
   background-repeat: no-repeat;
   background-size: 95% 95%;
-  margin-top: 2%;
+  margin-top: 7%;
   margin-left: 7%;
 }
 .login {
@@ -124,7 +124,55 @@ form {
 #name-select {
   height: 40px;
 }
+#required {
+  font-size: 25px;
+  color: red;
+  float: right;
+  margin-bottom: 8%;
+  font-weight: bold;
+}
 
+.list {
+  width: 80%;
+  height: 75%;
+  margin-left: 10%;
+  margin-top: 5%;
+  border-radius: 10%;
+  padding-top: 5%;
+  background-color: #f8f9fa;
+  filter: drop-shadow(0 4px 4px rgba(0.25, 0.25, 0.25, 0.25));
+}
+.userdatalabel {
+  width: 40%;
+  color: #6c757d;
+  border: none;
+  margin-top: 4%;
+  margin-left: 2%;
+}
+.userdataP {
+  border: 1px solid #6c757d;
+  background-color: #e9ecef;
+  width: 90%;
+  height: 10%;
+  color: #6c757d;
+  margin-left: 5%;
+  margin-top: 3%;
+  text-align: left;
+  padding-left: 1%;
+  padding-top: 1%;
+  font-weight: 200;
+}
+h6,
+h5 {
+  color: #445161;
+  margin-left: 5%;
+  margin-top: 2%;
+  font-weight: bolder;
+  font-size: 20px;
+}
+#datap {
+  height: 30%;
+}
 /* /////////////////////////////////////////////////SCROLL DESIGN ///////////////////////////////////////////////*/
 /* width */
 ::-webkit-scrollbar {

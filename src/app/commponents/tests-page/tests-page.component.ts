@@ -10,18 +10,23 @@ import { LoadTest } from 'src/app/classes/load-test';
 export class TestsPageComponent implements OnInit {
   show = false;
   constructor(private auth: AuthService) {}
-  PatientSSn='';
-  PHX: any ={};
-
-
+  PatientSSn = '';
+  PHX: any = {};
+  spanRequired = false;
+  Tests = [1, 2, 3, 4];
   test: LoadTest = {
     TestName: '',
-    TestImage: ''
-    };
+    TestImage: '',
+  };
 
   ngOnInit(): void {}
   logBody() {
-    this.show = true;
+    if (this.PatientSSn != '') {
+      this.getPatientHX();
+      this.show = true;
+    } else {
+      this.spanRequired = true;
+    }
   }
 
   getPatientHX() {
@@ -45,5 +50,4 @@ export class TestsPageComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-
 }
