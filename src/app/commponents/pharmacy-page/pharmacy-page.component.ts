@@ -10,6 +10,8 @@ export class PharmacyPageComponent implements OnInit {
   constructor(private auth: AuthService) {}
   PatientSSn = '';
   PHX: any = {};
+  prescsWithDetails=[];
+  clickedPrescWithDetails={};
   spanRequired = false;
   search = true; //true
   log = false; //false
@@ -37,4 +39,29 @@ export class PharmacyPageComponent implements OnInit {
       }
     );
   }
+//this return all prscs belongs to specefic user
+getPresscs() {
+  this.auth.getAllPrescOfUser(this.PatientSSn).subscribe(
+    (res: any) => {
+      this.prescsWithDetails = res;
+      console.log(res);
+    },
+    (err) => {
+      console.log(err);
+    }
+  );
+}
+
+//this show clicked prescription
+ShowPresc(item: any) {
+  console.log(item);
+  this.auth.getPrescriptionByID(item.ID).subscribe(
+    (res) => {
+      console.log(res);
+      this.clickedPrescWithDetails = res;
+    },
+    (err) => {}
+  );
+}
+
 }

@@ -45,7 +45,7 @@ export class TestsPageComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-
+//return all tests from DB for dropdown list
   getTests() {
     this.auth.getAllTests().subscribe(
       (res: any) => {

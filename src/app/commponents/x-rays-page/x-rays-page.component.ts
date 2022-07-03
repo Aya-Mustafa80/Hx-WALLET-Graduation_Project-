@@ -12,7 +12,7 @@ export class XRaysPageComponent implements OnInit {
   PatientSSn='';
   PHX: any ={};
   xrays=[];
-  
+
     xray: LoadXray = {
     XrayName: '',
     XrayImage: ''
@@ -44,7 +44,7 @@ export class XRaysPageComponent implements OnInit {
       (err) => console.log(err)
     );
   }
-
+//return all xrays from DB for dropdown list
   getxrays() {
     this.auth.getAllXrays().subscribe(
       (res: any) => {
