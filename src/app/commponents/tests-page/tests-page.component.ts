@@ -12,7 +12,7 @@ export class TestsPageComponent implements OnInit {
   constructor(private auth: AuthService) {}
   PatientSSn='';
   PHX: any ={};
-
+  tests=[];
 
   test: LoadTest = {
     TestName: '',
@@ -43,6 +43,18 @@ export class TestsPageComponent implements OnInit {
         console.log(res);
       },
       (err) => console.log(err)
+    );
+  }
+
+  getTests() {
+    this.auth.getAllTests().subscribe(
+      (res: any) => {
+        this.tests = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
     );
   }
 

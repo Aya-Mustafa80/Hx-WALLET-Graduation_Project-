@@ -11,7 +11,8 @@ export class XRaysPageComponent implements OnInit {
   constructor(private auth: AuthService) {}
   PatientSSn='';
   PHX: any ={};
-
+  xrays=[];
+  
     xray: LoadXray = {
     XrayName: '',
     XrayImage: ''
@@ -41,6 +42,18 @@ export class XRaysPageComponent implements OnInit {
         console.log(res);
       },
       (err) => console.log(err)
+    );
+  }
+
+  getxrays() {
+    this.auth.getAllXrays().subscribe(
+      (res: any) => {
+        this.xrays = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
     );
   }
 

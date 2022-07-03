@@ -106,6 +106,7 @@ export class AuthService {
 
   getPatient(ssn: string) {
     return this.http.get(
+      //this return only ID and date from DB ..replace it whith the new link that return all details
       `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
     );
   }
@@ -116,6 +117,24 @@ export class AuthService {
       `http://hostserver-001-site1.ctempurl.com/get/doc/${ssn}`
     );
   }
+
+getDrugs(){
+  return this.http.get(
+    `http://hostserver-001-site1.ctempurl.com/api/drugs`
+  );
+}
+//here the link of all tests stored in DB
+getAllTests(){
+  return this.http.get(
+    ``
+  );
+}
+//here the link of all xrays stored in DB
+getAllXrays(){
+  return this.http.get(
+    ``
+  );
+}
 
   addPrescription(pre:Prescription){
     return this.http.post<any>(this._addprescURL, Prescription);
