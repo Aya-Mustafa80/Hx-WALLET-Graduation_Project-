@@ -47,15 +47,15 @@
         <h2 id="viewHx">View Medical History</h2>
 
         <div class="card">
-          <h4>Prescriptions</h4>
+          <h4 id="Hcard">Prescriptions</h4>
           <button class="cardBUT" (click)="openForm1()">View</button>
         </div>
         <div class="card">
-          <h4>Medical Tests</h4>
+          <h4 id="Hcard">Medical Tests</h4>
           <button class="cardBUT" (click)="openForm2()">View</button>
         </div>
         <div class="card">
-          <h4>X-Ray Tests</h4>
+          <h4 id="Hcard">X-Ray Tests</h4>
           <button class="cardBUT" (click)="openForm3()">View</button>
         </div>
       </div>
@@ -93,20 +93,53 @@
     <div class="popupModal-content">
       <div class="popupModal-body">
         <button id="closeBUt" (click)="closeForm()"></button>
-        <div *ngIf="showPrscription">
-          <p style="margin-left: 20%" *ngFor="let pre of PHX?.prescription">
-            {{ pre.ID }} {{ pre.Date }}
-          </p>
+        <div class="Continer" *ngIf="showPrscription">
+          <div class="Cont" *ngFor="let pre of PHX?.prescription">
+            <h4>Doc name:</h4>
+            <h5>Prescription Date:</h5>
+            <div class="med">
+              <!-- *ngFor="let med of PHX?.prescription." -->
+              <label class="userdatalabel_P">Medicine name:</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Form of Medicine</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Strength:</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Method of Intake:</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Dosage:</label>
+              <label class="userdataP_P" id="datap_P">
+                <!-- ngfor -->
+                <p>dose1</p>
+                <p>dose1</p>
+                <p>dose1</p>
+              </label>
+              <label class="userdatalabel_P">Other instractions:</label>
+              <label class="userdataP_P" id="datap_P">Name</label>
+            </div>
+          </div>
         </div>
-        <div *ngIf="showtest">
-          <p style="margin-left: 20%" *ngFor="let prt of PHX?.Patirnt_Tests">
-            {{ prt.ID }} {{ prt.Name }} {{ prt.Image }} {{ prt.IPSSN }}
-          </p>
+        <div class="Continer" *ngIf="showtest">
+          <div class="list_T">
+            <!-- *ngFor="let prt of PHX?.Patirnt_Tests" -->
+            <h5>Doc name:</h5>
+            <h6>Test Date:</h6>
+            <label class="userdatalabel_T">Test name:</label>
+            <label class="userdataP_T">name</label>
+            <label class="userdatalabel_T">Result</label>
+            <label class="userdataP_T" id="datap_T"> name</label>
+          </div>
         </div>
-        <div *ngIf="showXRays">
-          <p style="margin-left: 20%" *ngFor="let prx of PHX?.Patient_Xrays">
-            {{ prx.ID }} {{ prx.Name }} {{ prx.Image }} {{ prx.IPSSN }}
-          </p>
+        <div class="Continer" *ngIf="showXRays">
+          <div class="list_T">
+            <!-- *ngFor="let prx of PHX?.Patient_Xrays" -->
+            <h5>Doc name:</h5>
+            <h6>X-Ray Date:</h6>
+            <label class="userdatalabel_T">X-Ray name:</label>
+            <label class="userdataP_T">name</label>
+            <label class="userdatalabel_T">Result</label>
+            <label class="userdataP_T" id="datap_T"> name</label>
+          </div>
         </div>
       </div>
     </div>

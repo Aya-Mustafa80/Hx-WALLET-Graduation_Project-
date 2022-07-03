@@ -4,12 +4,7 @@
     <div class="col-10">
       <select name="" id="name-select" class="form-control">
         <option value="">Please choose a medicine</option>
-        <option value="1">option</option>
-        <option value="2">option</option>
-        <option value="3">option</option>
-        <option value="4">option</option>
-        <option value="5">option</option>
-        <option value="6">option</option>
+        <option value="" *ngFor="let item of drugs">{{ item?.Name }}</option>
       </select>
     </div>
   </div>
@@ -22,12 +17,10 @@
     <div class="col-8">
       <select name="" id="formof-select" class="form-control">
         <option value="">Form of medicine</option>
-        <option value="1">option</option>
-        <option value="2">option</option>
-        <option value="3">option</option>
-        <option value="4">option</option>
-        <option value="5">option</option>
-        <option value="6">option</option>
+        <option value="1">Tablet</option>
+        <option value="2">Capsules</option>
+        <option value="3">Liquid</option>
+        <option value="4">injection</option>
       </select>
     </div>
   </div>
@@ -40,12 +33,11 @@
       <input type="text" class="col-6 form-control" placeholder="#" />
       <select name="" id="strength-select" class="col-6 form-control">
         <option value="">mg</option>
-        <option value="1">option</option>
-        <option value="2">option</option>
-        <option value="3">option</option>
-        <option value="4">option</option>
-        <option value="5">option</option>
-        <option value="6">option</option>
+        <option value="1">15</option>
+        <option value="2">50</option>
+        <option value="3">100</option>
+        <option value="4">500</option>
+        <option value="5">1000</option>
       </select>
     </div>
     <div class="col-2">
@@ -54,12 +46,11 @@
     <div class="col-4">
       <select name="" id="mthod-select" class="form-control">
         <option value="">Method of Intake</option>
-        <option value="1">option</option>
-        <option value="2">option</option>
-        <option value="3">option</option>
-        <option value="4">option</option>
-        <option value="5">option</option>
-        <option value="6">option</option>
+        <option value="1">Oral</option>
+        <option value="2">Injection</option>
+        <option value="3">Sublingual and buccal</option>
+        <option value="4">Otic</option>
+        <option value="5">Nasal</option>
       </select>
     </div>
   </div>

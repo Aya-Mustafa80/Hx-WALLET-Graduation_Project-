@@ -7,18 +7,14 @@ import { LoadXray } from 'src/app/classes/load-xray';
   styleUrls: ['./x-rays-page.component.css'],
 })
 export class XRaysPageComponent implements OnInit {
-  show = false;
   constructor(private auth: AuthService) {}
-
+  show = false;
   PatientSSn = '';
   PHX: any = {};
   spanRequired = false;
   Tests = [1, 2, 3, 4];
+  xrays = [];
   xray: LoadXray = {
-  xrays=[];
-
-   xray: LoadXray = {
-
     XrayName: '',
     XrayImage: '',
   };
@@ -55,7 +51,7 @@ export class XRaysPageComponent implements OnInit {
     );
   }
 
-//return all xrays from DB for dropdown list
+  //return all xrays from DB for dropdown list
   getxrays() {
     this.auth.getAllXrays().subscribe(
       (res: any) => {
@@ -67,5 +63,4 @@ export class XRaysPageComponent implements OnInit {
       }
     );
   }
-
 }

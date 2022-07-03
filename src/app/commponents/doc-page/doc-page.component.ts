@@ -33,10 +33,8 @@ export class DocPageComponent implements OnInit {
   PatientSSn = '';
 
   PHX: any = {};
-  drugs=[];
-  tests=[];
-  xrays=[];
-  prescsWithDetails=[];
+
+  prescsWithDetails = [];
   meds: number[] = [1];
   ngOnInit(): void {}
   spanRequired = false; //false
@@ -127,49 +125,13 @@ export class DocPageComponent implements OnInit {
       (res: any) => {
         this.PHX = res;
         console.log(res);
-        console.log(this.PHX);
       },
       (err) => {
         console.log(err);
       }
     );
   }
-//this retrn all drugs in DB for dropdown list
-  getDrugs() {
-    this.auth.getDrugs().subscribe(
-      (res: any) => {
-        this.drugs = res;
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
-//this retrn all tests in DB for dropdown list
-  getTests() {
-    this.auth.getAllTests().subscribe(
-      (res: any) => {
-        this.tests = res;
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
-//this retrn all xrays in DB for dropdown list
-  getxrays() {
-    this.auth.getAllXrays().subscribe(
-      (res: any) => {
-        this.xrays = res;
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+
   //this return all prscs belongs to specefic user
   getPresscs() {
     this.auth.getAllPrescOfUser(this.PatientSSn).subscribe(
