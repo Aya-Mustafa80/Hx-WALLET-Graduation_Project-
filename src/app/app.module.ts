@@ -17,10 +17,6 @@ import { PatientPageComponent } from './commponents/patient-page/patient-page.co
 import { AuthService } from 'src/app/services/auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from 'src/app/services/token-interceptor.service';
-import { MedFormComponent } from './commponents/doc-page/med-form/med-form.component';
-import { TestFormComponent } from './commponents/doc-page/test-form/test-form.component';
-import { XrayFormComponent } from './commponents/doc-page/xray-form/xray-form.component';
-import { DosageComponent } from './commponents/doc-page/med-form/dosage/dosage.component';
 import { PharmacyPageComponent } from './commponents/pharmacy-page/pharmacy-page.component';
 import { TestsPageComponent } from './commponents/tests-page/tests-page.component';
 import { XRaysPageComponent } from './commponents/x-rays-page/x-rays-page.component';
@@ -49,10 +45,6 @@ const routes = [
     DocPageComponent,
     ForgetPasswordComponent,
     PatientPageComponent,
-    MedFormComponent,
-    TestFormComponent,
-    XrayFormComponent,
-    DosageComponent,
     PharmacyPageComponent,
     TestsPageComponent,
     XRaysPageComponent,
