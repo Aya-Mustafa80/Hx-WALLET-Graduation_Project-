@@ -33,7 +33,9 @@ export class DocPageComponent implements OnInit {
   PatientSSn = '';
 
   PHX: any = {};
-
+  drugs=[];
+  tests=[];
+  xrays=[];
   meds: number[] = [1];
   ngOnInit(): void {}
   spanRequired = false; //false
@@ -124,6 +126,42 @@ export class DocPageComponent implements OnInit {
         this.PHX = res;
         console.log(res);
         console.log(this.PHX);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getDrugs() {
+    this.auth.getDrugs().subscribe(
+      (res: any) => {
+        this.drugs = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getTests() {
+    this.auth.getAllTests().subscribe(
+      (res: any) => {
+        this.tests = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  getxrays() {
+    this.auth.getAllXrays().subscribe(
+      (res: any) => {
+        this.xrays = res;
+        console.log(res);
       },
       (err) => {
         console.log(err);
