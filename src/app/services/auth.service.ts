@@ -5,6 +5,11 @@ import { User } from '../classes/user';
 import { OtherUsers } from 'src/app/classes/other-users';
 import { RegisterDoctor } from 'src/app/classes/register-doctor';
 import { RegisterPatient } from 'src/app/classes/register-patient';
+import { Prescription } from 'src/app/classes/prescription';
+import { MedicalXray } from 'src/app/classes/medical-xray';
+import { MedicalTest } from 'src/app/classes/medical-test';
+import { LoadTest } from 'src/app/classes/load-test';
+import { LoadXray } from 'src/app/classes/load-xray';
 //import { IPatient } from '../interfaces/patient';
 
 @Injectable({
@@ -25,6 +30,11 @@ export class AuthService {
   private _signuptURL = 'http://hostserver-001-site1.ctempurl.com/reg/tlab';
   // url of x-ray lab
   private _signupxURL = 'http://hostserver-001-site1.ctempurl.com/reg/xlab';
+  private _addprescURL = 'http://hostserver-001-site1.ctempurl.com/api/Prescriptions';
+  private _loadtestURL = 'http://hostserver-001-site1.ctempurl.com/add/tst';
+  private _loadxrayURL = 'http://hostserver-001-site1.ctempurl.com/add/xray';
+  private _addtestURL='';
+  private _addxrayURL='';
 
   constructor(private http: HttpClient) {}
   // function for get all patient tests
@@ -99,4 +109,31 @@ export class AuthService {
       `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
     );
   }
+
+
+  getDoctor(ssn: string) {
+    return this.http.get(
+      `http://hostserver-001-site1.ctempurl.com/get/doc/${ssn}`
+    );
+  }
+
+  addPrescription(pre:Prescription){
+    return this.http.post<any>(this._addprescURL, Prescription);
+  }
+
+  addTest(t:MedicalTest){
+    return this.http.post<any>(this._addtestURL, MedicalTest);
+  }
+
+  addXray(x:MedicalXray){
+    return this.http.post<any>(this._addxrayURL,MedicalXray);
+  }
+  loadTest(t:LoadTest){
+    return this.http.post<any>(this._loadtestURL, LoadTest);
+  }
+
+  loadXray(x:LoadXray){
+    return this.http.post<any>(this._loadxrayURL,LoadXray);
+  }
+
 }

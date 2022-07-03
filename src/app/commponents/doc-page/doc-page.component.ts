@@ -1,15 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { Prescription } from 'src/app/classes/prescription';
+import { MedicalXray } from 'src/app/classes/medical-xray';
+import { MedicalTest } from 'src/app/classes/medical-test';
 import { AuthService } from 'src/app/services/auth.service';
+
+
 @Component({
   selector: 'app-doc-page',
   templateUrl: './doc-page.component.html',
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
+
+  presc: Prescription = {
+  FormOfMedicine: '',
+  Strength: '',
+  MethodOfIntake: '',
+  Quantity: '',
+  When: '',
+  OtherInstructions: '',
+  StartOn: '',
+  Till: ''
+  };
+  test: MedicalTest = {
+  TestName: '',
+  OtherInstructions: ''
+  };
+  xray: MedicalXray = {
+  XrayName: '',
+  OtherInstructions: ''
+  };
+  
+
   constructor(private auth: AuthService) {}
   PatientSSn = '';
 
-  PHX: any[] = [];
+  PHX: any ={};
   meds: number[] = [1];
   ngOnInit(): void {}
   spanRequired = false; //false
@@ -104,6 +130,34 @@ export class DocPageComponent implements OnInit {
       (err) => {
         console.log(err);
       }
+    );
+  }
+
+
+  addPresc() {
+    this.auth.addPrescription(this.presc).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => console.log(err)
+    );
+  }
+
+  addTest() {
+    this.auth.addTest(this.test).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => console.log(err)
+    );
+  }
+
+  addxray() {
+    this.auth.addXray(this.xray).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => console.log(err)
     );
   }
 }
