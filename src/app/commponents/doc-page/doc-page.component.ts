@@ -4,38 +4,36 @@ import { MedicalXray } from 'src/app/classes/medical-xray';
 import { MedicalTest } from 'src/app/classes/medical-test';
 import { AuthService } from 'src/app/services/auth.service';
 
-
 @Component({
   selector: 'app-doc-page',
   templateUrl: './doc-page.component.html',
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-
   presc: Prescription = {
-  FormOfMedicine: '',
-  Strength: '',
-  MethodOfIntake: '',
-  Quantity: '',
-  When: '',
-  OtherInstructions: '',
-  StartOn: '',
-  Till: ''
+    FormOfMedicine: '',
+    Strength: '',
+    MethodOfIntake: '',
+    Quantity: '',
+    When: '',
+    OtherInstructions: '',
+    StartOn: '',
+    Till: '',
   };
   test: MedicalTest = {
-  TestName: '',
-  OtherInstructions: ''
+    TestName: '',
+    OtherInstructions: '',
   };
   xray: MedicalXray = {
-  XrayName: '',
-  OtherInstructions: ''
+    XrayName: '',
+    OtherInstructions: '',
   };
-  
 
   constructor(private auth: AuthService) {}
   PatientSSn = '';
 
-  PHX: any ={};
+  PHX: any = {};
+
   meds: number[] = [1];
   ngOnInit(): void {}
   spanRequired = false; //false
@@ -132,7 +130,6 @@ export class DocPageComponent implements OnInit {
       }
     );
   }
-
 
   addPresc() {
     this.auth.addPrescription(this.presc).subscribe(

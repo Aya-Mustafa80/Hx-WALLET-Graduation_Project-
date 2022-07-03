@@ -8,16 +8,21 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class PharmacyPageComponent implements OnInit {
   constructor(private auth: AuthService) {}
-  PatientSSn='';
-  PHX: any ={};
-  
+  PatientSSn = '';
+  PHX: any = {};
+  spanRequired = false;
   search = true; //true
   log = false; //false
   ngOnInit(): void {}
-  
+
   Search() {
+    if (this.PatientSSn != '') {
+      this.getPatientHX();
       this.search = false;
       this.log = true;
+    } else {
+      this.spanRequired = true;
+    }
   }
 
   getPatientHX() {

@@ -7,6 +7,7 @@
       id="SSN"
       [(ngModel)]="PatientSSn"
       required
+      name="PSSN"
     />
     <span *ngIf="spanRequired" id="required">requird!</span>
     <button id="srch" (click)="Start()">Search</button>
@@ -28,7 +29,7 @@
         <div class="Infos">
           <label class="userdatalabel">Name</label>
           <label class="userdataP">{{ PHX?.Name }}</label>
-          <!-- {{ PHX?.Name }} -->
+
           <label class="userdatalabel">Age</label>
           <label class="userdataP">{{ PHX?.Age }}</label>
 
@@ -93,13 +94,19 @@
       <div class="popupModal-body">
         <button id="closeBUt" (click)="closeForm()"></button>
         <div *ngIf="showPrscription">
-          <p style="margin-left: 20%" *ngFor="let pre of PHX?.prescription">{{ pre.ID }}  {{ pre.Date }}</p>
+          <p style="margin-left: 20%" *ngFor="let pre of PHX?.prescription">
+            {{ pre.ID }} {{ pre.Date }}
+          </p>
         </div>
         <div *ngIf="showtest">
-          <p style="margin-left: 20%" *ngFor="let prt of PHX?.Patirnt_Tests">{{ prt.ID }} {{ prt.Name }} {{ prt.Image }} {{ prt.IPSSN }}</p>
+          <p style="margin-left: 20%" *ngFor="let prt of PHX?.Patirnt_Tests">
+            {{ prt.ID }} {{ prt.Name }} {{ prt.Image }} {{ prt.IPSSN }}
+          </p>
         </div>
         <div *ngIf="showXRays">
-          <p style="margin-left: 20%" *ngFor="let prx of PHX?.Patient_Xrays">{{ prx.ID }} {{ prx.Name }} {{ prx.Image }} {{ prx.IPSSN }}</p>
+          <p style="margin-left: 20%" *ngFor="let prx of PHX?.Patient_Xrays">
+            {{ prx.ID }} {{ prx.Name }} {{ prx.Image }} {{ prx.IPSSN }}
+          </p>
         </div>
       </div>
     </div>
