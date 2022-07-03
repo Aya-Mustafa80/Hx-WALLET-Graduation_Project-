@@ -47,29 +47,178 @@
         <h2 id="viewHx">View Medical History</h2>
 
         <div class="card">
-          <h4>Prescriptions</h4>
+          <h4 id="Hcard">Prescriptions</h4>
           <button class="cardBUT" (click)="openForm1()">View</button>
         </div>
         <div class="card">
-          <h4>Medical Tests</h4>
+          <h4 id="Hcard">Medical Tests</h4>
           <button class="cardBUT" (click)="openForm2()">View</button>
         </div>
         <div class="card">
-          <h4>X-Ray Tests</h4>
+          <h4 id="Hcard">X-Ray Tests</h4>
           <button class="cardBUT" (click)="openForm3()">View</button>
         </div>
       </div>
       <div class="drgfrm" *ngIf="adddrug">
-        <app-med-form *ngFor="let m of meds"></app-med-form>
+        <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+        <form *ngFor="let m of meds">
+          <label for="">Medicine Name:</label>
+          <div class="row">
+            <div class="col-10">
+              <select name="" id="name-select" class="form-control">
+                <option value="">Please choose a medicine</option>
+                <option value="" *ngFor="let item of drugs">
+                  {{ item?.Name }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <label for="">Details of medicine:</label>
+          <br />
+          <div class="row">
+            <div class="col-2">
+              <label for="" class="labelFromin">Form of medicine:</label>
+            </div>
+            <div class="col-8">
+              <select name="" id="formof-select" class="form-control">
+                <option value="">Form of medicine</option>
+                <option value="1">Tablet</option>
+                <option value="2">Capsules</option>
+                <option value="3">Liquid</option>
+                <option value="4">injection</option>
+              </select>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-2">
+              <label for="" class="labelFromin">Strength:</label>
+            </div>
+            <div class="col-2 row">
+              <input type="text" class="col-6 form-control" placeholder="#" />
+              <select name="" id="strength-select" class="col-6 form-control">
+                <option value="">mg</option>
+                <option value="1">15</option>
+                <option value="2">50</option>
+                <option value="3">100</option>
+                <option value="4">500</option>
+                <option value="5">1000</option>
+              </select>
+            </div>
+            <div class="col-2">
+              <label for="" class="labelFromin">Method of Intake:</label>
+            </div>
+            <div class="col-4">
+              <select name="" id="mthod-select" class="form-control">
+                <option value="">Method of Intake</option>
+                <option value="1">Oral</option>
+                <option value="2">Injection</option>
+                <option value="3">Sublingual and buccal</option>
+                <option value="4">Otic</option>
+                <option value="5">Nasal</option>
+              </select>
+            </div>
+          </div>
+          <label for="">Dosage:</label>
+          <!-- /////////////////////////////////////////// -->
+          <div class="row" *ngFor="let do of dos">
+            <div class="col-2">
+              <label for="" class="labelFromin">Quantity:</label>
+            </div>
+            <div class="col-3 row">
+              <input type="text" class="col-5 form-control" placeholder="#" />
+              <select name="" id="strength-select" class="col-7 form-control">
+                <option value="">e.g daily</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="col-1">
+              <label id="when" for="" class="labelFromin">When:</label>
+            </div>
+            <div class="col-4">
+              <select name="" id="mthod-select" class="form-control">
+                <option value="">e.g Before Food</option>
+                <option value="1">Before Food</option>
+                <option value="2">after Food</option>
+              </select>
+            </div>
+          </div>
+          <!-- ////////////////////////////////////////////////////////////////////////////// -->
+          <span (click)="AddDosage()" id="addDosage"
+            ><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span
+          >
+          <!-- dosage itration -->
+          <label for="">Other Instructions:</label>
+          <div class="row">
+            <div class="col-10">
+              <textarea
+                id="other"
+                class="form-control"
+                rows="5"
+                placeholder="Note to patient e.g Medicine to be taken 30 min before meal."
+              ></textarea>
+            </div>
+          </div>
+          <label for="">Duration:</label>
+          <div class="row">
+            <div class="col-5 dat">
+              <label for="" class="col-3 labeldate">Start on:</label>
+              <input
+                class="col-7 form-control"
+                type="date"
+                id="start"
+                value="2022-01-1"
+              />
+            </div>
+            <div class="col-5 dat">
+              <label for="" class="col-2 labeldate">Till:</label>
+              <input
+                class="col-7 form-control"
+                type="date"
+                id="till"
+                value="2022-01-1"
+              />
+            </div>
+          </div>
+        </form>
+
+        <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <button type="button" (click)="AddMed()" class="medbt">
           Add Medicine
         </button>
-        <button type="button" class="medbt">submit</button>
+        <button type="button" (click)="addPresc()" class="medbt">submit</button>
         <br />
         <br />
       </div>
       <div class="testfrm" *ngIf="addtests">
-        <app-test-form></app-test-form>
+        <!-- ///////////////////////////////////////// -->
+        <form>
+          <label for="">Medical Test Name:</label>
+          <div class="row">
+            <div class="col-11">
+              <select name="" id="name-select" class="form-control">
+                <option value="">Please choose a Test</option>
+                <!-- <option value="" *ngFor="let item of tests">{{item?.}}</option> -->
+              </select>
+            </div>
+          </div>
+          <br />
+          <label for="">Other Instructions:</label>
+          <div class="row">
+            <div class="col-11">
+              <textarea
+                id="other"
+                class="form-control"
+                rows="5"
+                placeholder="Note to patient ."
+              ></textarea>
+            </div>
+          </div>
+        </form>
+        <!-- //////////////////////////////////// -->
         <br />
         <br />
         <button type="button" class="medbt">submit</button>
@@ -77,7 +226,31 @@
         <br />
       </div>
       <div class="Xraysfrm" *ngIf="addxrays">
-        <app-xray-form></app-xray-form>
+        <!-- /////////////////////////////////////////////////// -->
+        <form>
+          <label for="">Medical X-Rays Name:</label>
+          <div class="row">
+            <div class="col-11">
+              <select name="" id="name-select" class="form-control">
+                <option value="">Please choose a X-ray</option>
+                <!-- <option value="" *ngFor="let item of xrays">{{item?.}}</option> -->
+              </select>
+            </div>
+          </div>
+          <br />
+          <label for="">Other Instructions:</label>
+          <div class="row">
+            <div class="col-11">
+              <textarea
+                id="other"
+                class="form-control"
+                rows="5"
+                placeholder="Note to patient ."
+              ></textarea>
+            </div>
+          </div>
+        </form>
+        <!-- /////////////////////////////////////////// -->
         <br /><br />
         <button type="button" class="medbt">submit</button>
         <br /><br />
@@ -93,20 +266,53 @@
     <div class="popupModal-content">
       <div class="popupModal-body">
         <button id="closeBUt" (click)="closeForm()"></button>
-        <div *ngIf="showPrscription">
-          <p style="margin-left: 20%" *ngFor="let pre of PHX?.prescription">
-            {{ pre.ID }} {{ pre.Date }}
-          </p>
+        <div class="Continer" *ngIf="showPrscription">
+          <div class="Cont" *ngFor="let pre of PHX?.prescription">
+            <h4>Doc name:</h4>
+            <h5>Prescription Date:</h5>
+            <div class="med">
+              <!-- *ngFor="let med of PHX?.prescription." -->
+              <label class="userdatalabel_P">Medicine name:</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Form of Medicine</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Strength:</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Method of Intake:</label>
+              <label class="userdataP_P">Name</label>
+              <label class="userdatalabel_P">Dosage:</label>
+              <label class="userdataP_P" id="datap_P">
+                <!-- ngfor -->
+                <p>dose1</p>
+                <p>dose1</p>
+                <p>dose1</p>
+              </label>
+              <label class="userdatalabel_P">Other instractions:</label>
+              <label class="userdataP_P" id="datap_P">Name</label>
+            </div>
+          </div>
         </div>
-        <div *ngIf="showtest">
-          <p style="margin-left: 20%" *ngFor="let prt of PHX?.Patirnt_Tests">
-            {{ prt.ID }} {{ prt.Name }} {{ prt.Image }} {{ prt.IPSSN }}
-          </p>
+        <div class="Continer" *ngIf="showtest">
+          <div class="list_T">
+            <!-- *ngFor="let prt of PHX?.Patirnt_Tests" -->
+            <h5>Doc name:</h5>
+            <h6>Test Date:</h6>
+            <label class="userdatalabel_T">Test name:</label>
+            <label class="userdataP_T">name</label>
+            <label class="userdatalabel_T">Result</label>
+            <label class="userdataP_T" id="datap_T"> name</label>
+          </div>
         </div>
-        <div *ngIf="showXRays">
-          <p style="margin-left: 20%" *ngFor="let prx of PHX?.Patient_Xrays">
-            {{ prx.ID }} {{ prx.Name }} {{ prx.Image }} {{ prx.IPSSN }}
-          </p>
+        <div class="Continer" *ngIf="showXRays">
+          <div class="list_T">
+            <!-- *ngFor="let prx of PHX?.Patient_Xrays" -->
+            <h5>Doc name:</h5>
+            <h6>X-Ray Date:</h6>
+            <label class="userdatalabel_T">X-Ray name:</label>
+            <label class="userdataP_T">name</label>
+            <label class="userdatalabel_T">Result</label>
+            <label class="userdataP_T" id="datap_T"> name</label>
+          </div>
         </div>
       </div>
     </div>

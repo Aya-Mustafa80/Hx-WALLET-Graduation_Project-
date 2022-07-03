@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Prescription } from 'src/app/classes/prescription';
 import { MedicalXray } from 'src/app/classes/medical-xray';
 import { MedicalTest } from 'src/app/classes/medical-test';
@@ -10,16 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  presc: Prescription = {
-    FormOfMedicine: '',
-    Strength: '',
-    MethodOfIntake: '',
-    Quantity: '',
-    When: '',
-    OtherInstructions: '',
-    StartOn: '',
-    Till: '',
-  };
+  presc: any;
+
   test: MedicalTest = {
     TestName: '',
     OtherInstructions: '',
@@ -28,15 +20,19 @@ export class DocPageComponent implements OnInit {
     XrayName: '',
     OtherInstructions: '',
   };
-
-  constructor(private auth: AuthService) {}
+  dos: number[] = [1];
+  drugs: any = {};
+  tests: any = {};
+  xrays: any = {};
+  constructor(private auth: AuthService) {
+    this.getDrugs();
+    this.getTests();
+    this.getxrays();
+  }
   PatientSSn = '';
-
   PHX: any = {};
-  drugs=[];
-  tests=[];
-  xrays=[];
-  prescsWithDetails=[];
+
+  prescsWithDetails = [];
   meds: number[] = [1];
   ngOnInit(): void {}
   spanRequired = false; //false
@@ -121,20 +117,10 @@ export class DocPageComponent implements OnInit {
     this.showXRays = false;
     this.showtest = false;
   }
-  //return all info of specific user
-  getPatientHX() {
-    this.auth.getPatient(this.PatientSSn).subscribe(
-      (res: any) => {
-        this.PHX = res;
-        console.log(res);
-        console.log(this.PHX);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+  AddDosage() {
+    this.dos.push(1);
   }
-//this retrn all drugs in DB for dropdown list
+  //this retrn all drugs in DB for dropdown list
   getDrugs() {
     this.auth.getDrugs().subscribe(
       (res: any) => {
@@ -146,11 +132,12 @@ export class DocPageComponent implements OnInit {
       }
     );
   }
-//this retrn all tests in DB for dropdown list
-  getTests() {
-    this.auth.getAllTests().subscribe(
+
+  //return all info of specific user
+  getPatientHX() {
+    this.auth.getPatient(this.PatientSSn).subscribe(
       (res: any) => {
-        this.tests = res;
+        this.PHX = res;
         console.log(res);
       },
       (err) => {
@@ -158,18 +145,7 @@ export class DocPageComponent implements OnInit {
       }
     );
   }
-//this retrn all xrays in DB for dropdown list
-  getxrays() {
-    this.auth.getAllXrays().subscribe(
-      (res: any) => {
-        this.xrays = res;
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+
   //this return all prscs belongs to specefic user
   getPresscs() {
     this.auth.getAllPrescOfUser(this.PatientSSn).subscribe(
@@ -182,16 +158,40 @@ export class DocPageComponent implements OnInit {
       }
     );
   }
-
+  //this retrn all tests in DB for dropdown list
+  getTests() {
+    this.auth.getAllTests().subscribe(
+      (res: any) => {
+        this.tests = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+  //this retrn all xrays in DB for dropdown list
+  getxrays() {
+    this.auth.getAllXrays().subscribe(
+      (res: any) => {
+        this.xrays = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+  //add prescription to patient
   addPresc() {
-    this.auth.addPrescription(this.presc).subscribe(
+    /*    this.auth.addPrescription(this.presc).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => console.log(err)
-    );
+    ); */
+    console.log(this.presc);
   }
-
   addTest() {
     this.auth.addTest(this.test).subscribe(
       (res) => {
