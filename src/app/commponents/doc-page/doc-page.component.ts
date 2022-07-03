@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Prescription } from 'src/app/classes/prescription';
 import { MedicalXray } from 'src/app/classes/medical-xray';
 import { MedicalTest } from 'src/app/classes/medical-test';
@@ -10,16 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  presc: Prescription = {
-    FormOfMedicine: '',
-    Strength: '',
-    MethodOfIntake: '',
-    Quantity: '',
-    When: '',
-    OtherInstructions: '',
-    StartOn: '',
-    Till: '',
-  };
   test: MedicalTest = {
     TestName: '',
     OtherInstructions: '',
@@ -31,7 +21,6 @@ export class DocPageComponent implements OnInit {
 
   constructor(private auth: AuthService) {}
   PatientSSn = '';
-
   PHX: any = {};
 
   prescsWithDetails = [];
@@ -142,15 +131,6 @@ export class DocPageComponent implements OnInit {
       (err) => {
         console.log(err);
       }
-    );
-  }
-
-  addPresc() {
-    this.auth.addPrescription(this.presc).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => console.log(err)
     );
   }
 

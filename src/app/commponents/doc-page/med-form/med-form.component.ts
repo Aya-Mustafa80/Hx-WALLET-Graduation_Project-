@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { Prescription } from 'src/app/classes/prescription';
 @Component({
   selector: 'app-med-form',
   templateUrl: './med-form.component.html',
@@ -9,6 +10,16 @@ export class MedFormComponent implements OnInit {
   constructor(private auth: AuthService) {
     this.getDrugs();
   }
+  presc: Prescription = {
+    FormOfMedicine: '',
+    Strength: '',
+    MethodOfIntake: '',
+    Quantity: '',
+    When: '',
+    OtherInstructions: '',
+    StartOn: '',
+    Till: '',
+  };
   dos: number[] = [1];
   drugs: any = {};
   ngOnInit(): void {}
@@ -25,6 +36,15 @@ export class MedFormComponent implements OnInit {
       (err) => {
         console.log(err);
       }
+    );
+  }
+  //add prescription to patient
+  addPresc() {
+    this.auth.addPrescription(this.presc).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => console.log(err)
     );
   }
 }
