@@ -27,19 +27,19 @@
         <img id="user" src="/assets/pics/UserPatient.png" alt="" />
         <div class="Infos">
           <label class="userdatalabel">Name</label>
-          <label class="userdataP">name</label>
+          <label class="userdataP">{{ PHX?.Name }}</label>
           <!-- {{ PHX?.Name }} -->
           <label class="userdatalabel">Age</label>
-          <label class="userdataP">age</label>
+          <label class="userdataP">{{ PHX?.Age }}</label>
 
           <label class="userdatalabel">Address</label>
-          <label class="userdataP">address</label>
+          <label class="userdataP">{{ PHX?.Address }}</label>
 
           <label class="userdatalabel">Email</label>
-          <label class="userdataP">email</label>
+          <label class="userdataP">{{ PHX?.Email }}</label>
 
           <label class="userdatalabel">Phone</label>
-          <label class="userdataP">phone</label>
+          <label class="userdataP">{{ PHX?.Phone }}</label>
         </div>
       </div>
       <div class="divshow" *ngIf="show">
@@ -93,13 +93,13 @@
       <div class="popupModal-body">
         <button id="closeBUt" (click)="closeForm()"></button>
         <div *ngIf="showPrscription">
-          <p style="margin-left: 20%">Data Here,prescriptions</p>
+          <p style="margin-left: 20%" *ngFor="let pre of PHX?.prescription">{{ pre.ID }}  {{ pre.Date }}</p>
         </div>
         <div *ngIf="showtest">
-          <p style="margin-left: 20%">Data Here,Tests</p>
+          <p style="margin-left: 20%" *ngFor="let prt of PHX?.Patirnt_Tests">{{ prt.ID }} {{ prt.Name }} {{ prt.Image }} {{ prt.IPSSN }}</p>
         </div>
         <div *ngIf="showXRays">
-          <p style="margin-left: 20%">Data Here,xrays</p>
+          <p style="margin-left: 20%" *ngFor="let prx of PHX?.Patient_Xrays">{{ prx.ID }} {{ prx.Name }} {{ prx.Image }} {{ prx.IPSSN }}</p>
         </div>
       </div>
     </div>
