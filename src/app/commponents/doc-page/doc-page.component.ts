@@ -9,7 +9,7 @@ export class DocPageComponent implements OnInit {
   constructor(private auth: AuthService) {}
   PatientSSn = '';
 
-  PHX: any[] = [];
+  PHX: any = {};
   meds: number[] = [1];
   ngOnInit(): void {}
   spanRequired = false; //false
