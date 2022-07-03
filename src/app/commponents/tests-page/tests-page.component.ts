@@ -14,6 +14,8 @@ export class TestsPageComponent implements OnInit {
   PHX: any = {};
   spanRequired = false;
   Tests = [1, 2, 3, 4];
+  tests=[];
+
   test: LoadTest = {
     TestName: '',
     TestImage: '',
@@ -50,4 +52,18 @@ export class TestsPageComponent implements OnInit {
       (err) => console.log(err)
     );
   }
+
+//return all tests from DB for dropdown list
+  getTests() {
+    this.auth.getAllTests().subscribe(
+      (res: any) => {
+        this.tests = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
 }

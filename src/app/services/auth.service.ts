@@ -98,12 +98,6 @@ export class AuthService {
       `http://hostserver-001-site1.ctempurl.com/presp/${ssn}`
     );
   } */
-  getPrescriptionByID(id: string) {
-    return this.http.get(
-      `http://hostserver-001-site1.ctempurl.com/api/Prescriptions/${id}`
-    );
-  }
-
   getPatient(ssn: string) {
     return this.http.get(
       `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
@@ -117,21 +111,80 @@ export class AuthService {
     );
   }
 
+  getPrescriptionByID(id: string) {
+    return this.http.get(
+       //this return only ID and date from DB ..replace it whith the link that return all details ofspecific presc in patient page
+      `http://hostserver-001-site1.ctempurl.com/api/Prescriptions/${id}`
+    );
+  }
+  //return all details ofspecific test in patient page
+  getTestByID(id: string) {
+    return this.http.get( 
+      ``
+    );
+  }
+//return all details ofspecific xray in patient page
+  getXrayByID(id: string) {
+    return this.http.get(
+      ``
+    );
+  }
+
+//get all prescriptions of specific user with it's details
+getAllPrescOfUser(ssn: string){
+  return this.http.get(
+    ``
+  );
+}
+//get all tests of specific user with it's details
+getAllTestscOfUser(ssn: string){
+  return this.http.get(
+    ``
+  );
+}
+//get all xrays of specific user with it's details
+getAllXraysOfUser(ssn: string){
+  return this.http.get(
+    ``
+  );
+}
+  
+//get all drugs in DB
+getDrugs(){
+  return this.http.get(
+    `http://hostserver-001-site1.ctempurl.com/api/drugs`
+  );
+}
+//get all tests stored in DB
+getAllTests(){
+  return this.http.get(
+    ``
+  );
+}
+//get all xrays stored in DB
+getAllXrays(){
+  return this.http.get(
+    ``
+  );
+}
+
+// add presc in doc_page
   addPrescription(pre:Prescription){
     return this.http.post<any>(this._addprescURL, Prescription);
   }
-
+// add test in doc_page
   addTest(t:MedicalTest){
     return this.http.post<any>(this._addtestURL, MedicalTest);
   }
-
+// add xray in doc_page
   addXray(x:MedicalXray){
     return this.http.post<any>(this._addxrayURL,MedicalXray);
   }
+  //load test with image in test lab_page
   loadTest(t:LoadTest){
     return this.http.post<any>(this._loadtestURL, LoadTest);
   }
-
+//load xray with image in xray lab_page
   loadXray(x:LoadXray){
     return this.http.post<any>(this._loadxrayURL,LoadXray);
   }

@@ -11,58 +11,15 @@ export class PatientPageComponent implements OnInit {
     /* this.getAllPres(); */
   }
   Prescription: any[] = [];
-  MTeats = [
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-  ];
-  MXRays = [
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-    { Name: '', Date: '', Result: '', LabName: '', LabAdress: '' },
-  ];
+  MTeats = [];
+  MXRays = [];
+  clickedPresc={};
+  clickedTest={};
+  clickedXray={};
   public objP: any = {};
   public Drugss: any = {};
-  ShowPresc(item: any) {
-    console.log(item);
-    this.auth.getPrescriptionByID(item.ID).subscribe(
-      (res) => {
-        console.log(res);
-        this.Drugss = res;
-      },
-      (err) => {}
-    );
-  }
+  
   public objT: any = {};
-  ShowTest(ell: object) {
-    this.objT = ell;
-  }
-  public objXR: any = {};
-  ShowXRay(ele: object) {
-    this.objXR = ele;
-  }
   /*//////////////////////////////////////////////////////// */
   ngOnInit(): void {}
   Name = '';
@@ -204,8 +161,9 @@ export class PatientPageComponent implements OnInit {
       this.flag2 = false;
     }
   }
-  /*   getAllPres() {
-    this.auth.getPatientPrescription().subscribe(
+  //all prescriptions of the user 
+  /* getAllPres() {
+    this.auth.getAllPrescOfUser(//here the ssn that return from token when yousef make it ).subscribe(
       (res: any) => {
         this.Prescription = res;
         console.log(res);
@@ -215,4 +173,64 @@ export class PatientPageComponent implements OnInit {
       }
     );
   } */
+
+  //all tests of the user 
+  /* getAllTests() {
+    this.auth.getAllTestscOfUser(//here the ssn that return from token when yousef make it ).subscribe(
+      (res: any) => {
+        this.MTeats = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  } */
+
+  //all xrays of the user 
+ /*  getAllPres() {
+    this.auth.getAllXraysOfUser(//here the ssn that return from token when yousef make it ).subscribe(
+      (res: any) => {
+        this.MXRays = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  } */
+
+//this show clicked prescription
+  ShowPresc(item: any) {
+    console.log(item);
+    this.auth.getPrescriptionByID(item.ID).subscribe(
+      (res) => {
+        console.log(res);
+        this.clickedPresc = res;
+      },
+      (err) => {}
+    );
+  }
+//this show clicked test
+  ShowTest(item: any) {
+    console.log(item);
+    this.auth.getTestByID(item.ID).subscribe(
+      (res) => {
+        console.log(res);
+        this.clickedTest = res;
+      },
+      (err) => {}
+    );
+  }
+//this show clicked xray
+  ShowXRay(item: any) {
+    console.log(item);
+    this.auth.getXrayByID(item.ID).subscribe(
+      (res) => {
+        console.log(res);
+        this.clickedXray = res;
+      },
+      (err) => {}
+    );
+  }
 }
