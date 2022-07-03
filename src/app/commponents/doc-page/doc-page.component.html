@@ -20,15 +20,15 @@
 
         <div class="card">
           <h4>Prescriptions</h4>
-          <button class="cardBUT" (click)="openForm()">View</button>
+          <button class="cardBUT" (click)="openForm1()">View</button>
         </div>
         <div class="card">
           <h4>Medical Tests</h4>
-          <button class="cardBUT" (click)="openForm()">View</button>
+          <button class="cardBUT" (click)="openForm2()">View</button>
         </div>
         <div class="card">
           <h4>X-Ray Tests</h4>
-          <button class="cardBUT" (click)="openForm()">View</button>
+          <button class="cardBUT" (click)="openForm3()">View</button>
         </div>
       </div>
       <div class="drgfrm" *ngIf="adddrug">
@@ -64,9 +64,16 @@
   <div class="popupModal-dialog">
     <div class="popupModal-content">
       <div class="popupModal-body">
-        <p style="margin-left: 20px">showModal</p>
-
-        <button (click)="closeForm()">Hide modal</button>
+        <button id="closeBUt" (click)="closeForm()"></button>
+        <div *ngIf="showPrscription">
+          <p style="margin-left: 20%">Data Here,prescriptions</p>
+        </div>
+        <div *ngIf="showtest">
+          <p style="margin-left: 20%">Data Here,Tests</p>
+        </div>
+        <div *ngIf="showXRays">
+          <p style="margin-left: 20%">Data Here,xrays</p>
+        </div>
       </div>
     </div>
   </div>

@@ -18,6 +18,11 @@ export class DocPageComponent implements OnInit {
   adddrug = false; //true
   addtests = false; //false
   addxrays = false; //false
+  /* ///////// */
+  showPrscription = false;
+  showtest = false;
+  showXRays = false;
+
   Start() {
     this.search = false;
     this.DO = true;
@@ -58,19 +63,22 @@ export class DocPageComponent implements OnInit {
   AddMed() {
     this.meds.push(1);
   }
-  openForm() {
+  openForm1() {
     this.popup = true;
-    /*  var p = document.getElementById('displayPage');
-    p?.setAttribute('class', 'form-popupedit');
-    var p1 = document.getElementById('bod');
-    p1?.setAttribute('class', 'bodBac '); */
+    this.showPrscription = true;
   }
-
+  openForm2() {
+    this.popup = true;
+    this.showtest = true;
+  }
+  openForm3() {
+    this.popup = true;
+    this.showXRays = true;
+  }
   closeForm() {
     this.popup = false;
-    var p = document.getElementById('displayPage');
-    p?.setAttribute('class', 'form-popup');
-    var p1 = document.getElementById('bod');
-    p1?.setAttribute('class', '');
+    this.showPrscription = false;
+    this.showXRays = false;
+    this.showtest = false;
   }
 }

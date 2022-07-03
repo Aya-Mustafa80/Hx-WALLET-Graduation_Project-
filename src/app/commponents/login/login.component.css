@@ -89,6 +89,7 @@ form {
   margin-left: 20%;
   border-radius: 15px;
   background-color: #5c959d;
+  border: none;
   color: white;
   font-size: 25px;
 }
@@ -98,3 +99,39 @@ button:active {
   box-shadow: 0 2px #5c959d;
   transform: translateY(1px);
 }
+
+/* ////////////////////////popUp////////////////////// */
+/* #Hsuccess {
+  color: #5c959d;
+  font-family: "Lobster", cursive;
+  font-family: "Shalimar", cursive;
+  font-family: "Titillium Web", sans-serif;
+  margin: 0;
+}
+.popupModal-dialog {
+  position: absolute;
+  width: 10%;
+  left: 50%;
+  top: 30%;
+  z-index: 1041;
+  filter: drop-shadow(0 4px 4px rgba(0.25, 0.25, 0.25, 0.25));
+}
+.popupModal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: none;
+  height: 70px;
+}
+
+.popupModal-body {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+ */

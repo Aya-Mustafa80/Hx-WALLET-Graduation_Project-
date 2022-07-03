@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  /*  successpopUP = false; */
   loginUSerData: User = {
     userName: '',
     password: undefined,
@@ -24,6 +25,12 @@ export class LoginComponent implements OnInit {
   body = new URLSearchParams();
   ngOnInit(): void {}
   onSubmit() {}
+  /*   loginPopUP() {
+    this.successpopUP = true;
+    var myTimeOut = setTimeout(() => {
+      this.successpopUP = false;
+    }, 1500);
+  } */
   loginuser() {
     this.body.set('userName', this.loginUSerData.userName);
     this.body.set('password', this.loginUSerData.password);
