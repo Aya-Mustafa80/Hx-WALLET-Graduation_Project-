@@ -39,7 +39,7 @@
               <input
                 type="text"
                 placeholder="Type Your ID"
-                [(ngModel)]="patientuser.id"
+                [(ngModel)]="patientuser.ssn"
                 name="pid"
                 required
               /><br /><br />
@@ -114,7 +114,7 @@
               <input
                 type="text"
                 placeholder="Type Your ID"
-                [(ngModel)]="doctoruser.id"
+                [(ngModel)]="doctoruser.ssn"
                 name="d-id"
                 required
               /><br /><br />
@@ -134,7 +134,7 @@
               <input
                 type="text"
                 placeholder="Type Your Specialty"
-                [(ngModel)]="doctoruser.specialty"
+                [(ngModel)]="doctoruser.specialization"
                 name="d-speciality"
                 required
               /><br /><br />
@@ -147,15 +147,7 @@
                 name="d-email"
                 required
               /><br /><br />
-              <label>Adress:</label>
 
-              <input
-                type="text"
-                placeholder="Type Your Adress"
-                [(ngModel)]="doctoruser.address"
-                name="d-address"
-                required
-              /><br /><br />
               <label> Create Password:</label>
 
               <input
@@ -196,7 +188,7 @@
               <input
                 type="text"
                 placeholder="Type Pharmacy ID"
-                [(ngModel)]="otheruser.id"
+                [(ngModel)]="otheruser.ssn"
                 name="ph-id"
                 required
               /><br /><br />
@@ -269,7 +261,7 @@
               <input
                 type="text"
                 placeholder="Type Lab ID"
-                [(ngModel)]="otheruser.id"
+                [(ngModel)]="otheruser.ssn"
                 name="t-id"
                 required
               /><br /><br />
@@ -343,7 +335,7 @@
               <input
                 type="text"
                 placeholder="Type Lab ID"
-                [(ngModel)]="otheruser.id"
+                [(ngModel)]="otheruser.ssn"
                 name="x-id"
                 required
               /><br /><br />

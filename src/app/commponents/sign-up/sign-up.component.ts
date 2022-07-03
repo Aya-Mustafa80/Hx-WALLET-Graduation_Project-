@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   patientuser: RegisterPatient = {
     name: '',
-    id: '',
+    ssn: '',
     phone: '',
     address: '',
     email: '',
@@ -23,23 +23,23 @@ export class SignUpComponent implements OnInit {
   };
   doctoruser: RegisterDoctor = {
     name: '',
-    id: undefined,
+    ssn: '',
     phone: '',
-    specialty: undefined,
+    specialization: '',
     email: '',
-    address: undefined,
     password: '',
-    confirmpassword: undefined,
+    confirmpassword: '',
   };
   otheruser: OtherUsers = {
     name: '',
-    id: undefined,
+    ssn: '',
     phone: '',
     email: undefined,
     address: '',
-    password: undefined,
+    password: '',
     confirmpassword: '',
   };
+  http: any;
 
   constructor(private info: AuthService, private _router: Router) {}
 
@@ -127,6 +127,7 @@ export class SignUpComponent implements OnInit {
       }, 1500);
     }
   }
+
   signuppatient() {
     //console.log(this.patientuser);
     this.info.signuppatient(this.patientuser).subscribe(
@@ -143,6 +144,7 @@ export class SignUpComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        this._router.navigate(['/Doc_page']);
       },
       (err) => console.log(err)
     );
@@ -152,6 +154,7 @@ export class SignUpComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        this._router.navigate(['/Pharmacy_page']);
       },
       (err) => console.log(err)
     );
@@ -161,6 +164,7 @@ export class SignUpComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        this._router.navigate(['/Tests_page']);
       },
       (err) => console.log(err)
     );
@@ -170,6 +174,7 @@ export class SignUpComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        this._router.navigate(['/XRays_page']);
       },
       (err) => console.log(err)
     );

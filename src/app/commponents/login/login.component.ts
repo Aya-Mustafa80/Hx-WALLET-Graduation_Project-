@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { User } from 'src/app/classes/user';
+import { User, UserLog } from 'src/app/classes/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   /*  successpopUP = false; */
+  UserLOg: UserLog = {
+    userName: '',
+    password: '',
+  };
   loginUSerData: User = {
     userName: '',
     password: undefined,
@@ -35,11 +39,19 @@ export class LoginComponent implements OnInit {
     this.body.set('userName', this.loginUSerData.userName);
     this.body.set('password', this.loginUSerData.password);
     this.body.set('grant_type', 'password');
-
+    /* local storage */
+    /* this.UserLOg.userName = this.loginUSerData.userName;
+    this.UserLOg.password = this.loginUSerData.password;
+    localStorage.setItem('myObject', JSON.stringify(this.UserLOg));
+    console.log(localStorage.getItem('myObject')); */
+    /*  */
     this.info.loginuser(this.body).subscribe(
       (res) => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        // if(res.userType == 'patient'){
+        //   this._router.navigate(['/Patient_page']);
+        // }
         this._router.navigate(['/Patient_page']);
       },
       (err) => console.log(err)

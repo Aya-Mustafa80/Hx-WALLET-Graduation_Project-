@@ -1,20 +1,47 @@
 <div class="container Doc_page">
   <div class="col-8" id="Check" *ngIf="search">
     <h2>Patient SSN:</h2>
-    <input type="text" class="form-control" id="SSN" />
+    <input
+      type="text"
+      class="form-control"
+      id="SSN"
+      [(ngModel)]="PatientSSn"
+      required
+    />
+    <span *ngIf="spanRequired" id="required">requird!</span>
     <button id="srch" (click)="Start()">Search</button>
   </div>
 
   <div class="row" id="select" *ngIf="select">
     <div class="col-3 list">
       <h2>Actions</h2>
-      <button id="button1" (click)="FuncShow()">Show Hx</button>
+      <button id="button1" (click)="PInfo()">show Patient Info</button>
+      <button (click)="FuncShow()">Show Hx</button>
       <button (click)="Drug()">Add Prescription</button>
       <button (click)="Tests()">Add Medical Test</button>
       <button (click)="XRays()">Add X-Ray Teat</button>
     </div>
 
     <div class="col-9 forms">
+      <div class="divInfo" *ngIf="Pinfo">
+        <img id="user" src="/assets/pics/UserPatient.png" alt="" />
+        <div class="Infos">
+          <label class="userdatalabel">Name</label>
+          <label class="userdataP">name</label>
+          <!-- {{ PHX?.Name }} -->
+          <label class="userdatalabel">Age</label>
+          <label class="userdataP">age</label>
+
+          <label class="userdatalabel">Address</label>
+          <label class="userdataP">address</label>
+
+          <label class="userdatalabel">Email</label>
+          <label class="userdataP">email</label>
+
+          <label class="userdatalabel">Phone</label>
+          <label class="userdataP">phone</label>
+        </div>
+      </div>
       <div class="divshow" *ngIf="show">
         <h2 id="viewHx">View Medical History</h2>
 
