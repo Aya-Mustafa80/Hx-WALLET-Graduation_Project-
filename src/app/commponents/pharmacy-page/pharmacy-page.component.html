@@ -35,14 +35,21 @@
             <label id="labssn">&nbsp; Enter Patient SSN:</label>
             <br />
             <br />
-            <input id="inputsrch" type="text" class="form-control" />
+            <input
+              id="inputsrch"
+              type="text"
+              class="form-control"
+              [(ngModel)]="PatientSSn"
+              required
+              name="PSSN"
+            /><span *ngIf="spanRequired" id="required">requird!</span>
             <button id="bt" (click)="Search()">Search</button>
           </form>
         </div>
       </div>
       <div class="testP col-11" *ngIf="log">
         <div class="pageCon">
-          <div class="col-6 lft">
+          <div class="col-4 lft">
             <label id="labelPharm"
               ><img id="phrtmIMG" src="/assets/pics/m.png" alt="" /> &nbsp;
               &nbsp;Pharmacy here for you
@@ -63,13 +70,33 @@
                 </div>
               </div>
               <div class="row list">
-                <!-- For_prescription_list -->
-                <div *ngFor="let pre of PHX?.prescription" >{{ pre }}</div>
+                <a *ngFor="let pre of PHX?.prescription" id="userdataP">
+                  <span id="SpanP">Prescription &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <span id="spanD"> {{ pre?.Date | date: "longDate" }}</span>
+                </a>
               </div>
             </div>
           </div>
-          <div class="col-6 rigt">
-            <!-- Detailed Prescription -->
+          <div class="col-8 rigt">
+            <h4>Doc name:</h4>
+            <h5>Prescription Date:</h5>
+            <div class="med">
+              <!-- *ngFor="let med of meds" -->
+              <label class="userdatalabel">Medicine name:</label>
+              <label class="userdataP">Name</label>
+              <label class="userdatalabel">Form of Medicine</label>
+              <label class="userdataP">Name</label>
+              <label class="userdatalabel">Strength:</label>
+              <label class="userdataP">Name</label>
+              <label class="userdatalabel">Method of Intake:</label>
+              <label class="userdataP">Name</label>
+              <label class="userdatalabel">Dosage:</label>
+              <label class="userdataP" id="datap">
+                <!-- ngfor -->
+              </label>
+              <label class="userdatalabel">Other instractions:</label>
+              <label class="userdataP" id="datap">Name</label>
+            </div>
           </div>
         </div>
       </div>

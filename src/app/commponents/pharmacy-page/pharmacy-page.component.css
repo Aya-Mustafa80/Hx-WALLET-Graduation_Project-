@@ -49,6 +49,8 @@
   height: 45px;
   width: 90%;
   margin-left: 5%;
+  padding-left: 2%;
+  font-size: large;
 }
 #bt {
   width: 40%;
@@ -93,6 +95,11 @@ button:active {
 .rigt {
   height: 100%;
   float: left;
+  border: 2px solid red;
+}
+.rigt {
+  overflow: auto;
+  overflow-x: hidden;
 }
 #labelPharm {
   margin-top: 3%;
@@ -145,6 +152,73 @@ button:active {
   margin-left: 5%;
   font-weight: bold;
 }
+h4,
+h5 {
+  color: #445161;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.med {
+  border: 2px solid red;
+  width: 80%;
+  height: 90%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.userdatalabel {
+  width: 30%;
+  float: left;
+  color: #6c757d;
+  border: none;
+  margin-top: 4%;
+}
+.userdataP {
+  border: 1px solid #6c757d;
+  background-color: #e9ecef;
+  width: 60%;
+  height: 7%;
+  color: #6c757d;
+  margin-left: 5%;
+  margin-top: 3%;
+  text-align: left;
+  padding-left: 1%;
+  padding-top: 1%;
+  font-weight: 200;
+}
+#datap {
+  height: 15%;
+}
+.list {
+  overflow: auto;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  width: 95%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 2.5%;
+}
+#userdataP {
+  border: 1px solid #6c757d;
+  background-color: #e9ecef;
+  width: 80%;
+  height: 12%;
+  color: #6c757d;
+  margin-left: 5%;
+  margin-top: 2%;
+  text-align: left;
+  padding-left: 1%;
+  padding-top: 3%;
+  font-weight: 200;
+  border-radius: 20px;
+}
+
+#spanD {
+  float: right;
+  padding-right: 2%;
+}
+#SpanP {
+  float: left;
+}
 /* background-color: #dddddd; */
 /* /////////////SEARCH BAR//////////////// */
 .wrapper {
@@ -176,20 +250,19 @@ button:active {
 .search:focus {
   border: 1px solid #009688;
 }
-.list {
-  /* edit */
-  background: rgba(255, 255, 255, 0.9);
-  width: 95%;
-  height: 80%;
-  margin-top: 5%;
-  margin-left: 2.5%;
-}
 
 /* ////////ZoomIN ZoomOut /////// */
 .zoom-in-zoom-out {
   animation: zoom-in-zoom-out 1s ease-out;
   animation-duration: 1;
   margin-top: 5%;
+}
+#required {
+  font-size: 25px;
+  color: red;
+  float: right;
+  margin-bottom: 8%;
+  font-weight: bold;
 }
 
 @keyframes zoom-in-zoom-out {
@@ -236,4 +309,29 @@ button:active {
   20% {
     transform: translateY(-20px);
   }
+}
+/* /////////////////////////////////////////////////SCROLL DESIGN ///////////////////////////////////////////////*/
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px #dae7e7;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5c959d;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #445161;
+}
+::-webkit-scrollbar-button {
+  height: 5px;
 }
