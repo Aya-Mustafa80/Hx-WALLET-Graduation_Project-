@@ -6,7 +6,6 @@ export class Prescription {
     public DrugsData: [
       {
         DrugName: any;
-        DrugId: any;
         when: any;
         Intake: any;
         Quantity: any;
@@ -16,5 +15,18 @@ export class Prescription {
         strength: any;
       }
     ]
+  ) {}
+}
+
+export class Drugsinfo {
+  constructor(
+    public DrugName: any,
+    public when: any,
+    public Intake: any,
+    public Quantity: any,
+    public DurationStart: any,
+    public DurationEnd: any,
+    public OtherInstructions: any,
+    public strength: any
   ) {}
 }

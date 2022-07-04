@@ -35,10 +35,11 @@ export class AuthService {
     'http://hostserver-001-site1.ctempurl.com/api/Prescriptions';
   private _loadtestURL = 'http://hostserver-001-site1.ctempurl.com/add/tst';
   private _loadxrayURL = 'http://hostserver-001-site1.ctempurl.com/add/xray';
-  private _addtestURL = ''; /* doc */
+  private _addtestURL =
+    'http://hostserver-001-site1.ctempurl.com/add/xray'; /* doc */
   private _addxrayURL = ''; /* doc */
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   // function for get all patient tests
   /* getAllpatients():Observable<IPatient[]>
  {
@@ -89,6 +90,12 @@ export class AuthService {
   loginuser(user: any) {
     return this.http.post<any>(this._loginURL, user);
   }
+  getTypeuser(email: any) {
+    return this.http.get<any>(
+      `http://hostserver-001-site1.ctempurl.com/api/getType?Email=${email}`,
+      email
+    );
+  }
   /*   getPatientHistory(ssn:string)
   {
     return this.http.get(
@@ -129,16 +136,22 @@ export class AuthService {
 
   //get all prescriptions of specific user with it's details
   getAllPrescOfUser(ssn: string) {
-    return this.http.get(``);
+    return this.http.get(
+      `http://hostserver-001-site1.ctempurl.com/prespDetails/${ssn}`
+    );
   }
-  //get all tests of specific user with it's details
+  /* //get all tests of specific user with it's details
   getAllTestscOfUser(ssn: string) {
-    return this.http.get(``);
+    return this.http.get(
+      `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
+    );
   }
   //get all xrays of specific user with it's details
   getAllXraysOfUser(ssn: string) {
-    return this.http.get(``);
-  }
+    return this.http.get(
+      `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
+    );
+  } */
 
   //get all drugs in DB
   getDrugs() {
@@ -158,19 +171,19 @@ export class AuthService {
     return this.http.post<any>(this._addprescURL, pre);
   }
   // add test in doc_page
-  addTest(t: MedicalTest) {
-    return this.http.post<any>(this._addtestURL, MedicalTest);
+  addTest(t: any) {
+    return this.http.post<any>(this._addtestURL, t);
   }
   // add xray in doc_page
   addXray(x: MedicalXray) {
-    return this.http.post<any>(this._addxrayURL, MedicalXray);
+    return this.http.post<any>(this._addxrayURL, x);
   }
   //load test with image in test lab_page
   loadTest(t: LoadTest) {
-    return this.http.post<any>(this._loadtestURL, LoadTest);
+    return this.http.post<any>(this._loadtestURL, t);
   }
   //load xray with image in xray lab_page
   loadXray(x: LoadXray) {
-    return this.http.post<any>(this._loadxrayURL, LoadXray);
+    return this.http.post<any>(this._loadxrayURL, x);
   }
 }
