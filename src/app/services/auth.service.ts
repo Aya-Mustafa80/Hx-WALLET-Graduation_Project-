@@ -36,8 +36,8 @@ export class AuthService {
   private _loadtestURL = 'http://hostserver-001-site1.ctempurl.com/add/tst';
   private _loadxrayURL = 'http://hostserver-001-site1.ctempurl.com/add/xray';
   private _addtestURL =
-    'http://hostserver-001-site1.ctempurl.com/add/xray'; /* doc */
-  private _addxrayURL = ''; /* doc */
+    'http://hostserver-001-site1.ctempurl.com/add/tst'; /* doc */
+  private _addxrayURL = 'http://hostserver-001-site1.ctempurl.com/add/xray'; /* doc */
 
   constructor(private http: HttpClient) {}
   // function for get all patient tests
@@ -140,7 +140,7 @@ export class AuthService {
       `http://hostserver-001-site1.ctempurl.com/prespDetails/${ssn}`
     );
   }
-  /* //get all tests of specific user with it's details
+  //get all tests of specific user with it's details
   getAllTestscOfUser(ssn: string) {
     return this.http.get(
       `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
@@ -151,7 +151,7 @@ export class AuthService {
     return this.http.get(
       `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
     );
-  } */
+  }
 
   //get all drugs in DB
   getDrugs() {
@@ -159,11 +159,11 @@ export class AuthService {
   }
   //get all tests stored in DB
   getAllTests() {
-    return this.http.get(``);
+    return this.http.get(`http://hostserver-001-site1.ctempurl.com/api/MedicalTests`);
   }
   //get all xrays stored in DB
   getAllXrays() {
-    return this.http.get(``);
+    return this.http.get(`http://hostserver-001-site1.ctempurl.com/api/XRays`);
   }
 
   // add presc in doc_page

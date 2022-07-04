@@ -20,6 +20,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
+  
+  PatientSSn = '';
   /* drugs_: Drugs[] = [
     {
       DrugName: '',
@@ -50,11 +52,11 @@ export class DocPageComponent implements OnInit {
     ],
   };
   test: MedicalTest = {
-    pssn: '',
+    pssn: this.PatientSSn,
     name: '',
   };
   xray: MedicalXray = {
-    pssn: '',
+    pssn: this.PatientSSn,
     name: '',
   };
   dos: number[] = [1];
@@ -69,7 +71,6 @@ export class DocPageComponent implements OnInit {
   temp = '';
   u = '';
 
-  PatientSSn = '';
   PHX: any = {};
 
   prescsWithDetails = [];
@@ -256,6 +257,8 @@ export class DocPageComponent implements OnInit {
     );
   }
   addTest() {
+    console.log(this.PatientSSn)
+    console.log(this.test.name)
     this.auth.addTest(this.test).subscribe(
       (res) => {
         console.log(res);
