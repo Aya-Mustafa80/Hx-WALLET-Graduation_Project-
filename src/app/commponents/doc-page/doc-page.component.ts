@@ -4,7 +4,7 @@ import { MedicalXray } from 'src/app/classes/medical-xray';
 import { MedicalTest } from 'src/app/classes/medical-test';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-/* export class Drugs {
+export class Drugs {
   public DrugName: string;
   public when: string;
   public Intake: string;
@@ -13,14 +13,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   public DuarationEnd: string;
   public OtherInstructions: string;
   public Strength: string;
-} */
+}
 @Component({
   selector: 'app-doc-page',
   templateUrl: './doc-page.component.html',
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  
+
   PatientSSn = '';
   /* drugs_: Drugs[] = [
     {
@@ -34,7 +34,7 @@ export class DocPageComponent implements OnInit {
       Strength: '',
     },
   ]; */
-  presc: Prescription = {
+  presc: any = {
     patientSSN: '',
     doctorSSN: '',
     date: '',
@@ -55,13 +55,13 @@ export class DocPageComponent implements OnInit {
     pssn: this.PatientSSn,
     name: '',
   };
-  xray: MedicalXray = {
+  xray: any = {
     pssn: this.PatientSSn,
     name: '',
   };
   dos: number[] = [1];
   drugs: any = {};
-  tests: any = {};
+  tests: any[] = [];
   xrays: any = {};
   constructor(private auth: AuthService, private fb: FormBuilder) {
     this.getDrugs();
@@ -256,9 +256,10 @@ export class DocPageComponent implements OnInit {
       (err) => console.log(err)
     );
   }
+  testname = '';
   addTest() {
     console.log(this.PatientSSn)
-    console.log(this.test.name)
+    console.log(this.testname)
     this.auth.addTest(this.test).subscribe(
       (res) => {
         console.log(res);
