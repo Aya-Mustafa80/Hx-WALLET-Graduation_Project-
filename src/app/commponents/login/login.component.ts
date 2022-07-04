@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
     password: undefined,
     grant_type: 'password',
   };
+  U: any = {};
+  user = { SSN: '', Role: '', Name: '', pss: '' };
   frmRegister: FormGroup | undefined;
   constructor(
     private _fb: FormBuilder,
@@ -35,24 +37,47 @@ export class LoginComponent implements OnInit {
       this.successpopUP = false;
     }, 1500);
   } */
+  getTypeuser() {
+    this.info.getTypeuser(this.loginUSerData.userName).subscribe(
+      (res) => {
+        console.log(res);
+        this.U = res;
+        this.user.Name = this.U.Name;
+        this.user.Role = this.U.Role;
+        this.user.SSN = this.U.SSN;
+        localStorage.setItem('currentUser', JSON.stringify(this.user));
+      },
+      (err) => console.log(err)
+    );
+    var retrievedObject = localStorage.getItem('currentUser');
+    console.log(retrievedObject);
+
+    this.loginuser();
+  }
+
   loginuser() {
     this.body.set('userName', this.loginUSerData.userName);
     this.body.set('password', this.loginUSerData.password);
     this.body.set('grant_type', 'password');
-    /* local storage */
-    /* this.UserLOg.userName = this.loginUSerData.userName;
-    this.UserLOg.password = this.loginUSerData.password;
-    localStorage.setItem('myObject', JSON.stringify(this.UserLOg));
-    console.log(localStorage.getItem('myObject')); */
-    /*  */
     this.info.loginuser(this.body).subscribe(
       (res) => {
-        console.log(res);
         localStorage.setItem('token', res.token);
-        // if(res.userType == 'patient'){
-        //   this._router.navigate(['/Patient_page']);
-        // }
-        this._router.navigate(['/Patient_page']);
+        console.log(res);
+
+        /*  var temp = JSON.parse(localStorage.getItem('currentUser') || '{}');
+        var u = JSON.parse(temp);
+         */
+        if (this.U.Role == 'patient') {
+          this._router.navigate(['/Patient_page']);
+        } else if (this.U.Role == 'doctor') {
+          this._router.navigate(['/Doc_page']);
+        } else if (this.U.Role == 'pharmacy') {
+          this._router.navigate(['/Pharmacy_page']);
+        } else if (this.U.Role == 'testlab') {
+          this._router.navigate(['/Tests_page']);
+        } else if (this.U.Role == 'xraylab') {
+          this._router.navigate(['/XRays_page']);
+        }
       },
       (err) => console.log(err)
     );

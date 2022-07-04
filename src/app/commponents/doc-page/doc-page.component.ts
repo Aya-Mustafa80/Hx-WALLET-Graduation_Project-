@@ -4,42 +4,58 @@ import { MedicalXray } from 'src/app/classes/medical-xray';
 import { MedicalTest } from 'src/app/classes/medical-test';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-export class Drugs {
-  public DrugID: string;
+/* export class Drugs {
+  public DrugName: string;
   public when: string;
   public Intake: string;
   public Quantity: string;
   public DuarationStart: string;
   public DuarationEnd: string;
-  public OtherInstruction: string;
+  public OtherInstructions: string;
   public Strength: string;
-}
+} */
 @Component({
   selector: 'app-doc-page',
   templateUrl: './doc-page.component.html',
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  drugs_: Drugs[] = [
+  /* drugs_: Drugs[] = [
     {
-      DrugID: '',
+      DrugName: '',
       when: '',
       Intake: '',
       Quantity: '',
       DuarationStart: '',
       DuarationEnd: '',
-      OtherInstruction: '',
+      OtherInstructions: '',
       Strength: '',
     },
-  ];
-  presc: any;
+  ]; */
+  presc: Prescription = {
+    patientSSN: '',
+    doctorSSN: '',
+    date: '',
+    DrugsData: [
+      {
+        DrugName: '',
+        when: '',
+        Intake: '',
+        Quantity: '',
+        DurationStart: '',
+        DurationEnd: '',
+        OtherInstructions: '',
+        strength: '',
+      },
+    ],
+  };
   test: MedicalTest = {
-    TestName: '',
-    OtherInstructions: '',
+    pssn: '',
+    name: '',
   };
   xray: MedicalXray = {
-    XrayName: '',
-    OtherInstructions: '',
+    pssn: '',
+    name: '',
   };
   dos: number[] = [1];
   drugs: any = {};
@@ -50,6 +66,9 @@ export class DocPageComponent implements OnInit {
     this.getTests();
     this.getxrays();
   }
+  temp = '';
+  u = '';
+
   PatientSSn = '';
   PHX: any = {};
 
@@ -61,6 +80,7 @@ export class DocPageComponent implements OnInit {
       drugID: [''],
       date: new Date(),
       doctorSSN: '',
+      patientSSN: '',
     });
   }
   spanRequired = false; //false
@@ -145,18 +165,18 @@ export class DocPageComponent implements OnInit {
     this.showXRays = false;
     this.showtest = false;
   }
-  AddDosage() {
+  /*   AddDosage() {
     this.drugs_.push({
-      DrugID: this.prescription_form.value.drugID,
+      DrugName: '',
       when: '',
       Intake: '',
       Quantity: '',
       DuarationStart: '',
       DuarationEnd: '',
-      OtherInstruction: '',
+      OtherInstructions: '',
       Strength: '',
     });
-  }
+  } */
   //this retrn all drugs in DB for dropdown list
   getDrugs() {
     this.auth.getDrugs().subscribe(
@@ -176,6 +196,8 @@ export class DocPageComponent implements OnInit {
       (res: any) => {
         this.PHX = res;
         console.log(res);
+        console.log(res.Patient_Xrays);
+        console.log(res.Patirnt_Tests);
       },
       (err) => {
         console.log(err);
@@ -185,6 +207,7 @@ export class DocPageComponent implements OnInit {
 
   //this return all prscs belongs to specefic user
   getPresscs() {
+    this.openForm1();
     this.auth.getAllPrescOfUser(this.PatientSSn).subscribe(
       (res: any) => {
         this.prescsWithDetails = res;
@@ -221,10 +244,9 @@ export class DocPageComponent implements OnInit {
   }
   //add prescription to patient
   addPresc() {
-    let doctorssn = 'akjsdhkasdhk';
-    this.prescription_form.get('doctorSSN')?.setValue(doctorssn);
-    this.presc = this.prescription_form.value;
-    this.presc.DrugsData = this.drugs_;
+    this.presc.patientSSN = this.PatientSSn;
+    this.presc.doctorSSN = '100';
+    this.presc.date = '01/01/2022';
     console.log(this.presc);
     this.auth.addPrescription(this.presc).subscribe(
       (res) => {

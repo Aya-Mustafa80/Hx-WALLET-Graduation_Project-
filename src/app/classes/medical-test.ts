@@ -1,6 +1,3 @@
 export class MedicalTest {
-    constructor(
-        public TestName: any,
-        public OtherInstructions: string,
-      ) {}
+  constructor(public pssn: any, public name: any) {}
 }

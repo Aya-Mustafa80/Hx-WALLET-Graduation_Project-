@@ -1,6 +1,3 @@
 export class MedicalXray {
-    constructor(
-        public XrayName: any,
-        public OtherInstructions: string,
-      ) {}
+  constructor(public pssn: any, public name: any) {}
 }
