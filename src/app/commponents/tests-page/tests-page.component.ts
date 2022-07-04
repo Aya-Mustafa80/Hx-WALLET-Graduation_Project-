@@ -45,6 +45,7 @@ export class TestsPageComponent implements OnInit {
   }
 
   addTest() {
+    console.log(this.test.TestName)
     this.auth.loadTest(this.test).subscribe(
       (res) => {
         console.log(res);

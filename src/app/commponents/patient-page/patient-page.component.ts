@@ -163,7 +163,8 @@ export class PatientPageComponent implements OnInit {
   }
   //all prescriptions of the user 
   /* getAllPres() {
-    this.auth.getAllPrescOfUser(//here the ssn that return from token when yousef make it ).subscribe(
+    Pssn=localStorage.getItem("ssn");
+    this.auth.getAllPrescOfUser(Pssn).subscribe(
       (res: any) => {
         this.Prescription = res;
         console.log(res);
