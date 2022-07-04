@@ -65,7 +65,12 @@
           <label for="">Medicine Name:</label>
           <div class="row">
             <div class="col-10">
-              <select name="" id="name-select" class="form-control">
+              <select
+                name="drugname"
+                id="name-select"
+                class="form-control"
+                [(ngModel)]="presc.DrugsData.DrugName"
+              >
                 <option value="">Please choose a medicine</option>
                 <option value="" *ngFor="let item of drugs">
                   {{ item?.Name }}
@@ -80,7 +85,7 @@
               <label for="" class="labelFromin">Form of medicine:</label>
             </div>
             <div class="col-8">
-              <select name="" id="formof-select" class="form-control">
+              <select name="drugform" id="formof-select" class="form-control">
                 <option value="">Form of medicine</option>
                 <option value="1">Tablet</option>
                 <option value="2">Capsules</option>
@@ -96,7 +101,12 @@
             </div>
             <div class="col-2 row">
               <input type="text" class="col-6 form-control" placeholder="#" />
-              <select name="" id="strength-select" class="col-6 form-control">
+              <select
+                name="strength"
+                id="strength-select"
+                class="col-6 form-control"
+                [(ngModel)]="presc.DrugsData.strength"
+              >
                 <option value="">mg</option>
                 <option value="1">15</option>
                 <option value="2">50</option>
@@ -109,7 +119,12 @@
               <label for="" class="labelFromin">Method of Intake:</label>
             </div>
             <div class="col-4">
-              <select name="" id="mthod-select" class="form-control">
+              <select
+                name="intake"
+                id="mthod-select"
+                class="form-control"
+                [(ngModel)]="presc.DrugsData.Intake"
+              >
                 <option value="">Method of Intake</option>
                 <option value="1">Oral</option>
                 <option value="2">Injection</option>
@@ -127,7 +142,12 @@
             </div>
             <div class="col-3 row">
               <input type="text" class="col-5 form-control" placeholder="#" />
-              <select name="" id="strength-select" class="col-7 form-control">
+              <select
+                name="Quantity"
+                id="strength-select"
+                class="col-7 form-control"
+                [(ngModel)]="presc.DrugsData.Quantity"
+              >
                 <option value="">e.g daily</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -139,7 +159,12 @@
               <label id="when" for="" class="labelFromin">When:</label>
             </div>
             <div class="col-4">
-              <select name="" id="mthod-select" class="form-control">
+              <select
+                name="When"
+                id="mthod-select"
+                class="form-control"
+                [(ngModel)]="presc.DrugsData.when"
+              >
                 <option value="">e.g Before Food</option>
                 <option value="1">Before Food</option>
                 <option value="2">after Food</option>
@@ -155,10 +180,12 @@
           <div class="row">
             <div class="col-10">
               <textarea
+                name="otherin"
                 id="other"
                 class="form-control"
                 rows="5"
                 placeholder="Note to patient e.g Medicine to be taken 30 min before meal."
+                [(ngModel)]="presc.DrugsData.OtherInstructions"
               ></textarea>
             </div>
           </div>
@@ -167,19 +194,23 @@
             <div class="col-5 dat">
               <label for="" class="col-3 labeldate">Start on:</label>
               <input
+                name="starton"
                 class="col-7 form-control"
                 type="date"
                 id="start"
                 value="2022-01-1"
+                [(ngModel)]="presc.DrugsData.DurationStart"
               />
             </div>
             <div class="col-5 dat">
               <label for="" class="col-2 labeldate">Till:</label>
               <input
+                name="till"
                 class="col-7 form-control"
                 type="date"
                 id="till"
                 value="2022-01-1"
+                [(ngModel)]="presc.DrugsData.DurationEnd"
               />
             </div>
           </div>

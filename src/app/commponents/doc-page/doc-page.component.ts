@@ -10,8 +10,24 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  presc: any;
-
+  presc: any = {
+    patientSSN: '',
+    doctorSSN: '',
+    date: Date.now(),
+    DrugsData: [
+      {
+        DrugName: '',
+        DrugId: '',
+        when: '',
+        Intake: '',
+        Quantity: '',
+        DurationStart: '',
+        DurationEnd: '',
+        OtherInstructions: '',
+        strength: '',
+      },
+    ],
+  };
   test: MedicalTest = {
     TestName: '',
     OtherInstructions: '',
@@ -184,7 +200,7 @@ export class DocPageComponent implements OnInit {
   }
   //add prescription to patient
   addPresc() {
-    /*    this.auth.addPrescription(this.presc).subscribe(
+    /*  this.auth.addPrescription(this.presc).subscribe(
       (res) => {
         console.log(res);
       },
