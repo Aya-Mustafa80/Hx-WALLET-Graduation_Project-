@@ -38,7 +38,7 @@ export class AuthService {
   private _addtestURL = ''; /* doc */
   private _addxrayURL = ''; /* doc */
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   // function for get all patient tests
   /* getAllpatients():Observable<IPatient[]>
  {
@@ -154,8 +154,8 @@ export class AuthService {
   }
 
   // add presc in doc_page
-  addPrescription(pre: Prescription) {
-    return this.http.post<any>(this._addprescURL, Prescription);
+  addPrescription(pre: any) {
+    return this.http.post<any>(this._addprescURL, pre);
   }
   // add test in doc_page
   addTest(t: MedicalTest) {

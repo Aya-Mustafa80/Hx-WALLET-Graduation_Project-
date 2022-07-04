@@ -3,31 +3,36 @@ import { Prescription } from 'src/app/classes/prescription';
 import { MedicalXray } from 'src/app/classes/medical-xray';
 import { MedicalTest } from 'src/app/classes/medical-test';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
+export class Drugs {
+  public DrugID: string;
+  public when: string;
+  public Intake: string;
+  public Quantity: string;
+  public DuarationStart: string;
+  public DuarationEnd: string;
+  public OtherInstruction: string;
+  public Strength: string;
+}
 @Component({
   selector: 'app-doc-page',
   templateUrl: './doc-page.component.html',
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  presc: any = {
-    patientSSN: '',
-    doctorSSN: '',
-    date: Date.now(),
-    DrugsData: [
-      {
-        DrugName: '',
-        DrugId: '',
-        when: '',
-        Intake: '',
-        Quantity: '',
-        DurationStart: '',
-        DurationEnd: '',
-        OtherInstructions: '',
-        strength: '',
-      },
-    ],
-  };
+  drugs_: Drugs[] = [
+    {
+      DrugID: '',
+      when: '',
+      Intake: '',
+      Quantity: '',
+      DuarationStart: '',
+      DuarationEnd: '',
+      OtherInstruction: '',
+      Strength: '',
+    },
+  ];
+  presc: any;
   test: MedicalTest = {
     TestName: '',
     OtherInstructions: '',
@@ -40,7 +45,7 @@ export class DocPageComponent implements OnInit {
   drugs: any = {};
   tests: any = {};
   xrays: any = {};
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private fb: FormBuilder) {
     this.getDrugs();
     this.getTests();
     this.getxrays();
@@ -50,7 +55,14 @@ export class DocPageComponent implements OnInit {
 
   prescsWithDetails = [];
   meds: number[] = [1];
-  ngOnInit(): void {}
+  prescription_form: FormGroup;
+  ngOnInit(): void {
+    this.prescription_form = this.fb.group({
+      drugID: [''],
+      date: new Date(),
+      doctorSSN: '',
+    });
+  }
   spanRequired = false; //false
   popup = false; //false
   search = true; //true
@@ -134,14 +146,23 @@ export class DocPageComponent implements OnInit {
     this.showtest = false;
   }
   AddDosage() {
-    this.dos.push(1);
+    this.drugs_.push({
+      DrugID: this.prescription_form.value.drugID,
+      when: '',
+      Intake: '',
+      Quantity: '',
+      DuarationStart: '',
+      DuarationEnd: '',
+      OtherInstruction: '',
+      Strength: '',
+    });
   }
   //this retrn all drugs in DB for dropdown list
   getDrugs() {
     this.auth.getDrugs().subscribe(
       (res: any) => {
         this.drugs = res;
-        console.log(res);
+        console.log('drugs', this.drugs);
       },
       (err) => {
         console.log(err);
@@ -200,13 +221,17 @@ export class DocPageComponent implements OnInit {
   }
   //add prescription to patient
   addPresc() {
-    /*  this.auth.addPrescription(this.presc).subscribe(
+    let doctorssn = 'akjsdhkasdhk';
+    this.prescription_form.get('doctorSSN')?.setValue(doctorssn);
+    this.presc = this.prescription_form.value;
+    this.presc.DrugsData = this.drugs_;
+    console.log(this.presc);
+    this.auth.addPrescription(this.presc).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => console.log(err)
-    ); */
-    console.log(this.presc);
+    );
   }
   addTest() {
     this.auth.addTest(this.test).subscribe(

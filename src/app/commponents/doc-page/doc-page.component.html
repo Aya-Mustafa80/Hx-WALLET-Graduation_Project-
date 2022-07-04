@@ -61,18 +61,18 @@
       </div>
       <div class="drgfrm" *ngIf="adddrug">
         <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
-        <form *ngFor="let m of meds">
+        <form [formGroup]="prescription_form">
           <label for="">Medicine Name:</label>
           <div class="row">
             <div class="col-10">
               <select
-                name="drugname"
+                name=""
                 id="name-select"
+                formControlName="drugID"
                 class="form-control"
-                [(ngModel)]="presc.DrugsData.DrugName"
               >
                 <option value="">Please choose a medicine</option>
-                <option value="" *ngFor="let item of drugs">
+                <option [value]="item?.ID" *ngFor="let item of drugs">
                   {{ item?.Name }}
                 </option>
               </select>
@@ -85,7 +85,7 @@
               <label for="" class="labelFromin">Form of medicine:</label>
             </div>
             <div class="col-8">
-              <select name="drugform" id="formof-select" class="form-control">
+              <select name="" id="formof-select" class="form-control">
                 <option value="">Form of medicine</option>
                 <option value="1">Tablet</option>
                 <option value="2">Capsules</option>
@@ -99,14 +99,11 @@
             <div class="col-2">
               <label for="" class="labelFromin">Strength:</label>
             </div>
-            <div class="col-2 row">
+            <div class="col-md-2">
               <input type="text" class="col-6 form-control" placeholder="#" />
-              <select
-                name="strength"
-                id="strength-select"
-                class="col-6 form-control"
-                [(ngModel)]="presc.DrugsData.strength"
-              >
+            </div>
+            <div class="col-2">
+              <select name="" id="strength-select" class="col-6 form-control">
                 <option value="">mg</option>
                 <option value="1">15</option>
                 <option value="2">50</option>
@@ -119,12 +116,7 @@
               <label for="" class="labelFromin">Method of Intake:</label>
             </div>
             <div class="col-4">
-              <select
-                name="intake"
-                id="mthod-select"
-                class="form-control"
-                [(ngModel)]="presc.DrugsData.Intake"
-              >
+              <select name="" id="mthod-select" class="form-control">
                 <option value="">Method of Intake</option>
                 <option value="1">Oral</option>
                 <option value="2">Injection</option>
@@ -134,19 +126,29 @@
               </select>
             </div>
           </div>
-          <label for="">Dosage:</label>
-          <!-- /////////////////////////////////////////// -->
-          <div class="row" *ngFor="let do of dos">
+        </form>
+
+        <label for="">Dosage:</label>
+        <!-- /////////////////////////////////////////// -->
+        <div style="height: unset !important" *ngFor="let do of drugs_">
+          <div class="row">
             <div class="col-2">
               <label for="" class="labelFromin">Quantity:</label>
             </div>
-            <div class="col-3 row">
-              <input type="text" class="col-5 form-control" placeholder="#" />
+            <div class="col-6">
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="do.Strength"
+                placeholder="#"
+              />
+            </div>
+            <div class="col-md-4">
               <select
-                name="Quantity"
+                name=""
+                [(ngModel)]="do.Quantity"
                 id="strength-select"
                 class="col-7 form-control"
-                [(ngModel)]="presc.DrugsData.Quantity"
               >
                 <option value="">e.g daily</option>
                 <option value="1">1</option>
@@ -155,15 +157,18 @@
                 <option value="4">4</option>
               </select>
             </div>
-            <div class="col-1">
+          </div>
+
+          <div class="row" style="margin-top: 10px">
+            <div class="col-2">
               <label id="when" for="" class="labelFromin">When:</label>
             </div>
             <div class="col-4">
               <select
-                name="When"
+                name=""
+                [(ngModel)]="do.when"
                 id="mthod-select"
                 class="form-control"
-                [(ngModel)]="presc.DrugsData.when"
               >
                 <option value="">e.g Before Food</option>
                 <option value="1">Before Food</option>
@@ -171,50 +176,48 @@
               </select>
             </div>
           </div>
+
           <!-- ////////////////////////////////////////////////////////////////////////////// -->
-          <span (click)="AddDosage()" id="addDosage"
-            ><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span
-          >
           <!-- dosage itration -->
           <label for="">Other Instructions:</label>
-          <div class="row">
+          <div class="row" style="height: unset !important">
             <div class="col-10">
               <textarea
-                name="otherin"
+                [(ngModel)]="do.OtherInstruction"
                 id="other"
                 class="form-control"
                 rows="5"
                 placeholder="Note to patient e.g Medicine to be taken 30 min before meal."
-                [(ngModel)]="presc.DrugsData.OtherInstructions"
               ></textarea>
             </div>
           </div>
           <label for="">Duration:</label>
-          <div class="row">
+          <div class="row" style="height: unset !important">
             <div class="col-5 dat">
               <label for="" class="col-3 labeldate">Start on:</label>
               <input
-                name="starton"
+                [(ngModel)]="do.DuarationStart"
                 class="col-7 form-control"
                 type="date"
                 id="start"
                 value="2022-01-1"
-                [(ngModel)]="presc.DrugsData.DurationStart"
               />
             </div>
             <div class="col-5 dat">
               <label for="" class="col-2 labeldate">Till:</label>
               <input
-                name="till"
+                [(ngModel)]="do.DuarationEnd"
                 class="col-7 form-control"
                 type="date"
                 id="till"
                 value="2022-01-1"
-                [(ngModel)]="presc.DrugsData.DurationEnd"
               />
             </div>
           </div>
-        </form>
+        </div>
+        <span (click)="AddDosage()" id="addDosage"
+          ><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span
+        >
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <button type="button" (click)="AddMed()" class="medbt">
@@ -238,7 +241,7 @@
           </div>
           <br />
           <label for="">Other Instructions:</label>
-          <div class="row">
+          <div class="row" style="height: unset !important">
             <div class="col-11">
               <textarea
                 id="other"

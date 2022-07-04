@@ -369,16 +369,16 @@ h6 {
 
 /* /////////////////////////////////////////////////MED FORM//////////////////////////////////////////////// */
 /* form {
-  
+
 } */
 label {
   margin-top: 2%;
 }
 /* [class*="col-"] {
-  border: 1px solid green; 
+  border: 1px solid green;
 } */
 /* .row {
-  border: 1px solid red; 
+  border: 1px solid red;
 } */
 #name-select,
 #formof-select,
@@ -413,9 +413,7 @@ label {
   font-weight: 100;
   margin-top: 5%;
 }
-#when {
-  margin-top: 20%;
-}
+
 #addDosage {
   float: right;
   font-weight: bold;
@@ -465,9 +463,6 @@ label {
   margin-left: 5%;
 }
 
-#when {
-  margin-top: 20%;
-}
 /* /////////////////////////////////////// */
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
