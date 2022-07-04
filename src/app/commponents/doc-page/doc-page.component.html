@@ -1,7 +1,14 @@
 <div class="container Doc_page">
   <div class="col-8" id="Check" *ngIf="search">
     <h2>Patient SSN:</h2>
-    <input type="text" class="form-control" id="SSN" [(ngModel)]="PatientSSn" required name="PSSN" />
+    <input
+      type="text"
+      class="form-control"
+      id="SSN"
+      [(ngModel)]="PatientSSn"
+      required
+      name="PSSN"
+    />
     <span *ngIf="spanRequired" id="required">requird!</span>
     <button id="srch" (click)="Start()">Search</button>
   </div>
@@ -58,7 +65,12 @@
           <label for="">Medicine Name:</label>
           <div class="row">
             <div class="col-10">
-              <select name="" id="name-select" formControlName="drugID" class="form-control">
+              <select
+                name=""
+                id="name-select"
+                formControlName="drugID"
+                class="form-control"
+              >
                 <option value="">Please choose a medicine</option>
                 <option [value]="item?.ID" *ngFor="let item of drugs">
                   {{ item?.Name }}
@@ -124,11 +136,20 @@
               <label for="" class="labelFromin">Quantity:</label>
             </div>
             <div class="col-6">
-              <input type="text" class="form-control" [(ngModel)]="do.Strength" placeholder="#" />
-
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="do.Strength"
+                placeholder="#"
+              />
             </div>
             <div class="col-md-4">
-              <select name="" [(ngModel)]="do.Quantity" id="strength-select" class="col-7 form-control">
+              <select
+                name=""
+                [(ngModel)]="do.Quantity"
+                id="strength-select"
+                class="col-7 form-control"
+              >
                 <option value="">e.g daily</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -143,7 +164,12 @@
               <label id="when" for="" class="labelFromin">When:</label>
             </div>
             <div class="col-4">
-              <select name="" [(ngModel)]="do.when" id="mthod-select" class="form-control">
+              <select
+                name=""
+                [(ngModel)]="do.when"
+                id="mthod-select"
+                class="form-control"
+              >
                 <option value="">e.g Before Food</option>
                 <option value="1">Before Food</option>
                 <option value="2">after Food</option>
@@ -156,24 +182,42 @@
           <label for="">Other Instructions:</label>
           <div class="row" style="height: unset !important">
             <div class="col-10">
-              <textarea [(ngModel)]="do.OtherInstruction" id="other" class="form-control" rows="5"
-                placeholder="Note to patient e.g Medicine to be taken 30 min before meal."></textarea>
+              <textarea
+                [(ngModel)]="do.OtherInstruction"
+                id="other"
+                class="form-control"
+                rows="5"
+                placeholder="Note to patient e.g Medicine to be taken 30 min before meal."
+              ></textarea>
             </div>
           </div>
           <label for="">Duration:</label>
           <div class="row" style="height: unset !important">
             <div class="col-5 dat">
               <label for="" class="col-3 labeldate">Start on:</label>
-              <input [(ngModel)]="do.DuarationStart" class="col-7 form-control" type="date" id="start"
-                value="2022-01-1" />
+              <input
+                [(ngModel)]="do.DuarationStart"
+                class="col-7 form-control"
+                type="date"
+                id="start"
+                value="2022-01-1"
+              />
             </div>
             <div class="col-5 dat">
               <label for="" class="col-2 labeldate">Till:</label>
-              <input [(ngModel)]="do.DuarationEnd" class="col-7 form-control" type="date" id="till" value="2022-01-1" />
+              <input
+                [(ngModel)]="do.DuarationEnd"
+                class="col-7 form-control"
+                type="date"
+                id="till"
+                value="2022-01-1"
+              />
             </div>
           </div>
         </div>
-        <span (click)="AddDosage()" id="addDosage"><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span>
+        <span (click)="AddDosage()" id="addDosage"
+          ><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span
+        >
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <button type="button" (click)="AddMed()" class="medbt">
@@ -199,7 +243,12 @@
           <label for="">Other Instructions:</label>
           <div class="row" style="height: unset !important">
             <div class="col-11">
-              <textarea id="other" class="form-control" rows="5" placeholder="Note to patient ."></textarea>
+              <textarea
+                id="other"
+                class="form-control"
+                rows="5"
+                placeholder="Note to patient ."
+              ></textarea>
             </div>
           </div>
         </form>
@@ -226,7 +275,12 @@
           <label for="">Other Instructions:</label>
           <div class="row">
             <div class="col-11">
-              <textarea id="other" class="form-control" rows="5" placeholder="Note to patient ."></textarea>
+              <textarea
+                id="other"
+                class="form-control"
+                rows="5"
+                placeholder="Note to patient ."
+              ></textarea>
             </div>
           </div>
         </form>

@@ -171,11 +171,11 @@ h2 {
 .drgfrm {
   width: 95%;
   height: 90%;
-
   margin-top: 3%;
   margin-left: 3%;
-  overflow: auto;
+  overflow: scroll;
   overflow-x: hidden;
+  border: 2px solid red;
 }
 .medbt {
   width: 25%;
@@ -413,7 +413,26 @@ label {
   font-weight: 100;
   margin-top: 5%;
 }
+.in1 {
+  width: 10%;
+  margin-left: 1%;
+}
+.in2 {
+  width: 10%;
 
+  padding-left: 5%;
+}
+.in3 {
+  width: 10%;
+
+  padding-right: 5%;
+}
+.in4 {
+  width: 20%;
+}
+.in5 {
+  width: 30%;
+}
 #addDosage {
   float: right;
   font-weight: bold;

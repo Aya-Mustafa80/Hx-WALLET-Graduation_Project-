@@ -8,15 +8,11 @@ export class Drugs {
   public DrugID: string;
   public when: string;
   public Intake: string;
-  public Quantity: string
+  public Quantity: string;
   public DuarationStart: string;
   public DuarationEnd: string;
   public OtherInstruction: string;
   public Strength: string;
-}
-export class Answer {
-  public text: string;
-  public selected: boolean;
 }
 @Component({
   selector: 'app-doc-page',
@@ -24,16 +20,18 @@ export class Answer {
   styleUrls: ['./doc-page.component.css'],
 })
 export class DocPageComponent implements OnInit {
-  drugs_: Drugs[] = [{
-    DrugID: '',
-    when: '',
-    Intake: '',
-    Quantity: '',
-    DuarationStart: '',
-    DuarationEnd: '',
-    OtherInstruction: '',
-    Strength: '',
-  }];
+  drugs_: Drugs[] = [
+    {
+      DrugID: '',
+      when: '',
+      Intake: '',
+      Quantity: '',
+      DuarationStart: '',
+      DuarationEnd: '',
+      OtherInstruction: '',
+      Strength: '',
+    },
+  ];
   presc: any;
   test: MedicalTest = {
     TestName: '',
@@ -62,8 +60,8 @@ export class DocPageComponent implements OnInit {
     this.prescription_form = this.fb.group({
       drugID: [''],
       date: new Date(),
-      doctorSSN: ''
-    })
+      doctorSSN: '',
+    });
   }
   spanRequired = false; //false
   popup = false; //false
@@ -163,7 +161,6 @@ export class DocPageComponent implements OnInit {
   getDrugs() {
     this.auth.getDrugs().subscribe(
       (res: any) => {
-
         this.drugs = res;
         console.log('drugs', this.drugs);
       },
@@ -235,7 +232,6 @@ export class DocPageComponent implements OnInit {
       },
       (err) => console.log(err)
     );
-
   }
   addTest() {
     this.auth.addTest(this.test).subscribe(

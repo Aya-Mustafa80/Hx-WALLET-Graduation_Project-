@@ -1,12 +1,20 @@
 export class Prescription {
-    constructor(
-        public FormOfMedicine: any,
-        public Strength: any,
-        public MethodOfIntake: any,
-        public Quantity: any,
-        public When: any,
-        public OtherInstructions: string,
-        public StartOn: any,
-        public Till: any
-      ) {}
+  constructor(
+    public patientSSN: any,
+    public doctorSSN: any,
+    public date: any,
+    public DrugsData: [
+      {
+        DrugName: any;
+        DrugId: any;
+        when: any;
+        Intake: any;
+        Quantity: any;
+        DurationStart: any;
+        DurationEnd: any;
+        OtherInstructions: any;
+        strength: any;
+      }
+    ]
+  ) {}
 }
