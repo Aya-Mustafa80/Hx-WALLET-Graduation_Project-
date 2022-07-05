@@ -72,7 +72,7 @@
                 *ngFor="let item of MTeats"
               >
                 <span id="SpanPres">Medical Test </span>
-                <span id="date"> <!-- {{ item.Date }} --></span>
+                <span id="date">{{ item?.Name  }}</span>
               </div>
             </div>
             <div class="content" *ngIf="Content_XRays">
@@ -82,7 +82,7 @@
                 *ngFor="let item of MXRays"
               >
                 <span id="SpanPres">Medicals X-Ray </span>
-                <span id="date"> <!-- {{ item.Date }} --></span>
+                <span id="date"> {{ item?.Name  }}</span>
               </div>
             </div>
           </div>
@@ -108,11 +108,11 @@
           <div class="detail" id="detailCon">
             <h1 class="HeadersDetail">{{ Detail }} Details:</h1>
             <div *ngIf="Detail_Prescription" class="DetailPrescription">
-              <h4>Doc name:</h4>
-              <h5>Prescription Date:</h5>
+              <h4>Doc name: {{clickedPresc.DoctorName}}</h4>
+              <h5>Prescription Date:{{clickedPresc}}</h5>
               <div class="med">
                 <!-- *ngFor="let med of meds" -->
-                <label class="userdatalabel">Medicine name:</label>
+                <label class="userdatalabel"> name:</label>
                 <label class="userdataP">Name</label>
                 <label class="userdatalabel">Form of Medicine</label>
                 <label class="userdataP">Name</label>

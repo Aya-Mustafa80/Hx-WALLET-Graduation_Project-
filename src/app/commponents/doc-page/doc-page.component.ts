@@ -260,16 +260,22 @@ export class DocPageComponent implements OnInit {
   addTest() {
     console.log(this.PatientSSn)
     console.log(this.testname)
-    this.auth.addTest(this.test).subscribe(
+    this.auth.addTest({
+      "pssn":this.PatientSSn,
+      "name":this.testname
+  }).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => console.log(err)
     );
   }
-
+  xrayname='';
   addxray() {
-    this.auth.addXray(this.xray).subscribe(
+    this.auth.addXray({
+      "pssn":this.PatientSSn,
+      "name":this.xrayname
+  }).subscribe(
       (res) => {
         console.log(res);
       },

@@ -8,14 +8,17 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class PatientPageComponent implements OnInit {
   constructor(private auth: AuthService) {
-    /* this.getAllPres(); */
-  }
+    this.getAllPres();
+    this.getAllTests();
+    this.getAllXrays();
+console.log( localStorage.getItem("ssn")) ;
+ }
   Prescription: any[] = [];
-  MTeats = [];
-  MXRays = [];
-  clickedPresc={};
-  clickedTest={};
-  clickedXray={};
+  MTeats :any;
+  MXRays :any;
+  clickedPresc:any;
+  clickedTest:any;
+  clickedXray:any;
   public objP: any = {};
   public Drugss: any = {};
   
@@ -162,8 +165,8 @@ export class PatientPageComponent implements OnInit {
     }
   }
   //all prescriptions of the user 
-  /* getAllPres() {
-    Pssn=localStorage.getItem("ssn");
+  getAllPres() {
+    let Pssn=localStorage.getItem("ssn");
     this.auth.getAllPrescOfUser(Pssn).subscribe(
       (res: any) => {
         this.Prescription = res;
@@ -173,11 +176,12 @@ export class PatientPageComponent implements OnInit {
         console.log(err);
       }
     );
-  } */
+  }
 
   //all tests of the user 
-  /* getAllTests() {
-    this.auth.getAllTestscOfUser(//here the ssn that return from token when yousef make it ).subscribe(
+  getAllTests() {
+    let Pssn=localStorage.getItem("ssn");
+    this.auth.getAllTestscOfUser(Pssn).subscribe(
       (res: any) => {
         this.MTeats = res;
         console.log(res);
@@ -186,11 +190,12 @@ export class PatientPageComponent implements OnInit {
         console.log(err);
       }
     );
-  } */
+  }
 
   //all xrays of the user 
- /*  getAllPres() {
-    this.auth.getAllXraysOfUser(//here the ssn that return from token when yousef make it ).subscribe(
+  getAllXrays() {
+  let Pssn=localStorage.getItem("ssn");
+    this.auth.getAllXraysOfUser(Pssn ).subscribe(
       (res: any) => {
         this.MXRays = res;
         console.log(res);
@@ -199,12 +204,12 @@ export class PatientPageComponent implements OnInit {
         console.log(err);
       }
     );
-  } */
+  }
 
 //this show clicked prescription
   ShowPresc(item: any) {
     console.log(item);
-    this.auth.getPrescriptionByID(item.ID).subscribe(
+    this.auth.getPrescriptionByID(item.PrescriptionID).subscribe(
       (res) => {
         console.log(res);
         this.clickedPresc = res;

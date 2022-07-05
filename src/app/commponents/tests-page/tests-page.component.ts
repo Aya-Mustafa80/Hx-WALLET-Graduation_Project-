@@ -8,17 +8,19 @@ import { LoadTest } from 'src/app/classes/load-test';
   styleUrls: ['./tests-page.component.css'],
 })
 export class TestsPageComponent implements OnInit {
+  PatientSSn = '';
   show = false;
   constructor(private auth: AuthService) {}
-  PatientSSn = '';
+  
   PHX: any = {};
   spanRequired = false;
   Tests = [1, 2, 3, 4];
   tests=[];
 
   test: LoadTest = {
-    TestName: '',
-    TestImage: '',
+    pssn: '',
+    name:'',
+    image: '',
   };
 
   ngOnInit(): void {}
@@ -43,10 +45,14 @@ export class TestsPageComponent implements OnInit {
       }
     );
   }
-
+  testImage='';
+  testName='';
   addTest() {
-    console.log(this.test.TestName)
-    this.auth.loadTest(this.test).subscribe(
+    this.auth.loadTest({
+      "pssn":this.PatientSSn,
+      "name":this.testName,
+      "image":this.testImage
+  }).subscribe(
       (res) => {
         console.log(res);
       },
@@ -55,16 +61,16 @@ export class TestsPageComponent implements OnInit {
   }
 
 //return all tests from DB for dropdown list
-  getTests() {
+ /*  getTests() {
     this.auth.getAllTests().subscribe(
       (res: any) => {
-        this.tests = res;
+        this.tests = res.Patirnt_Tests;
         console.log(res);
       },
       (err) => {
         console.log(err);
       }
     );
-  }
+  } */
 
 }

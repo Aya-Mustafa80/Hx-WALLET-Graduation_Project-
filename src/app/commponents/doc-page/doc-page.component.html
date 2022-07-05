@@ -181,7 +181,8 @@
         <button type="button" (click)="AddMed()" class="medbt">
           Add Medicine
         </button>
-        <button type="button" (click)="addPresc()" class="medbt">submit</button>
+        <button type="button" 
+         class="medbt">submit</button>
         <br />
         <br />
       </div>
@@ -211,12 +212,11 @@
       </div>
       <div class="Xraysfrm" *ngIf="addxrays">
         <!-- /////////////////////////////////////////////////// -->
-        <form>
           <label for="">Medical X-Rays Name:</label>
           <div class="row">
             <div class="col-11">
-              <select id="name-select" class="form-control" [(ngModel)]="xray.name" name="xrayname">
-                <option value={{item.Name}} *ngFor="let item of xrays">{{item.Name}}</option>
+              <select id="name-select" class="form-control" [(ngModel)]="xrayname" >
+                <option [value]="item.Name" *ngFor="let item of xrays">{{item.Name}}</option>
                 <!-- <option value="" *ngFor="let item of xrays">{{item?.}}</option> -->
               </select>
             </div>
@@ -228,7 +228,6 @@
               <textarea id="other" class="form-control" rows="5" placeholder="Note to patient ."></textarea>
             </div>
           </div>
-        </form>
         <!-- /////////////////////////////////////////// -->
         <br /><br />
         <button type="button" (click)="addxray()" class="medbt">submit</button>
