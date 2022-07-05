@@ -47,20 +47,18 @@
           <div class="result col-4">
             <img id="picl" src="/assets/pics/la1b.jpg" alt="" />
             <label for="test">Select test:</label>
-            <select name="" id="name-select" class="form-control">
+            <select name="" id="name-select" class="form-control" [(ngModel)]="testName">
               <option value="">Please choose a Test</option>
-              <option value={{item}} *ngFor="let item of Tests">{{ item }}</option>
+              <option [value]="item.Name" *ngFor="let item of PHX.Patirnt_Tests">{{item.Name}}</option>
             </select>
             <br />
             <label for="img">Select result:</label>
             <input
               class="form-control"
-              type="file"
+              type="text"
               id="img"
-              name="img"
               accept="image/*"
-              [(ngModel)]="test.TestImage" 
-              name="testname"
+              [(ngModel)]="testImage" 
             />
             <br /><br />
             <input id="sub" type="submit" (click)="addTest()"/>

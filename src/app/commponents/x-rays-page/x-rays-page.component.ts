@@ -12,11 +12,12 @@ export class XRaysPageComponent implements OnInit {
   PatientSSn = '';
   PHX: any = {};
   spanRequired = false;
-  Tests = [1, 2, 3, 4];
+  Tests = [];
   xrays = [];
   xray: LoadXray = {
-    XrayName: '',
-    XrayImage: '',
+    pssn:'',
+    name: '',
+    image: '',
   };
 
   ngOnInit(): void {}
@@ -41,9 +42,14 @@ export class XRaysPageComponent implements OnInit {
       }
     );
   }
-
+  xrayName='';
+  xrayImage ='';
   addxray() {
-    this.auth.loadXray(this.xray).subscribe(
+    this.auth.loadXray({
+      "pssn":this.PatientSSn,
+      "name":this.xrayName,
+      "image":this.xrayImage
+  }).subscribe(
       (res) => {
         console.log(res);
       },
