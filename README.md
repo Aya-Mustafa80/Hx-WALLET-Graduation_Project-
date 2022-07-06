@@ -5,9 +5,14 @@ Hx Wallet is your wallet to keep your medical history, prescriptions, medical te
 ![readme](https://user-images.githubusercontent.com/74293468/177630362-52ff8469-708b-44c0-8dc3-3a53b2d5de3d.jpeg)
 
 
-## Development server
+## Features
+This system presents a relationship between doctors, patients, pharmacies and medical laboratories to establish a linking relationship between the medical sector and provides:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* It is given to doctors who are authorized to trade the profession and who are registered to enter the system and create an account to follow the patient history of their patients by displaying all their patient history.
+* Doctors are allowed to add prescriptions, tests, and medical x-rays for them to be kept in their medical record.
+* Pharmacies are allowed to access the patient’s file with his national number to display only his prescriptions and give him medicine to get rid of the idea of paper prescriptions.
+* Medical laboratories are allowed to display the required analyzes and x-rays in the patient’s file, perform them for him, and send the result to his account on the website.
+* Finally, it gives an easy-to-use interface for the patient to see and follow his medical history and receive notifications of the result of his medical test when sent from the lab.
 
 ## Code scaffolding
 
