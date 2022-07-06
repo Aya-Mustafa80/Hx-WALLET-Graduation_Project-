@@ -1,6 +1,7 @@
 export class LoadTest {
     constructor(
-        public TestName: any,
-        public TestImage: any
+        public pssn: any,
+        public name: any,
+        public image: any
       ) {}
 }

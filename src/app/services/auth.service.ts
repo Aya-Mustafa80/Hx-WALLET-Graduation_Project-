@@ -33,11 +33,11 @@ export class AuthService {
 
   private _addprescURL =
     'http://hostserver-001-site1.ctempurl.com/api/Prescriptions';
-  private _loadtestURL = 'http://hostserver-001-site1.ctempurl.com/add/tst';
-  private _loadxrayURL = 'http://hostserver-001-site1.ctempurl.com/add/xray';
+  private _loadtestURL = 'http://hostserver-001-site1.ctempurl.com/upload/testImg';
+  private _loadxrayURL = 'http://hostserver-001-site1.ctempurl.com/upload/xrayImg';
   private _addtestURL =
-    'http://hostserver-001-site1.ctempurl.com/add/xray'; /* doc */
-  private _addxrayURL = ''; /* doc */
+    'http://hostserver-001-site1.ctempurl.com/add/tst'; /* doc */
+  private _addxrayURL = 'http://hostserver-001-site1.ctempurl.com/add/xray'; /* doc */
 
   constructor(private http: HttpClient) {}
   // function for get all patient tests
@@ -135,23 +135,23 @@ export class AuthService {
   }
 
   //get all prescriptions of specific user with it's details
-  getAllPrescOfUser(ssn: string) {
+  getAllPrescOfUser(ssn: any) {
     return this.http.get(
       `http://hostserver-001-site1.ctempurl.com/prespDetails/${ssn}`
     );
   }
-  /* //get all tests of specific user with it's details
-  getAllTestscOfUser(ssn: string) {
+  //get all tests of specific user with it's details
+  getAllTestscOfUser(ssn: any) {
+    return this.http.get(
+      `http://hostserver-001-site1.ctempurl.com/test/${ssn}`
+    );
+  }
+  //get all xrays of specific user with it's details
+  getAllXraysOfUser(ssn: any) {
     return this.http.get(
       `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
     );
   }
-  //get all xrays of specific user with it's details
-  getAllXraysOfUser(ssn: string) {
-    return this.http.get(
-      `http://hostserver-001-site1.ctempurl.com/getPat/${ssn}`
-    );
-  } */
 
   //get all drugs in DB
   getDrugs() {
@@ -159,11 +159,11 @@ export class AuthService {
   }
   //get all tests stored in DB
   getAllTests() {
-    return this.http.get(``);
+    return this.http.get(`http://hostserver-001-site1.ctempurl.com/api/MedicalTests`);
   }
   //get all xrays stored in DB
   getAllXrays() {
-    return this.http.get(``);
+    return this.http.get(`http://hostserver-001-site1.ctempurl.com/api/XRays`);
   }
 
   // add presc in doc_page
@@ -180,10 +180,10 @@ export class AuthService {
   }
   //load test with image in test lab_page
   loadTest(t: LoadTest) {
-    return this.http.post<any>(this._loadtestURL, t);
+    return this.http.put<any>(this._loadtestURL, t);
   }
   //load xray with image in xray lab_page
   loadXray(x: LoadXray) {
-    return this.http.post<any>(this._loadxrayURL, x);
+    return this.http.put<any>(this._loadxrayURL, x);
   }
 }

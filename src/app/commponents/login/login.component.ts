@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     grant_type: 'password',
   };
   U: any = {};
-  user = { SSN: '', Role: '', Name: '', pss: '' };
+  userData = { SSN: '', Role: '', Name: '', pss: '' };
   frmRegister: FormGroup | undefined;
   constructor(
     private _fb: FormBuilder,
@@ -42,10 +42,10 @@ export class LoginComponent implements OnInit {
       (res) => {
         console.log(res);
         this.U = res;
-        this.user.Name = this.U.Name;
-        this.user.Role = this.U.Role;
-        this.user.SSN = this.U.SSN;
-        localStorage.setItem('currentUser', JSON.stringify(this.user));
+        this.userData.Name = this.U.Name;
+        this.userData.Role = this.U.Role;
+        this.userData.SSN = this.U.SSN;
+        localStorage.setItem('currentUser', JSON.stringify(this.userData));
       },
       (err) => console.log(err)
     );
@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
     this.body.set('grant_type', 'password');
     this.info.loginuser(this.body).subscribe(
       (res) => {
+        localStorage.setItem("ssn",this.userData.SSN)
         localStorage.setItem('token', res.token);
         console.log(res);
 

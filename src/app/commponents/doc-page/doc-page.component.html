@@ -1,14 +1,7 @@
 <div class="container Doc_page">
   <div class="col-8" id="Check" *ngIf="search">
     <h2>Patient SSN:</h2>
-    <input
-      type="text"
-      class="form-control"
-      id="SSN"
-      [(ngModel)]="PatientSSn"
-      required
-      name="PSSN"
-    />
+    <input type="text" class="form-control" id="SSN" [(ngModel)]="PatientSSn" required name="PSSN" />
     <span *ngIf="spanRequired" id="required">requird!</span>
     <button id="srch" (click)="Start()">Search</button>
   </div>
@@ -65,13 +58,8 @@
           <label for="">Medicine Name:</label>
           <div class="row">
             <div class="col-10">
-              <select
-                name="drgname"
-                id="name-select"
-                formControlName="drugID"
-                class="form-control"
-                [(ngModel)]="presc.DrugsData[0].DrugName"
-              >
+              <select name="drgname" id="name-select" formControlName="drugID" class="form-control"
+                [(ngModel)]="presc.DrugsData[0].DrugName">
                 <option value="">Please choose a medicine</option>
                 <!-- <option [value]="item?.ID" *ngFor="let item of drugs">
                   {{ item?.Name }} -->
@@ -104,12 +92,7 @@
               <input type="text" class="col-6 form-control" placeholder="#" />
             </div>
             <div class="col-2">
-              <select
-                name=""
-                id="strength-select"
-                class="col-6 form-control"
-                [(ngModel)]="presc.DrugsData[0].strength"
-              >
+              <select name="" id="strength-select" class="col-6 form-control" [(ngModel)]="presc.DrugsData[0].strength">
                 <option value="">mg</option>
                 <option value="1">15</option>
                 <option value="2">50</option>
@@ -122,12 +105,7 @@
               <label for="" class="labelFromin">Method of Intake:</label>
             </div>
             <div class="col-4">
-              <select
-                name=""
-                id="mthod-select"
-                class="form-control"
-                [(ngModel)]="presc.DrugsData[0].Intake"
-              >
+              <select name="" id="mthod-select" class="form-control" [(ngModel)]="presc.DrugsData[0].Intake">
                 <option value="">Method of Intake</option>
                 <option value="1">Oral</option>
                 <option value="2">Injection</option>
@@ -147,12 +125,7 @@
               <label for="" class="labelFromin">Quantity:</label>
             </div>
             <div class="col-6">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="#"
-                [(ngModel)]="presc.DrugsData[0].Quantity"
-              />
+              <input type="text" class="form-control" placeholder="#" [(ngModel)]="presc.DrugsData[0].Quantity" />
             </div>
             <div class="col-md-4">
               <select name="" id="strength-select" class="col-7 form-control">
@@ -170,12 +143,7 @@
               <label id="when" for="" class="labelFromin">When:</label>
             </div>
             <div class="col-4">
-              <select
-                name=""
-                id="mthod-select"
-                class="form-control"
-                [(ngModel)]="presc.DrugsData[0].when"
-              >
+              <select name="" id="mthod-select" class="form-control" [(ngModel)]="presc.DrugsData[0].when">
                 <option value="">e.g Before Food</option>
                 <option value="1">Before Food</option>
                 <option value="2">after Food</option>
@@ -188,101 +156,67 @@
           <label for="">Other Instructions:</label>
           <div class="row" style="height: unset !important">
             <div class="col-10">
-              <textarea
-                id="other"
-                class="form-control"
-                rows="5"
+              <textarea id="other" class="form-control" rows="5"
                 placeholder="Note to patient e.g Medicine to be taken 30 min before meal."
-                [(ngModel)]="presc.DrugsData[0].OtherInstructions"
-              ></textarea>
+                [(ngModel)]="presc.DrugsData[0].OtherInstructions"></textarea>
             </div>
           </div>
           <label for="">Duration:</label>
           <div class="row" style="height: unset !important">
             <div class="col-5 dat">
               <label for="" class="col-3 labeldate">Start on:</label>
-              <input
-                class="col-7 form-control"
-                type="date"
-                id="start"
-                value="01/01/2022"
-                [(ngModel)]="presc.DrugsData[0].DurationStart"
-              />
+              <input class="col-7 form-control" type="date" id="start" value="01/01/2022"
+                [(ngModel)]="presc.DrugsData[0].DurationStart" />
             </div>
             <div class="col-5 dat">
               <label for="" class="col-2 labeldate">Till:</label>
-              <input
-                class="col-7 form-control"
-                type="date"
-                id="till"
-                value="01/01/2022"
-                [(ngModel)]="presc.DrugsData[0].DurationEnd"
-              />
+              <input class="col-7 form-control" type="date" id="till" value="01/01/2022"
+                [(ngModel)]="presc.DrugsData[0].DurationEnd" />
             </div>
           </div>
         </div>
-        <span id="addDosage"
-          ><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span
-        >
+        <span id="addDosage"><img src="assets/pics/plus.png" alt="" /> Add Another Dosage</span>
 
         <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
         <button type="button" (click)="AddMed()" class="medbt">
           Add Medicine
         </button>
-        <button type="button" (click)="addPresc()" class="medbt">submit</button>
+        <button type="button" 
+         class="medbt">submit</button>
         <br />
         <br />
       </div>
       <div class="testfrm" *ngIf="addtests">
         <!-- ///////////////////////////////////////// -->
-        <form>
-          <label for="">Medical Test Name:</label>
-          <div class="row">
-            <div class="col-11">
-              <select
-                name=""
-                id="name-select"
-                class="form-control"
-                [(ngModel)]="test.name"
-              >
-                <option value="">Please choose a Test</option>
-                <!-- <option value="" *ngFor="let item of tests">{{item?.}}</option> -->
-              </select>
-            </div>
+        <label for="">Medical Test Name:</label>
+        <div class="row">
+          <div class="col-11">
+            <select id="name-select" class="form-control" [(ngModel)]="testname">
+              <option [value]="item.Name" *ngFor="let item of tests">{{item.Name}}</option>
+            </select>
           </div>
-          <br />
-          <label for="">Other Instructions:</label>
-          <div class="row" style="height: unset !important">
-            <div class="col-11">
-              <textarea
-                id="other"
-                class="form-control"
-                rows="5"
-                placeholder="Note to patient ."
-              ></textarea>
-            </div>
+        </div>
+        <br />
+        <label for="">Other Instructions:</label>
+        <div class="row" style="height: unset !important">
+          <div class="col-11">
+            <textarea id="other" class="form-control" rows="5" placeholder="Note to patient ."></textarea>
           </div>
-        </form>
+        </div>
         <!-- //////////////////////////////////// -->
         <br />
         <br />
-        <button type="button" class="medbt">submit</button>
+        <button type="button" (click)="addTest()" class="medbt">submit</button>
         <br />
         <br />
       </div>
       <div class="Xraysfrm" *ngIf="addxrays">
         <!-- /////////////////////////////////////////////////// -->
-        <form>
           <label for="">Medical X-Rays Name:</label>
           <div class="row">
             <div class="col-11">
-              <select
-                name=""
-                id="name-select"
-                class="form-control"
-                [(ngModel)]="xray.name"
-              >
-                <option value="">Please choose a X-ray</option>
+              <select id="name-select" class="form-control" [(ngModel)]="xrayname" >
+                <option [value]="item.Name" *ngFor="let item of xrays">{{item.Name}}</option>
                 <!-- <option value="" *ngFor="let item of xrays">{{item?.}}</option> -->
               </select>
             </div>
@@ -291,18 +225,12 @@
           <label for="">Other Instructions:</label>
           <div class="row">
             <div class="col-11">
-              <textarea
-                id="other"
-                class="form-control"
-                rows="5"
-                placeholder="Note to patient ."
-              ></textarea>
+              <textarea id="other" class="form-control" rows="5" placeholder="Note to patient ."></textarea>
             </div>
           </div>
-        </form>
         <!-- /////////////////////////////////////////// -->
         <br /><br />
-        <button type="button" class="medbt">submit</button>
+        <button type="button" (click)="addxray()" class="medbt">submit</button>
         <br /><br />
       </div>
     </div>
