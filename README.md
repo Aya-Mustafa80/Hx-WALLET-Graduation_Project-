@@ -14,22 +14,14 @@ This system presents a relationship between doctors, patients, pharmacies and me
 * Medical laboratories are allowed to display the required analyzes and x-rays in the patient’s file, perform them for him, and send the result to his account on the website.
 * Finally, it gives an easy-to-use interface for the patient to see and follow his medical history and receive notifications of the result of his medical test when sent from the lab.
 
-## Code scaffolding
+## Tech Stack
+Front-end:
+* HTML, CSS, JavaScript ,Typescript
+* Angular JS (JS framework to develop web applications)
+Back-end:
+* .Net
+* C#
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## For more information about the system, implementation, and technologies:
+* Documentation.pdf
+* presentation.pptx
