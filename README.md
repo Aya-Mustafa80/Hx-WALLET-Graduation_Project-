@@ -23,5 +23,5 @@ Back-end:
 * C#
 
 ## For more information about the system, implementation, and technologies:
-* Documentation.pdf [a relative link](Documentation.pdf)
-* presentation.pptx
+*  [Documentation.pdf](Documentation.pdf)
+*  [presentation.pptx](presentation.pptx)
