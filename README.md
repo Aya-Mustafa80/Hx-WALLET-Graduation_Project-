@@ -1,7 +1,9 @@
 # Hx Wallet
 
-Hx Wallet is your wallet to keep your medical history, prescriptions, medical tests, and x-rays all in one place to keep. To protect it from loss and to quickly access it
-![My Image]("/assets/pics/readme.jpeg")
+Hx Wallet is your wallet to keep your medical history, prescriptions, medical tests, and x-rays all in one place to keep. To protect it from loss and to quickly access it.
+
+![readme](https://user-images.githubusercontent.com/74293468/177630362-52ff8469-708b-44c0-8dc3-3a53b2d5de3d.jpeg)
+
 
 ## Development server
 
